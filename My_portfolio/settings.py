@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-pt&(s(*ct!37@n0aar(1cpg3g#xpx^xl$4)sxcn&)p*xvzdjw%
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['sirbrams-branding.onrender.com', 'https://sirbrams-branding.onrender.com', '127.0.0.1', 'localhost']
 
 
 INSTALLED_APPS = [
