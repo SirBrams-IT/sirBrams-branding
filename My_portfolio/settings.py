@@ -88,4 +88,12 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
+SESSION_COOKIE_SECURE = True  # Cookies only sent over HTTPS
+CSRF_COOKIE_SECURE = True  # CSRF cookies only over HTTPS
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
