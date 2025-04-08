@@ -1,0 +1,68 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+<!-- Services Section -->
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Services</h2>
+    <div class="title-shape">
+      <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+    </div>
+    <p>We offer cutting-edge, inclusive, and reliable tech solutions tailored for educational and business growth.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row align-items-center">
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <h2 class="fw-bold mb-4 servies-title" style="color: navy">Smart Solutions That Drive Real Impact</h2>
+        <p class="mb-4">From e-learning platforms to job portals, we design systems that empower communities and elevate businesses.</p>
+        <a href="{% url 'contact' %}" class="btn btn-outline-primary">Get a Custom Solution</a>
+      </div>
+      <div class="col-lg-8">
+        <div class="row g-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item">
+              <i class="bi bi-laptop icon"></i>
+              <h3><a href="#">Virtual Learning Systems</a></h3>
+              <p>Development of inclusive and scalable e-learning platforms like SirBrams Virtual Campus.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item">
+              <i class="bi bi-briefcase icon"></i>
+              <h3><a href="#">Job Portals & CV Tools</a></h3>
+              <p>Smart employment systems with automated CV builders and WhatsApp integration for job alerts.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item">
+              <i class="bi bi-building icon"></i>
+              <h3><a href="#">School Management Systems</a></h3>
+              <p>Complete solutions for high schools including admission, student portals, exams, and class monitoring.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item">
+              <i class="bi bi-lightbulb icon"></i>
+              <h3><a href="#">Custom Web Applications</a></h3>
+              <p>We build reliable, secure, and user-friendly systems tailored to your vision using Django & Bootstrap.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+{% endblock %}
