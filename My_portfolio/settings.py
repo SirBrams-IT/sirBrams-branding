@@ -7,9 +7,11 @@ SECRET_KEY = 'django-insecure-pt&(s(*ct!37@n0aar(1cpg3g#xpx^xl$4)sxcn&)p*xvzdjw%
 
 DEBUG = False
 
-
-ALLOWED_HOSTS = ['sirbrams-branding.onrender.com', 'https://sirbrams-branding.onrender.com', '127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = [
+    "sirbrams-branding.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,12 +90,16 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
-SESSION_COOKIE_SECURE = True  # Cookies only sent over HTTPS
-CSRF_COOKIE_SECURE = True  # CSRF cookies only over HTTPS
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS = 'DENY'
+SECURE_SSL_REDIRECT = False
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://sirbrams-branding.onrender.com',
+    'http://127.0.0.1:8000',
+    'http://localhost:8000'
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
