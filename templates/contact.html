@@ -1,90 +1,90 @@
 {% extends 'starter-page.html' %}
 {% load static %}
 {% block body %}
-  <!-- Contact Section -->
 
-  <!-- Horizontal Map Section -->
-  <div class="col-12 mt-5">
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.601232263616!2d-74.00895038459363!3d40.71305497933174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a1eac3457b5%3A0x7633d4e62de710fd!2sA108%20Adam%20Street%2C%20New%20York%2C%20NY%20535022!5e0!3m2!1sen!2sus!4v1632278198767!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<section id="contact" class="contact section py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    <div class="text-center mb-5">
+      <h2 class="text-uppercase fw-bold mb-2" style="color: navy">Contact Us</h2>
+      <h3 class="display-6 text-primary">Get in Touch with SirBrams Tech Solutions</h3>
+      <p class="text-muted">Have a question or need support? We’re here to help with smart solutions tailored to your needs.</p>
     </div>
-  </div>
 
-  <section id="contact" class="contact section light-background">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-5">
+  <div class="col-lg-6">
+    <div class="bg-white p-4 shadow-sm rounded-4 h-100">
+      <div class="mb-4">
+        <h3 class="fw-semibold mb-3 " style="color: navy">Contact Information</h3>
+        <div class="d-flex align-items-startmb-3">
+          <i class="bi bi-envelope-at text-primary fs-5 me-3"></i>
+          <p class="">support@sirbramstechsolutions.com</p>
+        </div>
+        <div class="d-flex align-items-start ">
+          <i class="bi bi-telephone text-primary fs-5 me-3"></i>
+          <p class="">+254 742 524 370</p>
+        </div>
+        <div class="d-flex align-items-start ">
+          <i class="bi bi-geo-alt text-primary fs-5 me-3"></i>
+          <p class="">Nairobi, Kenya</p>
+        </div>
 
-      <div class="row g-5">
-        <div class="col-lg-6">
-          <div class="content" data-aos="fade-up" data-aos-delay="200">
-            <div class="section-category mb-3">Contact</div>
-            <h2 class="display-5 mb-4">Nemo enim ipsam voluptatem quia voluptas aspernatur</h2>
-            <p class="lead mb-4">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
-
-            <div class="contact-info mt-5">
-              <div class="info-item d-flex mb-3">
-                <i class="bi bi-envelope-at me-3"></i>
-                <span>info@sirbramstech.com</span>
-              </div>
-
-              <div class="info-item d-flex mb-3">
-                <i class="bi bi-telephone me-3"></i>
-                <span>+1 5589 55488 558</span>
-              </div>
-
-              <div class="info-item d-flex mb-4">
-                <i class="bi bi-geo-alt me-3"></i>
-                <span>A108 Adam Street, New York, NY 535022</span>
-              </div>
-
-              <a href="https://www.google.com/maps?q=A108%20Adam%20Street,%20New%20York,%20NY%20535022" class="map-link d-inline-flex align-items-center ms-2 me-2" target="_blank">
-                Open Map
-                <i class="bi bi-arrow-right ms-2"></i>
-              </a>
+        <div class="support-hours">
+          <div class="d-flex align-items-start ">
+            <i class="bi bi-clock-history text-primary fs-5 me-3"></i>
+            <div>
+              <p class="small mb-0 fw-semibold">24/7 Emergency Support</p>
+              <p class="small text-muted">Critical issues anytime</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-start">
+            <i class="bi bi-calendar-check text-primary fs-5 me-3"></i>
+            <div>
+              <p class="small mb-0 fw-semibold">Standard Business Hours</p>
+              <p class="small text-muted mb-0">Monday-Friday: 8:00 AM - 5:00 PM</p>
+              <p class="small text-muted">Saturday: 9:00 AM - 1:00 PM</p>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-6">
-          <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-body p-4 p-lg-5">
-
-              <form action="forms/contact.php" method="post" class="php-email-form">
-                <div class="row gy-4">
-
-                  <div class="col-12">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                  </div>
-
-                  <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit" class="btn btn-submit w-100">Submit Message</button>
-                  </div>
-
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-
       </div>
 
+          <div class="ratio ratio-16x9 rounded-4 shadow-sm">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.01134417029!2d36.817244987331755!3d-1.2920659291888988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d528dbf1b5%3A0x112d5d59aa0a1b7a!2sNairobi!5e0!3m2!1sen!2ske!4v1646631799350!5m2!1sen!2ske"
+              style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card shadow-sm border-0 rounded-4 h-100">
+          <div class="card-body p-4 p-lg-5">
+            <h3 class=" fw-semibold mb-5 text-center" style="color:navy">Send Us a Message</h3>
+            <form method="post" >
+              {% csrf_token %}
+              <div class="row g-3">
+                <div class="col-md-6 mb-4">
+                  <input type="text" name="name" class="form-control rounded-3" placeholder="Full Name" required="required">
+                </div>
+                <div class="col-md-6 mb-4">
+                  <input type="email" name="email" class="form-control rounded-3" placeholder="Email Address" required="required">
+                </div>
+                <div class="col-12 mb-4">
+                  <input type="text" name="subject" class="form-control rounded-3" placeholder="Subject" required="required">
+                </div>
+                <div class="col-12 mb- ">
+                  <textarea name="message" rows="5" class="form-control rounded-3" placeholder="How can we help you?" required="required"></textarea>
+                </div>
+                <div class="col-12 ">
+                  <button type="submit" class="btn btn-navy w-100 py-3 rounded-3 fw-semibold">
+                  Send Message <i class="bi bi-send ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </section><!-- /Contact Section -->
+  </div>
+</section>
 
 {% endblock %}

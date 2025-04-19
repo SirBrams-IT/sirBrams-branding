@@ -2,100 +2,68 @@
 {% load static %}
 {% block body %}
 
-	<section id="about" class="about section light-background">
+     <main id="main" >
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>About</h2>
-    <div class="title-shape">
-      <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
-      </svg>
-    </div>
-    <p>Empowering innovation and inclusion through smart digital solutions tailored for tomorrow's challenges.</p>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row align-items-center">
-      <div class="col-lg-6 position-relative" data-aos="fade-right" data-aos-delay="200">
-        <div class="about-image">
-          <img src="{% static 'assets/img/sir.jpg' %}" alt="SirBrams Tech Image" class="img-fluid rounded-4">
-
-        </div>
-      </div>
-
-      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+    <section class="about-story">
+      <div class="container">
         <div class="about-content">
-          <span class="subtitle">About Us</span>
-
-          <h2>Tech Solutions That Matter</h2>
-
-          <p class="lead mb-4">At SirBrams Tech Solutions, we specialize in transforming ideas into impactful digital platforms. We focus on innovation, inclusivity, and affordable tech access for all.</p>
-
-          <p class="mb-4">Whether it's virtual learning, digital literacy, or custom web systems, we are committed to real impact through smart solutions.</p>
-
-          <div class="personal-info">
-            <div class="row g-4">
-              <div class="col-6">
-                <div class="info-item">
-                  <span class="label">Founder</span>
-                  <span class="value">Bramuel SirBrams</span>
-                </div>
-              </div>
-
-              <div class="col-6">
-                <div class="info-item">
-                  <span class="label">Phone</span>
-                  <span class="value">+254 712 345 678</span>
-                </div>
-              </div>
-
-              <div class="col-6">
-                <div class="info-item">
-                  <span class="label">Founded</span>
-                  <span class="value">2023</span>
-                </div>
-              </div>
-
-              <div class="col-6">
-                <div class="info-item">
-                  <span class="label">Email</span>
-                  <span class="value">info@sirbramstech.com</span>
-                </div>
-              </div>
-
-              <div class="col-6">
-                <div class="info-item">
-                  <span class="label">Sector</span>
-                  <span class="value">EdTech & Digital Solutions</span>
-                </div>
-              </div>
-
-              <div class="col-6">
-                <div class="info-item">
-                  <span class="label">Tagline</span>
-                  <span class="value">Smart Solutions. Real Impact.</span>
-                </div>
-              </div>
-            </div>
+          <div class="about-text">
+            <h2>Our Story</h2>
+            <p>Founded in 2015, SirBrams Tech Solutions began as a small team of passionate technologists with a vision to transform how businesses leverage technology. What started as a modest operation has grown into a trusted name in the tech industry.</p>
+            <p>Our journey has been marked by continuous learning, adaptation, and an unwavering commitment to excellence. We've helped over 200 clients across various industries achieve their digital transformation goals.</p>
+            <p>Today, we stand as a testament to what innovative thinking, technical expertise, and customer-centric values can achieve in the rapidly evolving tech landscape.</p>
           </div>
-
-          <div class="signature mt-4">
-            <div class="signature-image">
-              <img src="{% static 'assets/img/misc/signature-1.webp' %}" alt="Founder Signature" class="img-fluid">
-            </div>
-            <div class="signature-info">
-              <h4>Bramuel SirBrams</h4>
-              <p>Founder & Tech Innovator</p>
-            </div>
+          <div class="about-image" >
+              <img src="{% static '/assets/img/about (2).jpg' %}" alt="">
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
+    <!-- ======= Values Section ======= -->
+    <section class="about-values">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Core Values</h2>
 
-</section><!-- /About Section -->
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon text-center  ">
+              <i class="fas fa-lightbulb "></i>
+            </div>
+            <h3 class="text-center">Innovation</h3>
+            <p>We constantly push boundaries to develop solutions that are not just effective today but will remain relevant tomorrow.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon text-center">
+              <i class="fas fa-handshake "></i>
+            </div>
+            <h3 class="text-center">Integrity</h3>
+            <p>We believe in transparent, honest communication and ethical business practices in all our engagements.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon text-center ">
+              <i class="fas fa-users "></i>
+            </div>
+            <h3 class="text-center">Collaboration</h3>
+            <p>We work closely with our clients, treating their challenges as our own to deliver truly customized solutions.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon text-center ">
+              <i class="fas fa-chart-line "></i>
+            </div>
+            <h3 class="text-center">Excellence</h3>
+            <p>We're committed to delivering nothing but the highest quality solutions, with attention to every detail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
 {% endblock %}

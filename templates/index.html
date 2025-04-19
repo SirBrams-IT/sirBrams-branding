@@ -4,601 +4,356 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title> SirBrams Tech Solutions</title>
-  <meta name="description" content="SirBrams Tech Solutions offers innovative technology solutions designed to enhance Business growth, digital transformation and professionals.">
-  <meta name="keywords" content="technology solutions, education technology, digital Transformation, SirBrams Tech Solutions, online education, remote learning, technical training">
-   {% load static %}
-    {% load tz %}
+  <title>SirBrams Tech Solutions | Smart Solutions. Real Impact</title>
+  <meta name="description" content="SirBrams Tech Solutions offers innovative technology solutions designed to enhance business growth, digital transformation, and professional development.">
+  <meta name="keywords" content="technology solutions, digital transformation, web development, software solutions, business automation, IT consulting">
+  {% load static %}
+  {% load tz %}
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/logo_b.png' %}" rel="icon">
-  <link href="{% static 'assets/img/logo_b.png' %}" rel="icon">
+  <link href="{% static 'assets/img/log-smart.png' %}" rel="icon">
+  <link href="{% static 'assets/img/logo-smart.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Questrial:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-<link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-<link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-<link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-<link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <!-- Vendor CSS -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
-<link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
-
+  <!-- Main CSS -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top" >
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
-         <img src="{% static 'assets/img/logo_b.png' %}" alt="SirBrams Logo" class="img-fluid" style="max-height: 70px;">
-             <h1 class="text-white text-uppercase">SirBrams <span id="solutions" style="font-size: 16px"> tech solutions</span>
-              </h1>
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto me-xl-0 ms-3">
+        <img src="{% static 'assets/img/logo-smart.png' %}" alt="SirBrams Logo" class="img-fluid" style="max-height: 70px;">
+        <h1 class="text-white text-uppercase">SirBrams <span id="solutions" style="font-size: 16px"> tech solutions</span></h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
-
-       <ul>
+        <ul>
           <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %}">Home</a></li>
           <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %}">About</a></li>
           <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %}">Services</a></li>
           <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %}">Contact</a></li>
-
-       </ul>
-
+        </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
-  </header>
+</header>
 
-<section id="hero" class="hero section">
-  <!-- Background Carousel -->
-  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'assets/img/portfolio/portfolio-1.webp' %}" class="d-block w-100" alt="Tech Image 1">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'assets/img/portfolio/portfolio-2.webp' %}" class="d-block w-100" alt="Tech Image 2">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'assets/img/portfolio/portfolio-5.webp' %}" class="d-block w-100" alt="Tech Image 3">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'assets/img/portfolio/portfolio-7.webp' %}" class="d-block w-100" alt="Tech Image 4">
-
-    </div>
-  </div>
-
-  <!-- Overlay Content -->
-  <div class="hero-overlay">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row align-items-center content">
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-          <h2 class="hero-title">Innovating <span class="highlighted">Tomorrow</span> with SirBrams Tech Solutions</h2>
-            <p class="hero-subtitle lead custom-hero-text">
-              Empowering businesses through cutting-edge technology, tailored solutions, and unparalleled expertise.
-            </p>
-     <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
-            <a href="{% url 'service' %}" class="btn btn-primary">Explore Our Services</a>
-            <a href="{% url 'contact' %}" class="btn btn-outline-primary">Get In Touch</a>
-          </div>
-          <div class="hero-stats d-flex flex-wrap gap-4 mt-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="stat-item">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">Years of Expertise</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">200+</span>
-              <span class="stat-label">Projects Delivered</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">150+</span>
-              <span class="stat-label">Satisfied Clients</span>
-            </div>
-          </div>
+  <main id="main">
+    <!-- ======= Compact Hero Carousel ======= -->
+<section class="compact-hero-carousel">
+  <div class="carousel-container" style="border-radius: 12px;  max-width: 1300px;">
+    <div class="hero-carousel">
+      <!-- Slide 1 -->
+      <div class="carousel-slide active" style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85) 0%, rgba(10, 15, 20, 0.85) 100%), url('https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); border-radius: 10px;">
+        <div class="container">
+          <h1>Innovating Tomorrow's Technology Today</h1>
+          <p>Cutting-edge solutions tailored to your business needs.</p>
         </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide" style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85) 0%, rgba(10, 15, 20, 0.85) 100%), url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); border-radius: 10px;">
+        <div class="container">
+          <h1>Digital Transformation Experts</h1>
+          <p>Customized strategies for your digital journey.</p>
+
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide" style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85) 0%, rgba(10, 15, 20, 0.85) 100%), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); border-radius: 10px;">
+        <div class="container">
+          <h1>Your Trusted Technology Partner</h1>
+          <p>Reliable and innovative solutions for growth.</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="carousel-slide" style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85) 0%, rgba(10, 15, 20, 0.85) 100%), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); border-radius: 10px;">
+        <div class="container">
+          <h1>Empowering Businesses</h1>
+          <p>Technology solutions that drive efficiency.</p>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control prev" aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="carousel-control next" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button class="indicator active" aria-label="Slide 1"></button>
+        <button class="indicator" aria-label="Slide 2"></button>
+        <button class="indicator" aria-label="Slide 3"></button>
+        <button class="indicator" aria-label="Slide 4"></button>
       </div>
     </div>
   </div>
 </section>
 
-
-    <section id="skills" class="skills section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4 skills-animation">
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-box">
-              <h3>HTML</h3>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-              <span class="text-end d-block">90%</span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+    <!-- ======= Stats Section ======= -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up">
+            <div class="stat-card">
+              <div class="stat-number">200+</div>
+              <h3>Clients Served</h3>
+              <p>Businesses transformed through our solutions</p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-box">
-              <h3>CSS</h3>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-              <span class="text-end d-block">90%</span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-card">
+              <div class="stat-number">150+</div>
+              <h3>Projects Completed</h3>
+              <p>Successful implementations across industries</p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="skill-box">
-              <h3>JavaScript</h3>
-              <p>Neque porro quisquam est qui dolorem ipsum quia dolor.</p>
-              <span class="text-end d-block">80%</span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-card">
+              <div class="stat-number">98%</div>
+              <h3>Client Satisfaction</h3>
+              <p>Consistently high feedback ratings</p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="skill-box">
-              <h3>Photoshop</h3>
-              <p>Quis autem vel eum iure reprehenderit qui in ea voluptate.</p>
-              <span class="text-end d-block">55%</span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-card">
+              <div class="stat-number">24/7</div>
+              <h3>Support Available</h3>
+              <p>Round-the-clock technical assistance</p>
             </div>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- /Skills Section -->
-
-   
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <div class="title-shape">
-          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
-          </svg>
-        </div>
-        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
-            <ul class="portfolio-filters isotope-filters">
-              <li data-filter="*" class="filter-active">All Work</li>
-              <li data-filter=".filter-web">Web Design</li>
-              <li data-filter=".filter-graphics">Graphics</li>
-              <li data-filter=".filter-motion">Motion</li>
-              <li data-filter=".filter-brand">Branding</li>
-            </ul>
-          </div>
-
-          <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-1.webp' %}" class="img-fluid" alt="" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="static/assets/img/portfolio/portfolio-1.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-web"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <span class="category">Web Design</span>
-                  <h3>Modern Dashboard Interface</h3>
-                  <p>Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-graphics">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-10.webp' %}" class="img-fluid" alt="" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="static/assets/img/portfolio/portfolio-10.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-graphics"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <span class="category">Graphics</span>
-                  <h3>Creative Brand Identity</h3>
-                  <p>Vestibulum id ligula porta felis euismod semper at vulputate.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-motion">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="static/assets/img/portfolio/portfolio-7.webp" class="img-fluid" alt="" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="static/assets/img/portfolio/portfolio-7.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-motion"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <span class="category">Motion</span>
-                  <h3>Product Animation Reel</h3>
-                  <p>Donec ullamcorper nulla non metus auctor fringilla dapibus.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-brand">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="static/assets/img/portfolio/portfolio-4.webp" class="img-fluid" alt="" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="static/assets/img/portfolio/portfolio-4.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-brand"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <span class="category">Branding</span>
-                  <h3>Luxury Brand Package</h3>
-                  <p>Aenean lacinia bibendum nulla sed consectetur elit.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="static/assets/img/portfolio/portfolio-2.webp" class="img-fluid" alt="" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="static/assets/img/portfolio/portfolio-2.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-web"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <span class="category">Web Design</span>
-                  <h3>E-commerce Platform</h3>
-                  <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-graphics">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="static/assets/img/portfolio/portfolio-11.webp" class="img-fluid" alt="" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="static/assets/img/portfolio/portfolio-11.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-graphics"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <span class="category">Graphics</span>
-                  <h3>Digital Art Collection</h3>
-                  <p>Cras mattis consectetur purus sit amet fermentum.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Testimonials Section -->
-<section id="testimonials" class="testimonials section light-background">
-
-  <!-- Section Title -->
+    </section><!-- End Stats Section -->
+     <!-- ======= Combined FAQ & CTA Section ======= -->
+<section id="faq" class="faq section">
   <div class="container section-title" data-aos="fade-up">
-    <h2>Client Testimonials</h2>
-    <div class="title-shape">
-      <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
-      </svg>
-    </div>
-    <p>Read what our clients have to say about the impact of SirBrams Tech Solutions and how we help them achieve success.</p>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="testimonials-slider swiper init-swiper">
-      <script type="application/json" class="swiper-config">
-        {
-          "slidesPerView": 1,
-          "loop": true,
-          "speed": 600,
-          "autoplay": {
-            "delay": 5000
-          },
-          "navigation": {
-            "nextEl": ".swiper-button-next",
-            "prevEl": ".swiper-button-prev"
-          }
-        }
-      </script>
-
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <div class="row">
-              <div class="col-lg-8">
-                <h2>Transforming Businesses with Technology</h2>
-                <p>
-                  Proin iaculis purus consequat sem, dignissimos donec porttitor suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                </p>
-                <p>
-                  Beatae magnam dolore quia ipsum. Voluptatem totam et qui dolore dignissimos. Amet quia sapiente laudantium nihil illo et assumenda sit cupiditate. Nam perspiciatis perferendis minus consequatur.
-                </p>
-                <div class="profile d-flex align-items-center">
-                  <img src="static/assets/img/person/person-m-7.webp" class="profile-img" alt="">
-                  <div class="profile-info">
-                    <h3>Saul Goodman</h3>
-                    <span>Client</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 d-none d-lg-block">
-                <div class="featured-img-wrapper">
-                  <img src="static/assets/img/person/person-m-7.webp" class="featured-img" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Testimonial Item -->
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <div class="row">
-              <div class="col-lg-8">
-                <h2>Boosting Creative Solutions</h2>
-                <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                </p>
-                <p>
-                  Dolorem excepturi esse qui amet maxime quibusdam aut repellendus voluptatum. Corrupti enim a repellat cumque est laborum fuga consequuntur. Dolorem nostrum deleniti quas voluptatem iure dolorum rerum.
-                </p>
-                <div class="profile d-flex align-items-center">
-                  <img src="static/assets/img/person/person-f-8.webp" class="profile-img" alt="">
-                  <div class="profile-info">
-                    <h3>Sara Wilsson</h3>
-                    <span>Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 d-none d-lg-block">
-                <div class="featured-img-wrapper">
-                  <img src="static/assets/img/person/person-f-8.webp" class="featured-img" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Testimonial Item -->
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <div class="row">
-              <div class="col-lg-8">
-                <h2>Innovative Solutions for Growth</h2>
-                <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                </p>
-                <p>
-                  Itaque ut explicabo vero occaecati est quam rerum sed. Numquam tempora aut aut quaerat quia illum. Nobis quia autem odit ipsam numquam. Doloribus sit sint corporis eius totam fuga.
-                </p>
-                <div class="profile d-flex align-items-center">
-                  <img src="static/assets/img/person/person-m-9.webp" class="profile-img" alt="">
-                  <div class="profile-info">
-                    <h3>Matt Brandon</h3>
-                    <span>Freelancer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 d-none d-lg-block">
-                <div class="featured-img-wrapper">
-                  <img src="static/assets/img/person/person-m-9.webp" class="featured-img" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Testimonial Item -->
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <div class="row">
-              <div class="col-lg-8">
-                <h2>Empowering Business Owners</h2>
-                <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                </p>
-                <p>
-                  Omnis aspernatur accusantium qui delectus praesentium repellendus. Facilis sint odio aspernatur voluptas commodi qui qui qui pariatur. Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore.
-                </p>
-                <div class="profile d-flex align-items-center">
-                  <img src="static/assets/img/person/person-f-10.webp" class="profile-img" alt="">
-                  <div class="profile-info">
-                    <h3>Jena Karlis</h3>
-                    <span>Store Owner</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 d-none d-lg-block">
-                <div class="featured-img-wrapper">
-                  <img src="static/assets/img/person/person-f-10.webp" class="featured-img" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Testimonial Item -->
-
-      </div>
-
-      <div class="swiper-navigation w-100 d-flex align-items-center justify-content-center">
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-
-    </div>
+    <h2>Explore our FAQs to learn more, or connect with us for additional information</h2>
 
   </div>
-
-</section><!-- /Testimonials Section -->
-
-<!-- FAQ Section -->
-<section id="faq" class="faq section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Frequently Asked Questions</h2>
-    <div class="title-shape">
-      <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
-      </svg>
-    </div>
-    <p>Find answers to common questions about SirBrams Tech Solutions, our services, and how we help businesses grow.</p>
-  </div><!-- End Section Title -->
 
   <div class="container">
-
-    <div class="row justify-content-center">
-
-      <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
+    <div class="row g-5">
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+          <p>Find answers to common questions about our services and how we can help your business grow</p>
         <div class="faq-container">
-
           <div class="faq-item faq-active">
-            <h3>What services does SirBrams Tech Solutions offer?</h3>
+            <h3>What industries do you specialize in?</h3>
             <div class="faq-content">
-              <p>We offer a range of innovative tech solutions, including web development, software solutions, digital marketing, and business automation. Our goal is to help businesses optimize their operations and increase efficiency.</p>
+              <p>We have extensive experience across multiple sectors including healthcare, finance, education, e-commerce, and manufacturing. Our solutions are tailored to meet industry-specific challenges while leveraging best practices from each domain.</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
+          </div>
 
           <div class="faq-item">
-            <h3>How can I get started with SirBrams Tech Solutions?</h3>
+            <h3>How do you ensure project quality?</h3>
             <div class="faq-content">
-              <p>Getting started with us is easy! Simply reach out to our team through our contact page or schedule a consultation. We’ll work closely with you to understand your business needs and create a tailored solution.</p>
+              <p>We implement a rigorous quality assurance process that includes code reviews, automated testing, user acceptance testing, and continuous integration. Our agile methodology ensures regular checkpoints for quality validation throughout the project lifecycle.</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
+          </div>
 
           <div class="faq-item">
-            <h3>Do you offer support for businesses after project completion?</h3>
+            <h3>What technology stacks do you work with?</h3>
             <div class="faq-content">
-              <p>Yes! We provide ongoing support and maintenance to ensure your solutions continue to perform at their best. Our team is available to assist with any issues or updates that may arise after the project is completed.</p>
+              <p>Our expertise spans modern technologies including MERN stack (MongoDB, Express, React, Node.js), Python/Django, .NET Core, and cloud platforms like AWS and Azure. We choose the optimal stack based on your specific requirements.</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
+          </div>
 
           <div class="faq-item">
-            <h3>What industries does SirBrams Tech Solutions serve?</h3>
+            <h3>Do you provide ongoing maintenance?</h3>
             <div class="faq-content">
-              <p>We serve a wide variety of industries, including technology, retail, healthcare, education, and more. We tailor our solutions to meet the unique needs of each industry and help businesses achieve their specific goals.</p>
+              <p>Yes, we offer comprehensive maintenance packages that include regular updates, security patches, performance optimization, and 24/7 monitoring. Our SLA guarantees response times based on issue severity.</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
+          </div>
 
           <div class="faq-item">
-            <h3>How can I contact SirBrams Tech Solutions for a consultation?</h3>
+            <h3>How do you handle data security?</h3>
             <div class="faq-content">
-              <p>You can contact us via our website’s contact form, through email, or by phone. We also offer consultations through video conferencing for your convenience.</p>
+              <p>Security is paramount in all our solutions. We implement industry-standard encryption, regular security audits, role-based access controls, and compliance with relevant regulations (GDPR, HIPAA, etc.).</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
+          </div>
 
           <div class="faq-item">
-            <h3>What makes SirBrams Tech Solutions stand out from other tech providers?</h3>
+            <h3>What's your typical project timeline?</h3>
             <div class="faq-content">
-              <p>Our commitment to providing innovative, high-quality solutions that are tailored to each client’s needs. We focus on creating long-term partnerships and delivering impactful results that drive success for our clients.</p>
+              <p>Project timelines vary based on complexity, but our agile approach delivers working prototypes within 2-4 weeks. Most mid-size projects complete in 3-6 months, with iterative releases providing early value.</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
-
+          </div>
         </div>
+      </div>
 
-      </div><!-- End Faq Column-->
+      <!-- CTA Column (Right) -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="cta-card h-100" style="background: linear-gradient(135deg, #000080 0%, #00005a 100%); color: white; border-radius: 12px; padding: 40px; display: flex; flex-direction: column;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Ready to Transform Your Business?</h2>
+          <p style="margin-bottom: 30px;">Let's discuss how our technology solutions can drive your business forward.</p>
 
+          <div class="mt-auto">
+            <a href="{% url 'contact' %}" class="btn btn-light btn-lg w-100 mb-3" style="border-radius: 50px; font-weight: 600;">Get Started</a>
+            <a href="{% url 'service' %}" class="btn btn-outline-light btn-lg w-100" style="border-radius: 50px; font-weight: 600;">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Combined FAQ & CTA Section -->
+ <!-- ======= Team Section ======= -->
+<section class="about-team py-5 bg-secondary">
+  <div class="container">
+    <div class="section-title text-center ">
+      <h2 class="display-5 fw-bold">Meet Our Leadership</h2>
+
+      <p class="lead text-muted mt-3">The brilliant minds driving our success</p>
     </div>
 
+    <!-- Team Carousel -->
+    <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner " >
+        <!-- Team Member 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="team-member card border-0 shadow-sm h-100">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CEO" class="member-photo card-img-top rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                  <h3 class="h5 card-title">Abraham Johnson</h3>
+                  <p class="text-primary mb-3">Founder & CEO</p>
+                  <p class="card-text small text-muted">Visionary leader with 15+ years in tech innovation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="team-member card border-0 shadow-sm h-100">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="CTO" class="member-photo card-img-top rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                  <h3 class="h5 card-title">Sarah Chen</h3>
+                  <p class="text-primary mb-3">Chief Technology Officer</p>
+                  <p class="card-text small text-muted">AI and systems architecture expert</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="team-member card border-0 shadow-sm h-100">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="COO" class="member-photo card-img-top rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                  <h3 class="h5 card-title">Michael Rodriguez</h3>
+                  <p class="text-primary mb-3">Chief Operations Officer</p>
+                  <p class="card-text small text-muted">Operational efficiency specialist</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Mobile Indicators -->
+    <div class="d-flex justify-content-center mt-4 d-md-none">
+      <div class="carousel-indicators position-static mx-0">
+        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true"></button>
+        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" class="bg-primary"></button>
+        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2" class="bg-primary"></button>
+      </div>
+    </div>
   </div>
-
-</section><!-- /FAQ Section -->
-
-
+</section>
   </main>
 
-  <footer id="footer" class="footer" style="background-color: navy;box-shadow: 0 0 0 3px gold">
-
+  <footer id="footer" class="footer" style="background-color: navy; box-shadow: 0 0 0 3px gold">
     <div class="container">
-
-      <div class="social-links mt-4 d-flex">
-          <a href="https://facebook.com/sirbrams" class="me-3 text-white"><i class="bi bi-facebook"></i></a>
-          <a href="https://twitter.com/sirbrams" class="me-3 text-white"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://whatsapp.com/in/sirbrams" class="me-3 text-white"><i class="bi bi-whatsapp"></i></a>
-          <a href="https://instagram.com/sirbrams" class="me-3 text-white"><i class="bi bi-instagram"></i></a>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="footer-info">
+            <img src="{% static 'assets/img/logo-smart.png' %}" alt="SirBrams Logo" style="max-height: 60px; margin-bottom: 15px;">
+            <p>Smart Solutions.Real Impact.</p>
+          </div>
         </div>
-        <div class="copyright text-center ">
-        <p style="color: white">copyright © <span>{% now "Y" %}</span> <strong class="px-1 sitename text-white">SirBrams tech Solutions.</strong> <span>All Rights Reserved</span></p>
-
+        <div class="col-lg-4">
+          <h3>Quick Links</h3>
+          <ul class="quick-links m-0 p-0">  <!-- Added quick-links class -->
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'service' %}">Services</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h3>Connect With Us</h3>
+          <div class="social-links mt-3 d-flex">
+            <a href="https://facebook.com/sirbrams" class="me-3 text-white"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/sirbrams" class="me-3 text-white"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com/company/sirbrams" class="me-3 text-white"><i class="bi bi-linkedin"></i></a>
+            <a href="https://instagram.com/sirbrams" class="me-3 text-white"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
       </div>
-
-    </div>
-      <hr>
-      <div class="credits">
+     </div>
+      <hr style="border-color: rgba(255,255,255,1); margin: 30px 0;">
+      <div class="copyright text-center">
+        <p style="color: white; margin-bottom: 0;">&copy; <span>{% now "Y" %}</span> <strong class="px-1">SirBrams Tech Solutions</strong>. All Rights Reserved</p>
+      </div>
+      <div class="credits text-center mt-3">
         Designed by <a class="text-white" href="">SirBrams Tech Solutions</a>
       </div>
+    </div>
   </footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS -->
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-<script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
-<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-<script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
 
-<!-- Main JS File -->
-<script src="{% static 'assets/js/main.js' %}"></script>
+  <!-- Main JS -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
 
 </body>
-
 </html>

@@ -220,3 +220,73 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+class Carousel {
+  constructor(containerSelector, interval = 5000) {
+    this.slides = document.querySelectorAll(`${containerSelector} .carousel-slide`);
+    this.interval = interval;
+    this.currentIndex = 0;
+    this.timer = null;
+
+    this.init();
+  }
+
+  init() {
+    // Set initial states
+    this.slides.forEach((slide, index) => {
+      if (index === 0) {
+        slide.classList.add('active');
+      } else if (index === 1) {
+        slide.classList.add('next');
+      } else {
+        slide.classList.remove('active', 'exiting', 'next');
+      }
+    });
+
+    this.startAutoPlay();
+  }
+
+  transitionToNext() {
+    const nextIndex = (this.currentIndex + 1) % this.slides.length;
+    this.transitionToIndex(nextIndex);
+  }
+
+  transitionToIndex(newIndex) {
+    // Clear all classes first
+    this.slides.forEach(slide => {
+      slide.classList.remove('active', 'exiting', 'next');
+    });
+
+    // Set current slide to exiting
+    this.slides[this.currentIndex].classList.add('exiting');
+
+    // Set new slide to active
+    this.slides[newIndex].classList.add('active');
+
+    // Set next slide in queue
+    const nextNextIndex = (newIndex + 1) % this.slides.length;
+    this.slides[nextNextIndex].classList.add('next');
+
+    this.currentIndex = newIndex;
+  }
+
+  startAutoPlay() {
+    this.timer = setInterval(() => {
+      this.transitionToNext();
+    }, this.interval);
+  }
+
+  stopAutoPlay() {
+    clearInterval(this.timer);
+  }
+}
+
+// Initialize carousel
+document.addEventListener('DOMContentLoaded', () => {
+  const myCarousel = new Carousel('.carousel-container', 5000);
+
+  // Optional: Pause on hover
+  const container = document.querySelector('.carousel-container');
+  container.addEventListener('mouseenter', () => myCarousel.stopAutoPlay());
+  container.addEventListener('mouseleave', () => myCarousel.startAutoPlay());
+});
