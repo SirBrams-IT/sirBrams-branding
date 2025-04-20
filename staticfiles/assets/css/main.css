@@ -165,6 +165,13 @@ span {
 .header .navmenu ul li a.active {
   color: lightgray;
 }
+.title-img {
+  filter: brightness(0) invert(1); /* Makes image appear white */
+  text-transform: uppercase; /* Only applies to text if needed */
+  height: 50px; /* Adjust size as needed */
+  vertical-align: middle;
+}
+
 
 @media (max-width: 1200px) {
   .header {
