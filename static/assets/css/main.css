@@ -1267,3 +1267,35 @@ section,
     height: 8px;
   }
 }
+
+.join-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: navy;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    animation: zoomOut 5s infinite;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.join-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
