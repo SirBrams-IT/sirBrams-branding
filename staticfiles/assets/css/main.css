@@ -1126,18 +1126,176 @@ section,
     font-size: 2rem;
   }
 }
-.carousel-bg {
-    height: 30vh;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
+
+.sirbrams-hero {
+  margin: 0;
+  background-color: #001f3f;
 }
 
+.sirbrams-slide {
+  height: 60vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
-.carousel-caption {
+.sirbrams-slide-content {
   position: relative;
   z-index: 2;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
+.sirbrams-heading {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+}
+
+.sirbrams-subheading {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+}
+
+.sirbrams-cta {
+  background-color: #14a800;
+  border-color: #14a800;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.sirbrams-cta:hover {
+  background-color: #0f8a00;
+  border-color: #0f8a00;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Indicators */
+.sirbrams-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.sirbrams-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255,255,255,0.5);
+  margin: 0 5px;
+  padding: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sirbrams-indicators button.active {
+  background-color: #14a800;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .sirbrams-slide {
+    height: 50vh;
+    min-height: 450px;
+  }
+
+  .sirbrams-heading {
+    font-size: 2.25rem;
+  }
+
+  .sirbrams-subheading {
+    font-size: 1.15rem;
+  }
+
+  .sirbrams-cta {
+    min-width: 160px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sirbrams-slide {
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .sirbrams-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem !important;
+  }
+
+  .sirbrams-subheading {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .sirbrams-slide {
+    height: 60vh;
+    min-height: 350px;
+  }
+
+  .sirbrams-heading {
+    font-size: 1.8rem;
+  }
+
+  .sirbrams-subheading {
+    font-size: 1rem;
+  }
+
+  .sirbrams-cta {
+    min-width: 140px;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .sirbrams-indicators button {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.join-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: navy;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    animation: zoomOut 5s infinite;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.join-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
