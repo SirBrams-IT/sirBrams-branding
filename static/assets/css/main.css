@@ -1129,7 +1129,6 @@ section,
 
 .sirbrams-hero {
   margin: 0;
-  background-color: #001f3f;
 }
 
 .sirbrams-slide {
@@ -1157,8 +1156,8 @@ section,
 }
 
 .sirbrams-cta {
-  background-color: #14a800;
-  border-color: #14a800;
+  background-color: navy;
+  border-color: navy;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
@@ -1166,8 +1165,8 @@ section,
 }
 
 .sirbrams-cta:hover {
-  background-color: #0f8a00;
-  border-color: #0f8a00;
+  background-color: navy;
+  border-color: navy;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -1200,7 +1199,7 @@ section,
 }
 
 .sirbrams-indicators button.active {
-  background-color: #14a800;
+  background-color: navy;
   transform: scale(1.2);
 }
 
@@ -1270,22 +1269,21 @@ section,
 
 .join-btn {
     position: absolute;
-    top: 50%;
+    bottom: 3%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     background-color: navy;
     color: #fff;
-    padding: 15px 30px;
-    font-size: 1.2rem;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     animation: zoomOut 5s infinite;
-    transition: background-color 0.3s;
+    transition: background-color 0.5s;
     z-index: 2;
 }
 
 .join-btn:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color:white;
+    color:black;
 }
 
 @keyframes zoomOut {
