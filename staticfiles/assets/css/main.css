@@ -1269,20 +1269,22 @@ section,
 
 .join-btn {
     position: absolute;
-    bottom: 3%;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     background-color: navy;
     color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 8px;
     animation: zoomOut 5s infinite;
-    transition: background-color 0.5s;
+    transition: background-color 0.3s;
     z-index: 2;
 }
 
 .join-btn:hover {
-    background-color:white;
+    background-color: white;
     color:black;
 }
 

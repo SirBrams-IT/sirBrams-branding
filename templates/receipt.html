@@ -1,0 +1,12 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body%}
+    <div class="container text-center">
+        <h2>Payment Receipt</h2>
+        <p><strong>Order ID:</strong> {{ payment.order_id }}</p>
+        <p><strong>Payer Name:</strong> {{ payment.payer_name }}</p>
+        <p><strong>Amount Paid:</strong> ${{ payment.amount }}</p>
+        <p><strong>Status:</strong> {{ payment.status }}</p>
+    </div>
+{% endblock %}

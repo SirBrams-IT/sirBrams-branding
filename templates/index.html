@@ -76,7 +76,7 @@
         <!-- Slide 2 - Portfolio -->
         <div class="carousel-item">
           <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
-               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/portfolio/portfolio-7.webp' %}');">
+               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/SirBrams_logo.jpg' %}');">
             <div class="container text-center py-5">
               <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
                 <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Proven Development Expertise</h1>
@@ -90,7 +90,7 @@
         <!-- Slide 3 - About -->
         <div class="carousel-item">
           <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
-               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(20, 20, 20, 0.85)), url('{% static 'assets/img/person/person-f-10.webp' %}');">
+               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(20, 20, 20, 0.85)), url('{% static 'assets/img/sir.jpg' %}');">
             <div class="container text-center py-5">
               <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
                 <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Technology With Purpose</h1>
@@ -114,7 +114,23 @@
             </div>
           </div>
         </div>
+
+         <!-- Slide 5 - Hire Me -->
+        <div class="carousel-item">
+          <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
+               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/about (2).jpg' %}');">
+            <div class="container text-center py-5">
+              <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
+                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Hire Me Today</h1>
+                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">Pay securely via PayPal to begin your project.</p>
+                <a href="{% url 'paypal_page' %}" class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2">Hire Me </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
 
       <!-- Indicators -->
       <div class="carousel-indicators sirbrams-indicators">
@@ -122,6 +138,7 @@
         <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
       </div>
     </div>
   </div>
@@ -338,6 +355,7 @@
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'service' %}">Services</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'paypal_page' %}">Hire Me</a><
           </ul>
         </div>
         <div class="col-lg-4">

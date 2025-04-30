@@ -9,5 +9,8 @@ urlpatterns = [
     path('service/',views.service, name='service'),
     path('contact/',views.contact, name='contact'),
     path('starter/',views.starter),
-
+    path('hire-me/', views.paypal_page, name='paypal_page'),
+    path('paypal/capture/', views.paypal_capture, name='paypal_capture'),
+    path('paypal/receipt/<int:payment_id>/', views.receipt, name='paypal_receipt'),
 ]
+
