@@ -290,3 +290,91 @@ document.addEventListener('DOMContentLoaded', () => {
   container.addEventListener('mouseenter', () => myCarousel.stopAutoPlay());
   container.addEventListener('mouseleave', () => myCarousel.startAutoPlay());
 });
+
+// Initialize EmailJS
+(function(){
+  emailjs.init("GLvB9e1q7YgCuXOqJ");
+})();
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("contactForm");
+
+  if (form) {
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value;
+
+      const whatsappMessage = `New contact from:\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+
+      // Optional: Send to WhatsApp silently (via WhatsApp API you cannot really send silently unless using a server or Twilio/Business API)
+      // This just builds the link but doesn’t open it
+      const phoneNumber = "254742524370";
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      // Optionally, log or fetch to your own server to handle this
+
+      // Send email to admin
+      const toAdmin = emailjs.send("service_gjegbzl", "template_0de245k", {
+        from_name: name,
+        reply_to: email,
+        phone: phone,
+        subject: subject,
+        message: message
+      });
+
+      // Send confirmation to client
+      const toClient = emailjs.send("service_gjegbzl", "template_yj1kc78", {
+        from_name: name,
+        reply_to: email,
+        message: message
+      });
+
+      Promise.all([toAdmin, toClient])
+        .then(function(response) {
+          showMessage("Message sent successfully! Confirm your email.", true);
+          form.reset();
+        })
+        .catch(function(error) {
+          showMessage("Failed to send message. Please try again.", false);
+          console.error("EmailJS Error:", error);
+        });
+    });
+  }
+
+  // Function to show success or error message with close button
+  function showMessage(msg, isSuccess) {
+    const responseDiv = document.getElementById("response");
+    responseDiv.style.display = "block";
+    responseDiv.style.position = "relative";
+    responseDiv.style.padding = "10px";
+    responseDiv.style.marginTop = "10px";
+    responseDiv.style.borderRadius = "5px";
+    responseDiv.style.fontWeight = "bold";
+    responseDiv.style.fontSize = "14px";
+    responseDiv.style.transition = "opacity 0.5s ease";
+
+    if (isSuccess) {
+      responseDiv.style.backgroundColor = "#d4edda"; // green
+      responseDiv.style.color = "#155724";
+      responseDiv.style.border = "1px solid #c3e6cb";
+    } else {
+      responseDiv.style.backgroundColor = "#f8d7da"; // red
+      responseDiv.style.color = "#721c24";
+      responseDiv.style.border = "1px solid #f5c6cb";
+    }
+
+    responseDiv.innerHTML = `
+      ${msg}
+      <button onclick="this.parentElement.style.display='none'" 
+              style="position: absolute; top: 5px; right: 10px; background: transparent; border: none; font-size: 20px; cursor: pointer;">
+        &times;
+      </button>
+    `;
+  }
+});
+
+

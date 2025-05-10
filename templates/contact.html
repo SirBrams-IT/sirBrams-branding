@@ -58,39 +58,34 @@
         <div class="card shadow-sm border-0 rounded-4 h-100">
           <div class="card-body p-4 p-lg-5">
             <h3 class=" fw-semibold mb-5 text-center" style="color:navy">Send Us a Message</h3>
-             <form method="POST" action="{% url 'contact' %}">
-                {% csrf_token %}
-                  {% if messages %}
-                          <div class="alert alert-success alert-dismissible  show" role="alert">
-                            {% for message in messages %}
-                              <p>{{ message }}</p>
-                            {% endfor %}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        {% endif %}
-                <div class="row g-3">
-                    <div class="col-md-6 mb-4">
-                        <input type="text" name="name" class="form-control rounded-3" placeholder="Full Name" required>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <input type="number" name="phone" class="form-control rounded-3" placeholder="Phone" required>
-                    </div>
-                    <div class="col-md-12 mb-4">
-                        <input type="email" name="email" class="form-control rounded-3" placeholder="Email Address" required>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <input type="text" name="subject" class="form-control rounded-3" placeholder="Subject" required>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <textarea name="message" rows="5" class="form-control rounded-3" placeholder="Messages?" required></textarea>
-                    </div>
-                    <div class="col-12">
-                       <button type="submit" class="btn btn-navy w-100 py-3 rounded-3 fw-semibold">
-                            Send Message <i class="bi bi-send ms-2"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+             <form id="contactForm">
+             <div class="row g-3">
+            <div class="col-md-6 mb-4">
+            <input type="text" id="name" name="name" class="form-control rounded-3" placeholder="Full Name" required>
+           </div>
+                 <div class="col-md-6 mb-4">
+          <input type="number" id="phone" name="phone" class="form-control rounded-3" placeholder="Phone" required>
+        </div>
+         <div class="col-md-12 mb-4">
+          <input type="email" id="email" name="email" class="form-control rounded-3" placeholder="Email Address" required>
+      </div>
+      <div class="col-12 mb-4">
+          <input type="text" id="subject" name="subject" class="form-control rounded-3" placeholder="Subject" required>
+      </div>
+      <div class="col-12 mb-4">
+          <textarea id="message" name="message" rows="5" class="form-control rounded-3" placeholder="Messages?" required></textarea>
+      </div>
+                 <div id="response" style="display: none;"></div>
+      <div class="col-12">
+         <button type="submit" class="btn btn-navy w-100 py-3 rounded-3 fw-semibold">
+              Send Message <i class="bi bi-send ms-2"></i>
+          </button>
+         </div>
+
+           </div>
+          </form>
+
+
           </div>
         </div>
       </div>
