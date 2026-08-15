@@ -1,18 +1,8 @@
-/**
-* Template Name: EasyFolio
-* Template URL: https://bootstrapmade.com/easyfolio-bootstrap-portfolio-template/
-* Updated: Feb 21 2025 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
-  function toggleScrolled() {
+    function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
@@ -22,9 +12,6 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * Mobile nav toggle
-   */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
@@ -36,9 +23,6 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
@@ -317,34 +301,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
       // Optionally, log or fetch to your own server to handle this
 
-      // Send email to admin
-      const toAdmin = emailjs.send("service_gjegbzl", "template_0de245k", {
-        from_name: name,
-        reply_to: email,
-        phone: phone,
-        subject: subject,
-        message: message
-      });
-
-      // Send confirmation to client
-      const toClient = emailjs.send("service_gjegbzl", "template_yj1kc78", {
-        from_name: name,
-        reply_to: email,
-        message: message
-      });
-
-      Promise.all([toAdmin, toClient])
-        .then(function(response) {
-          showMessage("Message sent successfully! Confirm your email.", true);
-          form.reset();
-        })
-        .catch(function(error) {
-          showMessage("Failed to send message. Please try again.", false);
-          console.error("EmailJS Error:", error);
-        });
-    });
-  }
-
+      
   // Function to show success or error message with close button
   function showMessage(msg, isSuccess) {
     const responseDiv = document.getElementById("response");
@@ -378,3 +335,55 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Check if popup has been shown before using sessionStorage
+document.addEventListener("DOMContentLoaded", function () {
+    const contactPopupElement = document.getElementById("contactPopup");
+    
+    if (!contactPopupElement) {
+        return;
+    }
+
+    const contactPopup = new bootstrap.Modal(contactPopupElement);
+
+    // Check if popup was already shown in this session
+    if (!sessionStorage.getItem('contactPopupShown')) {
+        // Show popup after 3 seconds (only once per session)
+        setTimeout(function () {
+            contactPopup.show();
+            // Mark as shown
+            sessionStorage.setItem('contactPopupShown', 'true');
+        }, 3000);
+    }
+});
+
+/* Open contact popup manually */
+function openContactPopup(showForm = false) {
+    const contactPopupElement = document.getElementById("contactPopup");
+    const contactPopup = bootstrap.Modal.getOrCreateInstance(contactPopupElement);
+
+    if (showForm) {
+        showContactForm();
+    } else {
+        showContactIntro();
+    }
+
+    contactPopup.show();
+}
+
+/* Show the contact introduction */
+function showContactIntro() {
+    document.getElementById("contactIntro").style.display = "block";
+    document.getElementById("contactFormContainer").style.display = "none";
+    document.getElementById("contactPopupIcon").innerHTML = "💬";
+    document.getElementById("contactPopupTitle").innerText = "Let's Talk";
+    document.getElementById("contactPopupSubtitle").innerText = "Have a question or need a digital solution?";
+}
+
+/* Show the actual contact form */
+function showContactForm() {
+    document.getElementById("contactIntro").style.display = "none";
+    document.getElementById("contactFormContainer").style.display = "block";
+    document.getElementById("contactPopupIcon").innerHTML = "✉️";
+    document.getElementById("contactPopupTitle").innerText = "Contact Us";
+    document.getElementById("contactPopupSubtitle").innerText = "Send us your message and we'll get back to you.";
+}

@@ -1,132 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>SirBrams Tech Solutions | Smart Solutions. Real Impact</title>
-  <meta name="description" content="SirBrams Tech Solutions offers innovative technology solutions designed to enhance business growth, digital transformation, and professional development.">
-  <meta name="keywords" content="technology solutions, digital transformation, web development, software solutions, business automation, IT consulting">
-  {% load static %}
-  {% load tz %}
-
-  <!-- Favicons -->
-  <link href="{% static 'assets/img/SirBrams_logo.jpg' %}" rel="icon">
-  <link href="{% static 'assets/img/SirBrams_logo.jpg' %}" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Questrial:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <!-- Vendor CSS -->
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Main CSS -->
-  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="{% static 'assets/img/SirBrams_logo.jpg' %}" alt="SirBrams Logo" class="img-fluid" style="max-height: 60px; border-radius:50%">
-        <img src="{% static 'assets/img/he.png' %}" alt="SirBrams Title" class="title-img img-fluid" style="height: 100px; max-width: 210px;">
-
-
-
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %}">Home</a></li>
-          <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %}">About</a></li>
-          <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %}">Services</a></li>
-          <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %}">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
+<main id="main">
 <section class="sirbrams-hero py-4">
   <div class="container-fluid px-3 px-md-5">
-    <div id="sirbramsCarousel" class="carousel slide rounded-4" data-bs-ride="carousel" style="overflow: hidden;">
+
+    <div
+      id="sirbramsCarousel"
+      class="carousel slide rounded-4"
+      data-bs-ride="carousel"
+      style="overflow: hidden;"
+    >
+
       <div class="carousel-inner rounded-4">
 
         <!-- Slide 1 - Services -->
         <div class="carousel-item active">
-          <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
-               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85) 0%, rgba(10, 15, 20, 0.85)), url('{% static 'assets/img/services/services-1.webp' %}');">
+
+          <div
+            class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
+            style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85) 0%, rgba(10, 15, 20, 0.85)), url('{% static 'assets/img/services/services-1.webp' %}');"
+          >
+
             <div class="container text-center py-5">
-              <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
-                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Custom Software Solutions</h1>
-                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">We design scalable systems tailored to your business needs.</p>
-                <a href="{% url 'service' %}" class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2">Our Services</a>
+
+              <div
+                class="sirbrams-slide-content mx-auto px-3"
+                style="max-width: 800px;"
+              >
+
+                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">
+                  Custom Software Solutions
+                </h1>
+
+                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">
+                  We design scalable systems tailored to your business needs.
+                </p>
+
+                <a
+                  href="{% url 'service' %}"
+                  class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2"
+                >
+                  Our Services
+                </a>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <!-- Slide 2 - Portfolio -->
         <div class="carousel-item">
-          <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
-               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/SirBrams_logo.jpg' %}');">
+
+          <div
+            class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
+            style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/SirBrams_logo.jpg' %}');"
+          >
+
             <div class="container text-center py-5">
-              <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
-                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Proven Development Expertise</h1>
-                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">View our portfolio of successful web and mobile applications.</p>
-                <a href="#" class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2">View Portfolio</a>
+
+              <div
+                class="sirbrams-slide-content mx-auto px-3"
+                style="max-width: 800px;"
+              >
+
+                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">
+                  Proven Development Expertise
+                </h1>
+
+                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">
+                  View our portfolio of successful web and mobile applications.
+                </p>
+
+                <a
+                  href="#"
+                  class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2"
+                >
+                  View Portfolio
+                </a>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <!-- Slide 3 - About -->
         <div class="carousel-item">
-          <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
-               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(20, 20, 20, 0.85)), url('{% static 'assets/img/sir.jpg' %}');">
+
+          <div
+            class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
+            style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(20, 20, 20, 0.85)), url('{% static 'assets/img/sir.jpg' %}');"
+          >
+
             <div class="container text-center py-5">
-              <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
-                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Technology With Purpose</h1>
-                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">Discover our commitment to innovation and digital inclusion.</p>
-                <a href="{% url 'about' %}" class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2">Our Story</a>
+
+              <div
+                class="sirbrams-slide-content mx-auto px-3"
+                style="max-width: 800px;"
+              >
+
+                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">
+                  Technology With Purpose
+                </h1>
+
+                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">
+                  Discover our commitment to innovation and digital inclusion.
+                </p>
+
+                <a
+                  href="{% url 'about' %}"
+                  class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2"
+                >
+                  Our Story
+                </a>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <!-- Slide 4 - Contact -->
         <div class="carousel-item">
-          <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
-               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/services/services-3.webp' %}');">
+
+          <div
+            class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
+            style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/services/services-3.webp' %}');"
+          >
+
             <div class="container text-center py-5">
-              <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
-                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Ready to Get Started?</h1>
-                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">Let's discuss how we can bring your project to life.</p>
-                <a href="{% url 'contact' %}" class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2">Contact Us</a>
+
+              <div
+                class="sirbrams-slide-content mx-auto px-3"
+                style="max-width: 800px;"
+              >
+
+                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">
+                  Ready to Get Started?
+                </h1>
+
+                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">
+                  Let's discuss how we can bring your project to life.
+                </p>
+
+                <button
+                  type="button"
+                  class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2"
+                  onclick="openContactPopup(true)"
+                >
+                  Contact Us
+                </button>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
 
-         <!-- Slide 5 - Hire Me -->
+
+        <!-- Slide 5 - Hire Me -->
         <div class="carousel-item">
-          <div class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
-               style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/about (2).jpg' %}');">
+
+          <div
+            class="sirbrams-slide d-flex align-items-center justify-content-center rounded-4"
+            style="background-image: linear-gradient(135deg, rgba(0, 0, 128, 0.85), rgba(0, 0, 0, 0.85)), url('{% static 'assets/img/about (2).jpg' %}');"
+          >
+
             <div class="container text-center py-5">
-              <div class="sirbrams-slide-content mx-auto px-3" style="max-width: 800px;">
-                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">Hire Me Today</h1>
-                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">Pay securely via PayPal to begin your project.</p>
-                <a href="{% url 'paypal_page' %}" class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2">Hire Me </a>
+
+              <div
+                class="sirbrams-slide-content mx-auto px-3"
+                style="max-width: 800px;"
+              >
+
+                <h1 class="sirbrams-heading display-4 fw-bold text-white mb-4">
+                  Hire Me Today
+                </h1>
+
+                <p class="sirbrams-subheading text-light mb-4 mb-lg-5">
+                  Pay securely via PayPal to begin your project.
+                </p>
+
+                <a
+                  href="#"
+                  class="sirbrams-cta btn btn-primary btn-lg px-4 px-lg-5 py-2"
+                >
+                  Hire Me
+                </a>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
 
       </div>
@@ -134,263 +215,1230 @@
 
       <!-- Indicators -->
       <div class="carousel-indicators sirbrams-indicators">
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+        <button
+          type="button"
+          data-bs-target="#sirbramsCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#sirbramsCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#sirbramsCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#sirbramsCarousel"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#sirbramsCarousel"
+          data-bs-slide-to="4"
+          aria-label="Slide 5"
+        ></button>
+
       </div>
+
     </div>
+
   </div>
 </section>
-    <!-- ======= Stats Section ======= -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-3 col-md-6" data-aos="fade-up">
-            <div class="stat-card">
-              <div class="stat-number">200+</div>
-              <h3>Clients Served</h3>
-              <p>Businesses transformed through our solutions</p>
-            </div>
+
+
+<!-- =========================================================
+     STATS SECTION
+========================================================= -->
+
+<section class="stats-section">
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up">
+
+        <div class="stat-card">
+
+          <div class="stat-number">
+            200+
           </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-card">
-              <div class="stat-number">150+</div>
-              <h3>Projects Completed</h3>
-              <p>Successful implementations across industries</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-card">
-              <div class="stat-number">98%</div>
-              <h3>Client Satisfaction</h3>
-              <p>Consistently high feedback ratings</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-card">
-              <div class="stat-number">24/7</div>
-              <h3>Support Available</h3>
-              <p>Round-the-clock technical assistance</p>
-            </div>
-          </div>
+
+          <h3>
+            Clients Served
+          </h3>
+
+          <p>
+            Businesses transformed through our solutions
+          </p>
+
         </div>
+
       </div>
-    </section><!-- End Stats Section -->
-     <!-- ======= Combined FAQ & CTA Section ======= -->
-<section id="faq" class="faq section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Explore our FAQs to learn more, or connect with us for additional information</h2>
+
+
+      <div
+        class="col-lg-3 col-md-6"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="stat-card">
+
+          <div class="stat-number">
+            150+
+          </div>
+
+          <h3>
+            Projects Completed
+          </h3>
+
+          <p>
+            Successful implementations across industries
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-lg-3 col-md-6"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="stat-card">
+
+          <div class="stat-number">
+            98%
+          </div>
+
+          <h3>
+            Client Satisfaction
+          </h3>
+
+          <p>
+            Consistently high feedback ratings
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-lg-3 col-md-6"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+
+        <div class="stat-card">
+
+          <div class="stat-number">
+            24/7
+          </div>
+
+          <h3>
+            Support Available
+          </h3>
+
+          <p>
+            Round-the-clock technical assistance
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
+</section>
+
+
+<!-- =========================================================
+     FAQ & CTA SECTION
+========================================================= -->
+
+<section id="faq" class="faq section">
+
+  <div class="container section-title" data-aos="fade-up">
+
+    <h2>
+      Explore our FAQs to learn more, or connect with us for additional information
+    </h2>
+
+  </div>
+
+
   <div class="container">
+
     <div class="row g-5">
-      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-          <p>Find answers to common questions about our services and how we can help your business grow</p>
+
+      <div
+        class="col-lg-8"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <p>
+          Find answers to common questions about our services and how we can help your business grow
+        </p>
+
+
         <div class="faq-container">
+
           <div class="faq-item faq-active">
-            <h3>What industries do you specialize in?</h3>
+
+            <h3>
+              What industries do you specialize in?
+            </h3>
+
             <div class="faq-content">
-              <p>We have extensive experience across multiple sectors including healthcare, finance, education, e-commerce, and manufacturing. Our solutions are tailored to meet industry-specific challenges while leveraging best practices from each domain.</p>
+
+              <p>
+                We have extensive experience across multiple sectors including healthcare, finance, education, e-commerce, and manufacturing. Our solutions are tailored to meet industry-specific challenges while leveraging best practices from each domain.
+              </p>
+
             </div>
+
             <i class="faq-toggle bi bi-chevron-right"></i>
+
           </div>
 
-          <div class="faq-item">
-            <h3>How do you ensure project quality?</h3>
-            <div class="faq-content">
-              <p>We implement a rigorous quality assurance process that includes code reviews, automated testing, user acceptance testing, and continuous integration. Our agile methodology ensures regular checkpoints for quality validation throughout the project lifecycle.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
 
           <div class="faq-item">
-            <h3>What technology stacks do you work with?</h3>
+
+            <h3>
+              How do you ensure project quality?
+            </h3>
+
             <div class="faq-content">
-              <p>Our expertise spans modern technologies including MERN stack (MongoDB, Express, React, Node.js), Python/Django, .NET Core, and cloud platforms like AWS and Azure. We choose the optimal stack based on your specific requirements.</p>
+
+              <p>
+                We implement a rigorous quality assurance process that includes code reviews, automated testing, user acceptance testing, and continuous integration. Our agile methodology ensures regular checkpoints for quality validation throughout the project lifecycle.
+              </p>
+
             </div>
+
             <i class="faq-toggle bi bi-chevron-right"></i>
+
           </div>
 
-          <div class="faq-item">
-            <h3>Do you provide ongoing maintenance?</h3>
-            <div class="faq-content">
-              <p>Yes, we offer comprehensive maintenance packages that include regular updates, security patches, performance optimization, and 24/7 monitoring. Our SLA guarantees response times based on issue severity.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
 
           <div class="faq-item">
-            <h3>How do you handle data security?</h3>
+
+            <h3>
+              What technology stacks do you work with?
+            </h3>
+
             <div class="faq-content">
-              <p>Security is paramount in all our solutions. We implement industry-standard encryption, regular security audits, role-based access controls, and compliance with relevant regulations (GDPR, HIPAA, etc.).</p>
+
+              <p>
+                Our expertise spans modern technologies including MERN stack (MongoDB, Express, React, Node.js), Python/Django, .NET Core, and cloud platforms like AWS and Azure. We choose the optimal stack based on your specific requirements.
+              </p>
+
             </div>
+
             <i class="faq-toggle bi bi-chevron-right"></i>
+
           </div>
 
+
           <div class="faq-item">
-            <h3>What's your typical project timeline?</h3>
+
+            <h3>
+              Do you provide ongoing maintenance?
+            </h3>
+
             <div class="faq-content">
-              <p>Project timelines vary based on complexity, but our agile approach delivers working prototypes within 2-4 weeks. Most mid-size projects complete in 3-6 months, with iterative releases providing early value.</p>
+
+              <p>
+                Yes, we offer comprehensive maintenance packages that include regular updates, security patches, performance optimization, and 24/7 monitoring. Our SLA guarantees response times based on issue severity.
+              </p>
+
             </div>
+
             <i class="faq-toggle bi bi-chevron-right"></i>
+
           </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              How do you handle data security?
+            </h3>
+
+            <div class="faq-content">
+
+              <p>
+                Security is paramount in all our solutions. We implement industry-standard encryption, regular security audits, role-based access controls, and compliance with relevant regulations (GDPR, HIPAA, etc.).
+              </p>
+
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              What's your typical project timeline?
+            </h3>
+
+            <div class="faq-content">
+
+              <p>
+                Project timelines vary based on complexity, but our agile approach delivers working prototypes within 2-4 weeks. Most mid-size projects complete in 3-6 months, with iterative releases providing early value.
+              </p>
+
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- CTA Column (Right) -->
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
-        <div class="cta-card h-100" style="background: linear-gradient(135deg, #000080 0%, #00005a 100%); color: white; border-radius: 12px; padding: 40px; display: flex; flex-direction: column;">
-          <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Ready to Transform Your Business?</h2>
-          <p style="margin-bottom: 30px;">Let's discuss how our technology solutions can drive your business forward.</p>
+
+      <!-- CTA COLUMN -->
+
+      <div
+        class="col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+
+        <div
+          class="cta-card h-100"
+          style="
+            background:linear-gradient(135deg,#000080 0%,#00005a 100%);
+            color:white;
+            border-radius:12px;
+            padding:40px;
+            display:flex;
+            flex-direction:column;
+          "
+        >
+
+          <h2 style="
+            font-size:1.8rem;
+            margin-bottom:1.5rem;
+          ">
+            Ready to Transform Your Business?
+          </h2>
+
+          <p style="margin-bottom:30px;">
+            Let's discuss how our technology solutions can drive your business forward.
+          </p>
 
           <div class="mt-auto">
-            <a href="{% url 'contact' %}" class="btn btn-light btn-lg w-100 mb-3" style="border-radius: 50px; font-weight: 600;">Get Started</a>
-            <a href="{% url 'service' %}" class="btn btn-outline-light btn-lg w-100" style="border-radius: 50px; font-weight: 600;">Our Services</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section><!-- End Combined FAQ & CTA Section -->
- <!-- ======= Team Section ======= -->
-<section class="about-team py-5 bg-secondary">
-  <div class="container">
-    <div class="section-title text-center ">
-      <h2 class="display-5 fw-bold">Meet Our Leadership</h2>
 
-      <p class="lead text-muted mt-3">The brilliant minds driving our success</p>
+            <button
+              type="button"
+              onclick="openContactPopup(true)"
+              class="btn btn-light btn-lg w-100 mb-3"
+              style="
+                border-radius:50px;
+                font-weight:600;
+              "
+            >
+              Get Started
+            </button>
+
+            <a
+              href="{% url 'service' %}"
+              class="btn btn-outline-light btn-lg w-100"
+              style="
+                border-radius:50px;
+                font-weight:600;
+              "
+            >
+              Our Services
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TEAM SECTION
+========================================================= -->
+
+<section class="about-team py-5 bg-secondary">
+
+  <div class="container">
+
+    <div class="section-title text-center">
+
+      <h2 class="display-5 fw-bold">
+        Meet Our Leadership
+      </h2>
+
+      <p class="lead text-muted mt-3">
+        The brilliant minds driving our success
+      </p>
+
+    </div>
+
 
     <!-- Team Carousel -->
-    <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner " >
+
+    <div
+      id="teamCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+
+      <div class="carousel-inner">
+
         <!-- Team Member 1 -->
+
         <div class="carousel-item active">
+
           <div class="row justify-content-center">
+
             <div class="col-md-4">
+
               <div class="team-member card border-0 shadow-sm h-100">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CEO" class="member-photo card-img-top rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover;">
+
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="CEO"
+                  class="member-photo card-img-top rounded-circle mx-auto mt-4"
+                  style="
+                    width:150px;
+                    height:150px;
+                    object-fit:cover;
+                  "
+                >
+
                 <div class="card-body text-center">
-                  <h3 class="h5 card-title">Abraham Johnson</h3>
-                  <p class="text-primary mb-3">Founder & CEO</p>
-                  <p class="card-text small text-muted">Visionary leader with 15+ years in tech innovation</p>
+
+                  <h3 class="h5 card-title">
+                    Abraham Johnson
+                  </h3>
+
+                  <p class="text-primary mb-3">
+                    Founder & CEO
+                  </p>
+
+                  <p class="card-text small text-muted">
+                    Visionary leader with 15+ years in tech innovation
+                  </p>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <!-- Team Member 2 -->
+
         <div class="carousel-item">
+
           <div class="row justify-content-center">
+
             <div class="col-md-4">
+
               <div class="team-member card border-0 shadow-sm h-100">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="CTO" class="member-photo card-img-top rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover;">
+
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="CTO"
+                  class="member-photo card-img-top rounded-circle mx-auto mt-4"
+                  style="
+                    width:150px;
+                    height:150px;
+                    object-fit:cover;
+                  "
+                >
+
                 <div class="card-body text-center">
-                  <h3 class="h5 card-title">Sarah Chen</h3>
-                  <p class="text-primary mb-3">Chief Technology Officer</p>
-                  <p class="card-text small text-muted">AI and systems architecture expert</p>
+
+                  <h3 class="h5 card-title">
+                    Sarah Chen
+                  </h3>
+
+                  <p class="text-primary mb-3">
+                    Chief Technology Officer
+                  </p>
+
+                  <p class="card-text small text-muted">
+                    AI and systems architecture expert
+                  </p>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <!-- Team Member 3 -->
+
         <div class="carousel-item">
+
           <div class="row justify-content-center">
+
             <div class="col-md-4">
+
               <div class="team-member card border-0 shadow-sm h-100">
-                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="COO" class="member-photo card-img-top rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover;">
+
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt="COO"
+                  class="member-photo card-img-top rounded-circle mx-auto mt-4"
+                  style="
+                    width:150px;
+                    height:150px;
+                    object-fit:cover;
+                  "
+                >
+
                 <div class="card-body text-center">
-                  <h3 class="h5 card-title">Michael Rodriguez</h3>
-                  <p class="text-primary mb-3">Chief Operations Officer</p>
-                  <p class="card-text small text-muted">Operational efficiency specialist</p>
+
+                  <h3 class="h5 card-title">
+                    Michael Rodriguez
+                  </h3>
+
+                  <p class="text-primary mb-3">
+                    Chief Operations Officer
+                  </p>
+
+                  <p class="card-text small text-muted">
+                    Operational efficiency specialist
+                  </p>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
 
       <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#teamCarousel"
+        data-bs-slide="prev"
+      >
+
+        <span
+          class="carousel-control-prev-icon bg-primary rounded-circle"
+          aria-hidden="true"
+        ></span>
+
+        <span class="visually-hidden">
+          Previous
+        </span>
+
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#teamCarousel"
+        data-bs-slide="next"
+      >
+
+        <span
+          class="carousel-control-next-icon bg-primary rounded-circle"
+          aria-hidden="true"
+        ></span>
+
+        <span class="visually-hidden">
+          Next
+        </span>
+
       </button>
+
     </div>
+
 
     <!-- Mobile Indicators -->
+
     <div class="d-flex justify-content-center mt-4 d-md-none">
+
       <div class="carousel-indicators position-static mx-0">
-        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true"></button>
-        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" class="bg-primary"></button>
-        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2" class="bg-primary"></button>
+
+        <button
+          type="button"
+          data-bs-target="#teamCarousel"
+          data-bs-slide-to="0"
+          class="active bg-primary"
+          aria-current="true"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#teamCarousel"
+          data-bs-slide-to="1"
+          class="bg-primary"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#teamCarousel"
+          data-bs-slide-to="2"
+          class="bg-primary"
+        ></button>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
-  </main>
 
-  <footer id="footer" class="footer" style="background-color: navy; box-shadow: 0 0 0 3px gold">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="footer-info">
-            <img src="{% static 'assets/img/SirBrams_logo.jpg' %}" alt="SirBrams Logo" style="max-height: 60px; margin-bottom: 15px;">
-            <p>Smart Solutions.Real Impact.</p>
+</main>
+
+
+<!-- =========================================================
+     FLOATING CONTACT BUTTON (BOTTOM RIGHT)
+========================================================= -->
+
+<!-- Floating Button -->
+<div 
+  id="floatingContactBtn"
+  style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9998;
+    cursor: pointer;
+    background: #000080;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 128, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+  "
+  onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 30px rgba(0, 0, 128, 0.5)'"
+  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 20px rgba(0, 0, 128, 0.4)'"
+  onclick="openContactPopup(false)"
+>
+  <i class="bi bi-chat-dots" style="font-size: 28px;"></i>
+</div>
+
+<!-- Tooltip Label -->
+<div 
+  id="floatingLabel"
+  style="
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 9997;
+    background: #0f172a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  "
+>
+  <i class="bi bi-chat-dots me-2"></i> Chat with us!
+  <div style="
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #0f172a;
+  "></div>
+</div>
+
+<style>
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    #floatingContactBtn {
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+    }
+    #floatingContactBtn i {
+      font-size: 22px;
+    }
+    #floatingLabel {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #floatingContactBtn {
+      width: 45px;
+      height: 45px;
+      bottom: 15px;
+      right: 15px;
+    }
+    #floatingContactBtn i {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  // Show tooltip after 2 seconds
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      const label = document.getElementById('floatingLabel');
+      if (label) {
+        label.style.opacity = '1';
+        label.style.transform = 'translateY(0)';
+        // Hide after 5 seconds
+        setTimeout(function() {
+          label.style.opacity = '0';
+          label.style.transform = 'translateY(10px)';
+        }, 5000);
+      }
+    }, 2000);
+  });
+</script>
+
+
+<!-- =========================================================
+     CONTACT POPUP (SMALLER SIZE)
+========================================================= -->
+
+<div
+  class="modal fade"
+  id="contactPopup"
+  tabindex="-1"
+  aria-labelledby="contactPopupTitle"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered modal-md">
+
+    <div
+      class="modal-content border-0 rounded-4 shadow-lg overflow-hidden"
+      style="max-width: 500px; margin: 0 auto;"
+    >
+
+      <!-- POPUP HEADER -->
+      <div
+        id="contactPopupHeader"
+        style="
+          background: linear-gradient(135deg, #0f172a, #1e3a8a);
+          color: white;
+          padding: 25px 20px;
+          text-align: center;
+        "
+      >
+
+        <div
+          id="contactPopupIcon"
+          style="
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+          "
+        >
+          💬
+        </div>
+
+        <h3
+          id="contactPopupTitle"
+          class="fw-bold mb-1"
+          style="font-size: 20px;"
+        >
+          Let's Talk
+        </h3>
+
+        <p
+          id="contactPopupSubtitle"
+          class="mb-0"
+          style="color: #bfdbfe; font-size: 13px;"
+        >
+          Have a question or need a digital solution?
+        </p>
+
+      </div>
+
+
+      <!-- POPUP INTRO -->
+      <div
+        id="contactIntro"
+        class="modal-body text-center p-4"
+      >
+
+        <h4
+          class="fw-bold mb-2"
+          style="color: #0f172a; font-size: 18px;"
+        >
+          We Are Here For You.
+        </h4>
+
+        <p
+          class="text-muted mx-auto mb-3"
+          style="
+            max-width: 400px;
+            line-height: 1.7;
+            font-size: 14px;
+          "
+        >
+          Whether you need technical support, web development,
+          custom software, or digital solutions, our team is ready
+          to help.
+        </p>
+
+
+        <!-- FEATURES -->
+        <div class="row g-2 mb-3">
+
+          <div class="col-4">
+
+            <div
+              class="p-2 rounded-3"
+              style="background: #f8fafc;"
+            >
+
+              <div
+                class="mb-1"
+                style="font-size: 20px;"
+              >
+                ⚡
+              </div>
+
+              <strong
+                style="
+                  color: #334155;
+                  font-size: 11px;
+                "
+              >
+                Quick
+              </strong>
+
+            </div>
+
           </div>
-        </div>
-        <div class="col-lg-4">
-          <h3>Quick Links</h3>
-          <ul class="quick-links m-0 p-0">  <!-- Added quick-links class -->
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'service' %}">Services</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-            <li><a href="{% url 'paypal_page' %}">Hire Me</a><
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <h3>Connect With Us</h3>
-           <div class="social-links mt-3 d-flex">
-            <a href="https://www.facebook.com/profile.php?id=61575350737698" class="me-3 text-white"><i class="bi bi-facebook"></i></a>
-            <a href="https://x.com/bramuelwekesa1?t=k4QhtblVWih06NYBqtOTGw&s=09" class="me-3 text-white"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.linkedin.com/in/bramuel-simiyu-036983360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-3 text-white"><i class="bi bi-linkedin"></i></a>
-            <a href="https://whatsapp.com/channel/0029Vb3HC8R7dmebd5Awqs2T" class="me-3 text-white"><i class="bi bi-whatsapp"></i></a>
+
+
+          <div class="col-4">
+
+            <div
+              class="p-2 rounded-3"
+              style="background: #f8fafc;"
+            >
+
+              <div
+                class="mb-1"
+                style="font-size: 20px;"
+              >
+                🛠️
+              </div>
+
+              <strong
+                style="
+                  color: #334155;
+                  font-size: 11px;
+                "
+              >
+                Smart
+              </strong>
+
+            </div>
+
           </div>
+
+
+          <div class="col-4">
+
+            <div
+              class="p-2 rounded-3"
+              style="background: #f8fafc;"
+            >
+
+              <div
+                class="mb-1"
+                style="font-size: 20px;"
+              >
+                🔒
+              </div>
+
+              <strong
+                style="
+                  color: #334155;
+                  font-size: 11px;
+                "
+              >
+                Pro
+              </strong>
+
+            </div>
+
+          </div>
+
         </div>
+
+
+        <button
+          type="button"
+          class="btn w-100 py-2 rounded-3 fw-semibold"
+          style="
+            background: #000080;
+            color: white;
+            border: none;
+            font-size: 14px;
+          "
+          onclick="showContactForm()"
+        >
+          Contact Us
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+
+
+        <button
+          type="button"
+          class="btn btn-light w-100 mt-2 rounded-3"
+          data-bs-dismiss="modal"
+          style="font-size: 14px;"
+        >
+          Maybe Later
+        </button>
+
       </div>
-     </div>
-      <hr style="border-color: rgba(255,255,255,1); margin: 30px 0;">
-      <div class="copyright text-center">
-        <p style="color: white; margin-bottom: 0;">&copy; <span>{% now "Y" %}</span> <strong class="px-1">SirBrams Tech Solutions</strong>. All Rights Reserved</p>
+
+
+      <!-- =====================================================
+           CONTACT FORM
+      ====================================================== -->
+
+      <div
+        id="contactFormContainer"
+        class="modal-body p-4"
+        style="display:none;"
+      >
+
+        <div class="text-center mb-3">
+
+          <h4
+            class="fw-bold"
+            style="color: #0f172a; font-size: 18px;"
+          >
+            Send Us a Message
+          </h4>
+
+          <p class="text-muted small mb-0" style="font-size: 12px;">
+            Tell us how we can help you.
+          </p>
+
+        </div>
+
+
+        <form
+          method="POST"
+          action="{% url 'contact' %}"
+        >
+
+          {% csrf_token %}
+
+          <div class="row g-2">
+
+            <!-- NAME -->
+            <div class="col-md-6">
+
+              <label
+                class="form-label fw-semibold small"
+                for="popupName"
+                style="font-size: 12px;"
+              >
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="popupName"
+                name="name"
+                class="form-control rounded-3 py-1"
+                placeholder="Your full name"
+                style="font-size: 13px;"
+                required
+              >
+
+            </div>
+
+
+            <!-- PHONE -->
+            <div class="col-md-6">
+
+              <label
+                class="form-label fw-semibold small"
+                for="popupPhone"
+                style="font-size: 12px;"
+              >
+                Phone Number
+              </label>
+
+              <input
+                type="text"
+                id="popupPhone"
+                name="phone"
+                class="form-control rounded-3 py-1"
+                placeholder="+254..."
+                style="font-size: 13px;"
+                required
+              >
+
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="col-12">
+
+              <label
+                class="form-label fw-semibold small"
+                for="popupEmail"
+                style="font-size: 12px;"
+              >
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="popupEmail"
+                name="email"
+                class="form-control rounded-3 py-1"
+                placeholder="you@example.com"
+                style="font-size: 13px;"
+                required
+              >
+
+            </div>
+
+
+            <!-- SUBJECT -->
+            <div class="col-12">
+
+              <label
+                class="form-label fw-semibold small"
+                for="popupSubject"
+                style="font-size: 12px;"
+              >
+                Subject
+              </label>
+
+              <input
+                type="text"
+                id="popupSubject"
+                name="subject"
+                class="form-control rounded-3 py-1"
+                placeholder="What can we help you with?"
+                style="font-size: 13px;"
+                required
+              >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+            <div class="col-12">
+
+              <label
+                class="form-label fw-semibold small"
+                for="popupMessage"
+                style="font-size: 12px;"
+              >
+                Message
+              </label>
+
+              <textarea
+                id="popupMessage"
+                name="message"
+                rows="3"
+                class="form-control rounded-3"
+                placeholder="Tell us more about your enquiry..."
+                style="font-size: 13px;"
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+            <div class="col-12 mt-3">
+
+              <button
+                type="submit"
+                class="btn w-100 py-2 rounded-3 fw-semibold"
+                style="
+                  background: #000080;
+                  color: white;
+                  border: none;
+                  font-size: 14px;
+                "
+              >
+                Send Message
+                <i class="bi bi-send ms-2"></i>
+              </button>
+
+            </div>
+
+
+            <div class="col-12 text-center">
+
+              <button
+                type="button"
+                class="btn btn-link text-muted text-decoration-none small"
+                onclick="showContactIntro()"
+                style="font-size: 12px;"
+              >
+                ← Back
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
       </div>
-      <div class="credits text-center mt-3">
-        Designed by <a class="text-white" href="">SirBrams Tech Solutions</a>
+
+
+      <!-- POPUP FOOTER -->
+      <div
+        class="text-center py-2"
+        style="
+          background: #f8fafc;
+          border-top: 1px solid #e2e8f0;
+        "
+      >
+
+        <small style="color: #94a3b8; font-size: 11px;">
+          SirBrams Tech Solutions
+        </small>
+
       </div>
+
     </div>
-  </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  </div>
 
-  <!-- Vendor JS -->
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+</div>
 
-  <!-- Main JS -->
-  <script src="{% static 'assets/js/main.js' %}"></script>
+<script>
+// Check if popup has been shown before using sessionStorage
+document.addEventListener("DOMContentLoaded", function () {
+    const contactPopupElement = document.getElementById("contactPopup");
+    
+    if (!contactPopupElement) {
+        return;
+    }
 
+    const contactPopup = new bootstrap.Modal(contactPopupElement);
 
-</body>
-</html>
+    // Check if popup was already shown in this session
+    if (!sessionStorage.getItem('contactPopupShown')) {
+        // Show popup after 3 seconds (only once per session)
+        setTimeout(function () {
+            contactPopup.show();
+            // Mark as shown
+            sessionStorage.setItem('contactPopupShown', 'true');
+        }, 3000);
+    }
+});
+
+/* Open contact popup manually */
+function openContactPopup(showForm = false) {
+    const contactPopupElement = document.getElementById("contactPopup");
+    const contactPopup = bootstrap.Modal.getOrCreateInstance(contactPopupElement);
+
+    if (showForm) {
+        showContactForm();
+    } else {
+        showContactIntro();
+    }
+
+    contactPopup.show();
+}
+
+/* Show the contact introduction */
+function showContactIntro() {
+    document.getElementById("contactIntro").style.display = "block";
+    document.getElementById("contactFormContainer").style.display = "none";
+    document.getElementById("contactPopupIcon").innerHTML = "💬";
+    document.getElementById("contactPopupTitle").innerText = "Let's Talk";
+    document.getElementById("contactPopupSubtitle").innerText = "Have a question or need a digital solution?";
+}
+
+/* Show the actual contact form */
+function showContactForm() {
+    document.getElementById("contactIntro").style.display = "none";
+    document.getElementById("contactFormContainer").style.display = "block";
+    document.getElementById("contactPopupIcon").innerHTML = "✉️";
+    document.getElementById("contactPopupTitle").innerText = "Contact Us";
+    document.getElementById("contactPopupSubtitle").innerText = "Send us your message and we'll get back to you.";
+}
+</script>
+
+{% endblock %}

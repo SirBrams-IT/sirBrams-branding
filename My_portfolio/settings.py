@@ -1,11 +1,18 @@
 import os
 from pathlib import Path
+from decouple import config
+import environ
+
+
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-pt&(s(*ct!37@n0aar(1cpg3g#xpx^xl$4)sxcn&)p*xvzdjw%'
+SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = False
+DEBUG = False  # Set to False for production
 
 ALLOWED_HOSTS = [
     "sirbrams-branding.onrender.com",
@@ -21,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'FolioApp',
+    "anymail",
 ]
 
 MIDDLEWARE = [
@@ -77,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'  # Changed to Nairobi timezone
 
 USE_I18N = True
 
@@ -101,5 +109,14 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://localhost:8000'
 ]
+# 📧 Email (Brevo via HTTP API)
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
+
+ANYMAIL = {
+    "BREVO_API_KEY": config("BREVO_API_KEY"), 
+}
+
+DEFAULT_FROM_EMAIL = "SirBrams Support <sirbramstechcampus1@gmail.com>"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

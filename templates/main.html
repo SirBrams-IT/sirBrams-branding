@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===== META ===== -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SirBrams Tech Solutions | Smart Solutions. Real Impact</title>
+    <meta name="description" content="SirBrams Tech Solutions offers innovative technology solutions designed to enhance business growth, digital transformation, and professional development.">
+    <meta name="keywords" content="technology solutions, digital transformation, web development, software solutions, business automation, IT consulting">
+
+    <!-- ===== DJANGO TAGS ===== -->
+    {% load static %}
+    {% load tz %}
+
+    <!-- ===== FAVICONS ===== -->
+    <link href="{% static 'assets/img/SirBrams_logo.jpg' %}" rel="icon">
+    <link href="{% static 'assets/img/SirBrams_logo.jpg' %}" rel="apple-touch-icon">
+
+    <!-- ===== GOOGLE FONTS ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- ===== VENDOR CSS ===== -->
+    <link href="{% static 'assets/files/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/files//bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/files//aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/files//glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/files//swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- ===== MAIN CSS ===== -->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+    <!-- HEADER -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <!-- Logo -->
+            <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+                <img src="{% static 'assets/img/SirBrams_logo.jpg' %}" alt="SirBrams Logo" class="img-fluid" style="max-height: 50px; border-radius:50%">
+                <img src="{% static 'assets/img/he.png' %}" alt="SirBrams Title" class="title-img img-fluid" style="height: 100px; max-width: 210px;">
+            </a>
+
+            <!-- Navigation -->
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %}">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %}">About</a></li>
+                    <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %}">Services</a></li>
+                    <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %}">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+    </header>
+
+    {% block body %}
+    <!-- Main content -->
+    {% endblock %}
+
+    <footer id="footer" class="footer">
+        <div class="container">
+
+            <!-- Footer Row -->
+            <div class="row">
+
+                <!-- Column 1: Brand -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="footer-info">
+                        <img src="{% static 'assets/img/SirBrams_logo.jpg' %}" alt="SirBrams Logo" style="max-height: 56px; border-radius: 50%; border: 2px solid rgba(255,215,0,0.25); margin-bottom: 12px;">
+                        <p>Smart Solutions. <span>Real Impact.</span></p>
+                        <p style="font-size: 0.85rem; color: #6a7b90; margin-top: 6px;">
+                            <i class="bi bi-geo-alt" style="color: #ffd700;"></i> Nairobi, Kenya
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h3>Quick Links</h3>
+                    <ul class="quick-links">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'service' %}">Services</a></li>
+                        <li><a href="#">Hire Me</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social -->
+                <div class="col-lg-4 col-md-12">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links mt-3 d-flex flex-wrap">
+                        <a href="https://www.facebook.com/profile.php?id=61575350737698" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/bramuelwekesa1?t=k4QhtblVWih06NYBqtOTGw&s=09" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.linkedin.com/in/bramuel-simiyu-036983360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb3HC8R7dmebd5Awqs2T" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                    <div style="margin-top: 18px; color: #6a7b90; font-size: 0.9rem;">
+                        <i class="bi bi-envelope" style="color: #ffd700; margin-right: 6px;"></i> info@sirbrams.com
+                    </div>
+                </div>
+
+            </div><!-- /row -->
+
+            <!-- Divider -->
+            <hr>
+
+            <!-- Copyright -->
+            <div class="copyright text-center">
+                <p style="margin-bottom: 0;">
+                    &copy; <span>{% now "Y" %}</span>
+                    <strong class="px-1">SirBrams Tech Solutions</strong>.
+                    <span style="color: #6a7b90;">All Rights Reserved</span>
+                </p>
+            </div>
+
+            <!-- Credits -->
+            <div class="credits text-center mt-2">
+                Designed with <i class="bi bi-heart-fill" style="color: #ffd700; font-size: 0.8rem;"></i> by
+                <a href="">SirBrams Tech Solutions</a>
+            </div>
+
+        </div><!-- /container -->
+    </footer>
+
+    <!-- ============================================================
+    SCROLL TOP BUTTON
+    ============================================================ -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+
+    <script src="{% static 'assets/files/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/files/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/files/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/files/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 700,
+                    easing: 'ease-in-out',
+                    once: true,
+                    mirror: false
+                });
+            }
+
+            // Glightbox
+            if (typeof GLightbox !== 'undefined') {
+                GLightbox({
+                    selector: '.glightbox'
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
