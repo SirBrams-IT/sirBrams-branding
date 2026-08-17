@@ -4,7 +4,7 @@
     <!-- ===== META ===== -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>SirBrams Tech Solutions | Smart Solutions. Real Impact</title>
+    <title>SirBrams Tech Solutions | Smart Solutions. Real Impact.</title>
     <meta name="description" content="SirBrams Tech Solutions offers innovative technology solutions designed to enhance business growth, digital transformation, and professional development.">
     <meta name="keywords" content="technology solutions, digital transformation, web development, software solutions, business automation, IT consulting">
 
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- ===== VENDOR CSS ===== -->
+    <!-- ===== BOOTSTRAP & OTHER CSS ===== -->
     <link href="{% static 'assets/files/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'assets/files//bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
     <link href="{% static 'assets/files//aos/aos.css' %}" rel="stylesheet">
@@ -34,7 +34,9 @@
 
 <body class="index-page">
 
-    <!-- HEADER -->
+    <!-- ============================================================
+         HEADER
+    ============================================================ -->
     <header id="header" class="header d-flex align-items-center sticky-top">
         <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
@@ -58,10 +60,16 @@
         </div>
     </header>
 
+    <!-- ============================================================
+         MAIN CONTENT BLOCK
+    ============================================================ -->
     {% block body %}
-    <!-- Main content -->
+    <!-- Main content goes here -->
     {% endblock %}
 
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
     <footer id="footer" class="footer">
         <div class="container">
 
@@ -127,43 +135,167 @@
         </div><!-- /container -->
     </footer>
 
-    <!-- ============================================================
-    SCROLL TOP BUTTON
-    ============================================================ -->
+    <!-- SCROLL TOP BUTTON -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
         <i class="bi bi-arrow-up-short"></i>
     </a>
 
+    <!--FLOATING BUTTONS - BOTTOM RIGHT -->
 
+    <!-- 1. CHAT/CONTACT BUTTON (Top position) -->
+    <div 
+        id="floatingContactBtn"
+        class="floating-btn contact-btn"
+        onclick="openContactPopup(false)"
+    >
+        <i class="bi bi-chat-dots"></i>
+        <span class="btn-label">Chat</span>
+    </div>
+
+    <!-- 2. WHATSAPP JOIN BUTTON (Bottom position) -->
+    <a 
+        href="https://whatsapp.com/channel/0029Vb3HC8R7dmebd5Awqs2T" 
+        target="_blank"
+        class="floating-btn whatsapp-btn"
+    >
+        <i class="fab fa-whatsapp"></i>
+        <span class="btn-label">Join Us</span>
+    </a>
+
+    <!-- Tooltip for Contact Button -->
+    <div id="floatingLabel" class="floating-tooltip">
+        <i class="bi bi-chat-dots me-2"></i> Chat with us!
+        <div class="tooltip-arrow"></div>
+    </div>
+
+    <!-- CONTACT POPUP-->
+    <div
+        class="modal fade"
+        id="contactPopup"
+        tabindex="-1"
+        aria-labelledby="contactPopupTitle"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden" style="max-width: 500px; margin: 0 auto;">
+
+                <!-- POPUP HEADER -->
+                <div id="contactPopupHeader" class="popup-header">
+                    <div id="contactPopupIcon" class="popup-icon">💬</div>
+                    <h3 id="contactPopupTitle" class="fw-bold mb-1">Let's Talk</h3>
+                    <p id="contactPopupSubtitle" class="mb-0">Have a question or need a digital solution?</p>
+                </div>
+
+                <!-- POPUP INTRO -->
+                <div id="contactIntro" class="modal-body text-center p-4">
+                    <h4 class="fw-bold mb-2 text-primary">We Are Here For You.</h4>
+                    <p class="text-muted mx-auto mb-3">
+                        Whether you need technical support, web development, custom software, or digital solutions, our team is ready to help.
+                    </p>
+
+                    <!-- Features -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-4">
+                            <div class="feature-item">
+                                <div class="feature-icon">⚡</div>
+                                <strong>Quick</strong>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="feature-item">
+                                <div class="feature-icon">🛠️</div>
+                                <strong>Smart</strong>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="feature-item">
+                                <div class="feature-icon">🔒</div>
+                                <strong>Pro</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary w-100 py-2 rounded-3 fw-semibold" onclick="showContactForm()">
+                        Contact Us <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-light w-100 mt-2 rounded-3" data-bs-dismiss="modal">
+                        Maybe Later
+                    </button>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <div id="contactFormContainer" class="modal-body p-4" style="display:none;">
+                    <div class="text-center mb-3">
+                        <h4 class="fw-bold">Send Us a Message</h4>
+                        <p class="text-muted small mb-0">Tell us how we can help you.</p>
+                    </div>
+
+                    <form method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold small" for="popupName">Full Name</label>
+                                <input type="text" id="popupName" name="name" class="form-control rounded-3 py-1" placeholder="Your full name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold small" for="popupPhone">Phone Number</label>
+                                <input type="text" id="popupPhone" name="phone" class="form-control rounded-3 py-1" placeholder="+254..." required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-semibold small" for="popupEmail">Email Address</label>
+                                <input type="email" id="popupEmail" name="email" class="form-control rounded-3 py-1" placeholder="you@example.com" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-semibold small" for="popupSubject">Subject</label>
+                                <input type="text" id="popupSubject" name="subject" class="form-control rounded-3 py-1" placeholder="What can we help you with?" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-semibold small" for="popupMessage">Message</label>
+                                <textarea id="popupMessage" name="message" rows="3" class="form-control rounded-3" placeholder="Tell us more about your enquiry..." required></textarea>
+                            </div>
+
+                            <div class="col-12 mt-3">
+                                <button type="submit" class="btn btn-primary w-100 py-2 rounded-3 fw-semibold">
+                                    Send Message <i class="bi bi-send ms-2"></i>
+                                </button>
+                            </div>
+
+                            <div class="col-12 text-center">
+                                <button type="button" class="btn btn-link text-muted text-decoration-none small" onclick="showContactIntro()">
+                                    ← Back
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- POPUP FOOTER -->
+                <div class="text-center py-2" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
+                    <small style="color: #94a3b8; font-size: 11px;">SirBrams Tech Solutions</small>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         JAVASCRIPT FILES
+    ============================================================ -->
     <script src="{% static 'assets/files/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'assets/files/aos/aos.js' %}"></script>
     <script src="{% static 'assets/files/glightbox/js/glightbox.min.js' %}"></script>
     <script src="{% static 'assets/files/swiper/swiper-bundle.min.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-
+    <!--  MAIN JS  -->
     <script src="{% static 'assets/js/main.js' %}"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // AOS
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 700,
-                    easing: 'ease-in-out',
-                    once: true,
-                    mirror: false
-                });
-            }
-
-            // Glightbox
-            if (typeof GLightbox !== 'undefined') {
-                GLightbox({
-                    selector: '.glightbox'
-                });
-            }
-        });
-    </script>
+  
 
 </body>
 </html>
