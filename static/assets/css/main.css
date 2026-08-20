@@ -422,83 +422,6 @@ h1, h2, h4, h5, h6 {
     display: block;
   }
 }
- /* Custom Hero Carousel Styles */
-    #heroCarousel {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      margin: 20px auto;
-      max-width: 1400px;
-    }
-
-    #heroCarousel .carousel-inner {
-      border-radius: 12px;
-    }
-
-    #heroCarousel .carousel-item {
-      height: 500px;
-    }
-
-    #heroCarousel .carousel-item img {
-      object-fit: cover;
-      height: 100%;
-      filter: brightness(0.7);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      z-index: 2;
-      padding: 0 20px;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      animation: fadeInUp 0.8s ease;
-    }
-
-    .hero-content p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-      animation: fadeInUp 0.8s ease 0.2s forwards;
-      opacity: 0;
-    }
-
-    .btn-hero {
-      background-color: #0074D9;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-      animation: fadeInUp 0.8s ease 0.4s forwards;
-      opacity: 0;
-    }
-
-    .btn-hero:hover {
-      background-color: #0066c4;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 116, 217, 0.3);
-    }
 
     /* Stats Counter */
     .stats-section {
@@ -1215,146 +1138,6 @@ section,
   }
 }
 
-.sirbrams-hero {
-  margin: 0;
-}
-
-.sirbrams-slide {
-  height: 60vh;
-  min-height: 500px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.sirbrams-slide-content {
-  position: relative;
-  z-index: 2;
-}
-
-.sirbrams-heading {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  line-height: 1.3;
-}
-
-.sirbrams-subheading {
-  font-size: 1.25rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  line-height: 1.6;
-}
-
-.sirbrams-cta {
-  background-color: navy;
-  border-color: navy;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  min-width: 180px;
-}
-
-.sirbrams-cta:hover {
-  background-color: navy;
-  border-color: navy;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Indicators */
-.sirbrams-indicators {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-
-.sirbrams-indicators button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(255,255,255,0.5);
-  margin: 0 5px;
-  padding: 0;
-  text-indent: -9999px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.sirbrams-indicators button.active {
-  background-color: navy;
-  transform: scale(1.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .sirbrams-slide {
-    height: 50vh;
-    min-height: 450px;
-  }
-
-  .sirbrams-heading {
-    font-size: 2.25rem;
-  }
-
-  .sirbrams-subheading {
-    font-size: 1.15rem;
-  }
-
-  .sirbrams-cta {
-    min-width: 160px;
-    padding: 0.5rem 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .sirbrams-slide {
-    height: 50vh;
-    min-height: 400px;
-  }
-
-  .sirbrams-heading {
-    font-size: 2rem;
-    margin-bottom: 1rem !important;
-  }
-
-  .sirbrams-subheading {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .sirbrams-slide {
-    height: 60vh;
-    min-height: 350px;
-  }
-
-  .sirbrams-heading {
-    font-size: 1.8rem;
-  }
-
-  .sirbrams-subheading {
-    font-size: 1rem;
-  }
-
-  .sirbrams-cta {
-    min-width: 140px;
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-
-  .sirbrams-indicators button {
-    width: 8px;
-    height: 8px;
-  }
-}
-
 .join-btn {
     position: absolute;
     bottom: 5%;
@@ -1422,14 +1205,14 @@ section,
         /* Contact Button */
         .contact-btn {
             bottom: 110px;
-            background: #000080;
+            background: #000d00;
             color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 128, 0.35);
+             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0,0,0,0.5);
         }
 
         .contact-btn:hover {
-            background: #000060;
-            box-shadow: 0 6px 30px rgba(0, 0, 128, 0.45);
+            background: #000080;
+            box-shadow: 0 6px 30px rgba(255, 255, 255);
             color: white;
         }
 

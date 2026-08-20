@@ -1,11 +1,6 @@
 (function() {
   "use strict";
 
-  /**
-   * ============================================================
-   * SCROLLED HEADER
-   * ============================================================
-   */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -16,11 +11,6 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * ============================================================
-   * MOBILE NAVIGATION
-   * ============================================================
-   */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
@@ -50,11 +40,6 @@
     });
   });
 
-  /**
-   * ============================================================
-   * SCROLL TOP BUTTON
-   * ============================================================
-   */
   let scrollTop = document.querySelector('.scroll-top');
 
   function toggleScrollTop() {
@@ -76,11 +61,6 @@
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
-   * ============================================================
-   * AOS ANIMATION
-   * ============================================================
-   */
   function aosInit() {
     if (typeof AOS !== 'undefined') {
       AOS.init({
@@ -93,11 +73,6 @@
   }
   window.addEventListener('load', aosInit);
 
-  /**
-   * ============================================================
-   * SKILLS ANIMATION
-   * ============================================================
-   */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
   skillsAnimation.forEach((item) => {
     if (typeof Waypoint !== 'undefined') {
@@ -114,22 +89,12 @@
     }
   });
 
-  /**
-   * ============================================================
-   * GLIGHTBOX
-   * ============================================================
-   */
   if (typeof GLightbox !== 'undefined') {
     const glightbox = GLightbox({
       selector: '.glightbox'
     });
   }
 
-  /**
-   * ============================================================
-   * ISOTOPE LAYOUT
-   * ============================================================
-   */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -161,11 +126,6 @@
     }
   });
 
-  /**
-   * ============================================================
-   * SWIPER SLIDERS
-   * ============================================================
-   */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
@@ -184,22 +144,12 @@
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * ============================================================
-   * FAQ TOGGLE
-   * ============================================================
-   */
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
     faqItem.addEventListener('click', () => {
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
 
-  /**
-   * ============================================================
-   * HASH SCROLL CORRECTION
-   * ============================================================
-   */
   window.addEventListener('load', function(e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
@@ -215,11 +165,6 @@
     }
   });
 
-  /**
-   * ============================================================
-   * NAVMENU SCROLLSPY
-   * ============================================================
-   */
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
@@ -239,11 +184,6 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-  /**
-   * ============================================================
-   * CAROUSEL CLASS
-   * ============================================================
-   */
   class Carousel {
     constructor(containerSelector, interval = 5000) {
       this.slides = document.querySelectorAll(`${containerSelector} .carousel-slide`);
@@ -293,11 +233,6 @@
     }
   }
 
-  /**
-   * ============================================================
-   * INITIALIZE CAROUSEL
-   * ============================================================
-   */
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.carousel-container');
     if (container) {
@@ -307,22 +242,12 @@
     }
   });
 
-  /**
-   * ============================================================
-   * EMAILJS INITIALIZATION
-   * ============================================================
-   */
   if (typeof emailjs !== 'undefined') {
     (function() {
       emailjs.init("GLvB9e1q7YgCuXOqJ");
     })();
   }
 
-  /**
-   * ============================================================
-   * CONTACT FORM HANDLING
-   * ============================================================
-   */
   document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
 
@@ -372,21 +297,45 @@
           }
         }
 
-        // Submit the form via AJAX or open WhatsApp
-        // For now, we'll show a success message
         showMessage("Thank you! Your message has been sent. We'll get back to you soon.", true);
         form.reset();
       });
     }
   });
 
-  /**
-   * ============================================================
-   * CONTACT POPUP FUNCTIONALITY
-   * ============================================================
-   */
+  document.addEventListener('DOMContentLoaded', function() {
+    if (!localStorage.getItem('chatPromptSeen')) {
+      const p = document.createElement('div');
+      p.innerHTML = '💬 Have a question? <button style="background:none;border:none;color:#fff;cursor:pointer;font-size:18px;">✕</button>';
+      Object.assign(p.style, {
+        position:'fixed', bottom:'90px', right:'20px',
+        background:'#1a2a4a', color:'#fff', padding:'12px 20px',
+        borderRadius:'12px', border:'2px solid rgba(255,255,255,0.3)',
+        boxShadow:'0 8px 30px rgba(0,0,0,0.4)',
+        fontFamily:'Arial,sans-serif', fontSize:'14px',
+        opacity:'0', transform:'translateY(20px)',
+        transition:'all 0.5s ease', zIndex:'9999',
+        display:'flex', alignItems:'center', gap:'10px'
+      });
+      document.body.appendChild(p);
+      
+      setTimeout(() => { 
+        p.style.opacity = '1'; 
+        p.style.transform = 'translateY(0)'; 
+      }, 1500);
+      
+      function dismissChat() {
+        p.style.opacity = '0'; 
+        p.style.transform = 'translateY(20px)';
+        localStorage.setItem('chatPromptSeen', 'true');
+        setTimeout(() => p.remove(), 500);
+      }
+      
+      p.querySelector('button').onclick = dismissChat;
+      setTimeout(dismissChat, 3000);
+    }
+  });
 
-  // Show tooltip for floating contact button
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       const label = document.getElementById('floatingLabel');
@@ -398,7 +347,6 @@
       }
     }, 2000);
 
-    // Check if popup has been shown before using sessionStorage
     const contactPopupElement = document.getElementById("contactPopup");
     
     if (contactPopupElement) {
@@ -408,14 +356,11 @@
         setTimeout(function() {
           contactPopup.show();
           sessionStorage.setItem('contactPopupShown', 'true');
-        }, 3000);
+        }, 4500);
       }
     }
   });
 
-  /**
-   * Open contact popup manually
-   */
   function openContactPopup(showForm = false) {
     const contactPopupElement = document.getElementById("contactPopup");
     if (contactPopupElement) {
@@ -431,9 +376,6 @@
     }
   }
 
-  /**
-   * Show the contact introduction
-   */
   function showContactIntro() {
     const intro = document.getElementById("contactIntro");
     const form = document.getElementById("contactFormContainer");
@@ -447,7 +389,6 @@
     if (title) title.innerText = "Let's Talk";
     if (subtitle) subtitle.innerText = "Have a question or need a digital solution?";
 
-    // Re-trigger animation
     if (intro) {
       intro.style.animation = 'none';
       requestAnimationFrame(() => {
@@ -456,9 +397,6 @@
     }
   }
 
-  /**
-   * Show the actual contact form
-   */
   function showContactForm() {
     const intro = document.getElementById("contactIntro");
     const form = document.getElementById("contactFormContainer");
@@ -472,7 +410,6 @@
     if (title) title.innerText = "Contact Us";
     if (subtitle) subtitle.innerText = "Send us your message and we'll get back to you.";
 
-    // Re-trigger animation
     if (form) {
       form.style.animation = 'none';
       requestAnimationFrame(() => {
@@ -481,11 +418,6 @@
     }
   }
 
-  /**
-   * ============================================================
-   * EXPOSE FUNCTIONS TO GLOBAL SCOPE
-   * ============================================================
-   */
   window.openContactPopup = openContactPopup;
   window.showContactIntro = showContactIntro;
   window.showContactForm = showContactForm;
