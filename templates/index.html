@@ -4,37 +4,35 @@
 <link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
 <main id="main">
 
-<!-- HERO CAROUSEL - MODERN LUSCENT -->
-<section class="sirbrams-hero py-2 position-relative overflow-hidden">
-  <div class="container-fluid px-2 px-md-4">
+<!-- HERO CAROUSEL - FULL WIDTH -->
+<div class="sirbrams-hero position-relative overflow-hidden" >
+  <div class="container-fluid px-0">
 
-    <!-- Floating Decor -->
     <div class="hero-decoration d-none d-lg-block">
       <div class="floating-shape shape-1"></div>
       <div class="floating-shape shape-2"></div>
       <div class="floating-shape shape-3"></div>
     </div>
 
-    <div
-      id="sirbramsCarousel"
-      class="carousel slide rounded-4 shadow-lg"
-      data-bs-ride="carousel"
-      style="overflow: hidden; border-radius: 16px;">
+    <div id="sirbramsCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow: hidden;">
 
-      <div class="carousel-inner rounded-4">
+      <div class="carousel-inner">
 
         <!-- SLIDE 1 -->
         <div class="carousel-item active">
-          <div class="sirbrams-slide split-slide" style="background: rgba(26, 42, 74, 0.75); backdrop-filter: blur(8px);">
+          <div class="sirbrams-slide split-slide" style="background: transparent; backdrop-filter: blur(8px);">
             <div class="split-container">
               <div class="split-text">
                 <div class="slide-badge mb-2">
                   <span class="badge-pulse"></span>
-                  <span class="badge-text">Empowering Innovation</span>
+                  <span class="badge-text">🚀 Empowering Innovation</span>
                 </div>
-                <h1 class="split-heading">Custom Software Solutions</h1>
+                <h1 class="split-heading">Custom <span class="highlight">Software</span> Solutions</h1>
                 <p class="split-subheading">
                   Scalable systems tailored to your business — turning ideas into reality with cutting-edge technology.
+                </p>
+                <p class="split-description">
+                  From concept to deployment, we build robust, secure, and future-ready applications that drive growth and streamline operations across industries.
                 </p>
                 <div class="split-actions">
                   <a href="{% url 'service' %}" class="btn-join">
@@ -54,19 +52,22 @@
 
         <!-- SLIDE 2 -->
         <div class="carousel-item">
-          <div class="sirbrams-slide split-slide" style="background: rgba(22, 42, 74, 0.75); backdrop-filter: blur(8px);">
+          <div class="sirbrams-slide split-slide" style="background: transparent; backdrop-filter: blur(8px);">
             <div class="split-container">
               <div class="split-text">
                 <div class="slide-badge mb-2">
                   <span class="badge-pulse"></span>
-                  <span class="badge-text">Proven Excellence</span>
+                  <span class="badge-text">🏆 Proven Excellence</span>
                 </div>
-                <h1 class="split-heading">Proven Expertise</h1>
+                <h1 class="split-heading">Trusted <span class="highlight">Expertise</span> You Can Rely On</h1>
                 <p class="split-subheading">
                   Successful web and mobile applications that drive real results across industries.
                 </p>
+                <p class="split-description">
+                  With over a decade of experience, we've delivered innovative solutions for startups, enterprises, and government agencies, ensuring measurable impact and ROI.
+                </p>
                 <div class="split-actions">
-                  <a href="#" class="btn-join">
+                  <a href="{% url 'contact' %}" class="btn-join">
                     Portfolio <i class="bi bi-grid-3x3-gap-fill ms-1"></i>
                   </a>
                 </div>
@@ -80,16 +81,19 @@
 
         <!-- SLIDE 3 -->
         <div class="carousel-item">
-          <div class="sirbrams-slide split-slide" style="background: rgba(30, 58, 95, 0.75); backdrop-filter: blur(8px);">
+          <div class="sirbrams-slide split-slide" style="background:transparent; backdrop-filter: blur(8px);">
             <div class="split-container">
               <div class="split-text">
                 <div class="slide-badge mb-2">
                   <span class="badge-pulse"></span>
-                  <span class="badge-text">Purpose-Driven</span>
+                  <span class="badge-text">💡 Purpose-Driven</span>
                 </div>
-                <h1 class="split-heading">Technology With Purpose</h1>
+                <h1 class="split-heading">Technology With <span class="highlight">Purpose</span></h1>
                 <p class="split-subheading">
                   Innovation, digital inclusion, and meaningful impact through technology.
+                </p>
+                <p class="split-description">
+                  We believe technology should serve humanity. Our solutions are designed to bridge gaps, empower communities, and create lasting positive change in society.
                 </p>
                 <div class="split-actions">
                   <a href="{% url 'about' %}" class="btn-join">
@@ -106,16 +110,19 @@
 
         <!-- SLIDE 4 -->
         <div class="carousel-item">
-          <div class="sirbrams-slide split-slide" style="background: rgba(15, 34, 72, 0.75); backdrop-filter: blur(8px);">
+          <div class="sirbrams-slide split-slide" style="background: transparent; backdrop-filter: blur(8px);">
             <div class="split-container">
               <div class="split-text">
                 <div class="slide-badge mb-2">
                   <span class="badge-pulse"></span>
-                  <span class="badge-text">Let's Connect</span>
+                  <span class="badge-text">🤝 Let's Connect</span>
                 </div>
-                <h1 class="split-heading">Ready to Get Started?</h1>
+                <h1 class="split-heading">Ready to <span class="highlight">Get Started</span>?</h1>
                 <p class="split-subheading">
                   Let's bring your project to life and create something amazing together.
+                </p>
+                <p class="split-description">
+                  Whether you have a clear vision or just an idea, our team is here to guide you through every step of the journey from concept to launch.
                 </p>
                 <div class="split-actions">
                   <button onclick="openContactPopup(true)" class="btn-join">
@@ -144,7 +151,7 @@
       </button>
 
       <!-- Indicators -->
-      <div class="carousel-indicators sirbrams-indicators d-flex justify-content-center align-items-center">
+      <div class="carousel-indicators sirbrams-indicators d-none d-lg-flex justify-content-center align-items-center mb-3">
         <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -154,81 +161,129 @@
     </div>
 
   </div>
-</section>
+</div>
 
-<!-- STATS SECTION -->
+<!-- STATS SECTION - Option 4: Gradient with Floating Dots -->
 <section class="stats-section py-4">
   <div class="container">
     <div class="row g-3">
 
+      <!-- Stat 1 - Clients Served -->
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-        <div class="stat-card text-center p-3 rounded-4 h-100">
-          <div class="stat-icon-wrapper mb-2">
-            <div class="stat-icon-bg">
-              <i class="bi bi-people-fill"></i>
+        <div class="stat-card text-center p-3 rounded-4 h-100" style="background: linear-gradient(135deg, #f8f9ff, #eef0ff); border: none; box-shadow: 0 8px 30px rgba(0, 0, 128, 0.04); position: relative; overflow: hidden;">
+          <!-- Floating dots decoration -->
+          <div style="position: absolute; top: 10px; right: 15px; display: flex; gap: 4px; opacity: 0.3;">
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #ffd700; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+          </div>
+          <!-- Decorative shapes -->
+          <div style="position: absolute; bottom: -40px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(255, 215, 0, 0.05), transparent); border-radius: 50%;"></div>
+          <div style="position: absolute; top: -30px; left: -30px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(0, 0, 128, 0.03), transparent); border-radius: 50%;"></div>
+          <div style="position: relative; z-index: 1;">
+            <div class="stat-icon-wrapper mb-2">
+              <div class="stat-icon-bg" style="background: linear-gradient(135deg, #000080, #2a2a9a); color: #ffd700; box-shadow: 0 4px 20px rgba(0, 0, 128, 0.12);">
+                <i class="bi bi-people-fill"></i>
+              </div>
             </div>
-          </div>
-          <div class="stat-number">
-            <span class="counter" data-target="4">0</span><span>+</span>
-          </div>
-          <h3 class="stat-title">Clients Served</h3>
-          <p class="stat-desc">Businesses transformed through our solutions</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 85%;"></div>
+            <div class="stat-number" style="color: #0f172a;">
+              <span class="counter" data-target="7">0</span><span>+</span>
+            </div>
+            <h3 class="stat-title" style="color: #1e293b;">Clients Served</h3>
+            <p class="stat-desc" style="color: #94a3b8;">Trusted by businesses worldwide</p>
+            <div class="stat-progress" style="background: rgba(0, 0, 128, 0.06);">
+              <div class="stat-progress-bar" style="width: 92%;"></div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Stat 2 - Projects Delivered -->
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="stat-card text-center p-3 rounded-4 h-100">
-          <div class="stat-icon-wrapper mb-2">
-            <div class="stat-icon-bg">
-              <i class="bi bi-check-circle-fill"></i>
+        <div class="stat-card text-center p-3 rounded-4 h-100" style="background: linear-gradient(135deg, #f8f9ff, #eef0ff); border: none; box-shadow: 0 8px 30px rgba(0, 0, 128, 0.04); position: relative; overflow: hidden;">
+          <!-- Floating dots decoration -->
+          <div style="position: absolute; top: 10px; right: 15px; display: flex; gap: 4px; opacity: 0.3;">
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #ffd700; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+          </div>
+          <!-- Decorative shapes -->
+          <div style="position: absolute; bottom: -40px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(255, 215, 0, 0.05), transparent); border-radius: 50%;"></div>
+          <div style="position: absolute; top: -30px; left: -30px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(0, 0, 128, 0.03), transparent); border-radius: 50%;"></div>
+          <div style="position: relative; z-index: 1;">
+            <div class="stat-icon-wrapper mb-2">
+              <div class="stat-icon-bg" style="background: linear-gradient(135deg, #000080, #2a2a9a); color: #ffd700; box-shadow: 0 4px 20px rgba(0, 0, 128, 0.12);">
+                <i class="bi bi-check-circle-fill"></i>
+              </div>
             </div>
-          </div>
-          <div class="stat-number">
-            <span class="counter" data-target="6">0</span><span>+</span>
-          </div>
-          <h3 class="stat-title">Projects Completed</h3>
-          <p class="stat-desc">Successful implementations across industries</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 75%;"></div>
+            <div class="stat-number" style="color: #0f172a;">
+              <span class="counter" data-target="10">0</span><span>+</span>
+            </div>
+            <h3 class="stat-title" style="color: #1e293b;">Projects Delivered</h3>
+            <p class="stat-desc" style="color: #94a3b8;">Successful implementations</p>
+            <div class="stat-progress" style="background: rgba(0, 0, 128, 0.06);">
+              <div class="stat-progress-bar" style="width: 88%;"></div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Stat 3 - Satisfaction Rate -->
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="stat-card text-center p-3 rounded-4 h-100">
-          <div class="stat-icon-wrapper mb-2">
-            <div class="stat-icon-bg">
-              <i class="bi bi-star-fill"></i>
+        <div class="stat-card text-center p-3 rounded-4 h-100" style="background: linear-gradient(135deg, #f8f9ff, #eef0ff); border: none; box-shadow: 0 8px 30px rgba(0, 0, 128, 0.04); position: relative; overflow: hidden;">
+          <!-- Floating dots decoration -->
+          <div style="position: absolute; top: 10px; right: 15px; display: flex; gap: 4px; opacity: 0.3;">
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #ffd700; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+          </div>
+          <!-- Decorative shapes -->
+          <div style="position: absolute; bottom: -40px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(255, 215, 0, 0.05), transparent); border-radius: 50%;"></div>
+          <div style="position: absolute; top: -30px; left: -30px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(0, 0, 128, 0.03), transparent); border-radius: 50%;"></div>
+          <div style="position: relative; z-index: 1;">
+            <div class="stat-icon-wrapper mb-2">
+              <div class="stat-icon-bg" style="background: linear-gradient(135deg, #000080, #2a2a9a); color: #ffd700; box-shadow: 0 4px 20px rgba(0, 0, 128, 0.12);">
+                <i class="bi bi-star-fill"></i>
+              </div>
             </div>
-          </div>
-          <div class="stat-number">
-            <span class="counter" data-target="98">0</span><span>%</span>
-          </div>
-          <h3 class="stat-title">Client Satisfaction</h3>
-          <p class="stat-desc">Consistently high feedback ratings</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 98%;"></div>
+            <div class="stat-number" style="color: #0f172a;">
+              <span class="counter" data-target="96">0</span><span>%</span>
+            </div>
+            <h3 class="stat-title" style="color: #1e293b;">Satisfaction Rate</h3>
+            <p class="stat-desc" style="color: #94a3b8;">Clients who recommend us</p>
+            <div class="stat-progress" style="background: rgba(0, 0, 128, 0.06);">
+              <div class="stat-progress-bar" style="width: 96%;"></div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Stat 4 - Support Available -->
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="stat-card text-center p-3 rounded-4 h-100">
-          <div class="stat-icon-wrapper mb-2">
-            <div class="stat-icon-bg">
-              <i class="bi bi-clock-fill"></i>
+        <div class="stat-card text-center p-3 rounded-4 h-100" style="background: linear-gradient(135deg, #f8f9ff, #eef0ff); border: none; box-shadow: 0 8px 30px rgba(0, 0, 128, 0.04); position: relative; overflow: hidden;">
+          <!-- Floating dots decoration -->
+          <div style="position: absolute; top: 10px; right: 15px; display: flex; gap: 4px; opacity: 0.3;">
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #ffd700; border-radius: 50%;"></span>
+            <span style="width: 6px; height: 6px; background: #000080; border-radius: 50%;"></span>
+          </div>
+          <!-- Decorative shapes -->
+          <div style="position: absolute; bottom: -40px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(255, 215, 0, 0.05), transparent); border-radius: 50%;"></div>
+          <div style="position: absolute; top: -30px; left: -30px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(0, 0, 128, 0.03), transparent); border-radius: 50%;"></div>
+          <div style="position: relative; z-index: 1;">
+            <div class="stat-icon-wrapper mb-2">
+              <div class="stat-icon-bg" style="background: linear-gradient(135deg, #000080, #2a2a9a); color: #ffd700; box-shadow: 0 4px 20px rgba(0, 0, 128, 0.12);">
+                <i class="bi bi-clock-fill"></i>
+              </div>
             </div>
-          </div>
-          <div class="stat-number">
-            <span>24</span><span>/</span><span>7</span>
-          </div>
-          <h3 class="stat-title">Support Available</h3>
-          <p class="stat-desc">Round-the-clock technical assistance</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 100%;"></div>
+            <div class="stat-number" style="color: #0f172a;">
+              <span>24</span><span>/</span><span>7</span>
+            </div>
+            <h3 class="stat-title" style="color: #1e293b;">Support Available</h3>
+            <p class="stat-desc" style="color: #94a3b8;">Round-the-clock assistance</p>
+            <div class="stat-progress" style="background: rgba(0, 0, 128, 0.06);">
+              <div class="stat-progress-bar" style="width: 100%;"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -238,31 +293,19 @@
 </section>
 
 <!-- FAQ & CTA SECTION -->
-<section id="faq" class="faq section py-4">
+<section id="faq" class="faq section py-2">
   <div class="container">
-
-    <div class="section-title text-center mb-4" data-aos="fade-up">
-      <div class="section-badge mx-auto mb-2">
-        <span class="badge-icon">❓</span>
-        <span class="badge-text">Frequently Asked Questions</span>
-      </div>
-      <h2 class="display-5 fw-bold mb-2" style="color: #0f172a; letter-spacing: -0.5px;">
-        Your Questions, <span style="color: #1e3a8a;">Answered</span>
-      </h2>
-      <p class="text-muted mx-auto" style="max-width: 600px; font-size: 1rem;">
-        Explore our FAQs to learn more, or connect with us for additional information
-      </p>
-    </div>
 
     <div class="row g-4 align-items-start">
 
       <!-- FAQ Column -->
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
         
-        <p class="text-muted mb-3" style="font-size: 0.9rem;">
+        <h2 class="text-muted mb-3" style="font-size: 0.9rem;">
+           Find answers to common questions about our services
           <i class="bi bi-question-circle-fill text-primary me-2"></i>
-          Find answers to common questions about our services
         </p>
+      
 
         <div class="faq-container">
 
@@ -285,25 +328,12 @@
                 <i class="bi bi-check-circle"></i>
               </div>
               <h3>How does SirBrams ensure quality in every project?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
+               <i class="faq-toggle bi bi-chevron-down"></i>
             </div>
             <div class="faq-content">
               <p>We enforce strict quality through automated testing, peer code reviews, and continuous integration. Agile sprints include regular quality checkpoints.</p>
             </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-              <div class="faq-icon-wrapper">
-                <i class="bi bi-code-square"></i>
-              </div>
-              <h3>What tech stacks does SirBrams work with?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-content">
-              <p>We use MERN, Python/Django, .NET Core, and major clouds like AWS and Azure. We pick the best stack for your project needs.</p>
-            </div>
-          </div>
+          </div>           
 
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">

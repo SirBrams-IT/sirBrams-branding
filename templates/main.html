@@ -52,11 +52,12 @@
                     <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %}">Services</a></li>
                     <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %}">Contact</a></li>
                 </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list "></i>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"onclick="toggleMobileNav(this)" 
+                aria-label="Toggle navigation menu" role="button"tabindex="0"></i>
             </nav>
 
-        </div>
-    </header>
+                </div>
+            </header>
 
             <!-- MAIN CONTENT BLOCK-->
             {% block body %}
