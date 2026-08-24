@@ -408,8 +408,7 @@
 
 
 .faq-item {
-  background: #000080;
-  
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(0, 0, 128, 1));
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 128, 0.04);
   overflow: hidden;
@@ -502,7 +501,7 @@
 }
 
 .cta-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 58, 138, 0.88));
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(0, 0, 128, 1));
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.06);
   position: relative;

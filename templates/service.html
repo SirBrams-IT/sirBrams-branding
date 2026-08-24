@@ -2,51 +2,9 @@
 {% load static %}
 {% block body %}
 <link rel="stylesheet" href="{% static 'assets/css/service.css' %}">
-<!-- SERVICES PAGE -->
 
-<!-- Page Header -->
-<section class="services-header position-relative overflow-hidden">
-    <div class="services-header-bg"></div>
-    <div class="container position-relative" style="z-index: 2;">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8" data-aos="fade-up">
-                <div class="header-badge mb-3">
-                    <span class="badge-icon">⚡</span>
-                    <span class="badge-text">What We Do</span>
-                </div>
-                <h1 class="display-3 fw-bold mb-3" style="color: #0f172a; letter-spacing: -1px;">
-                    Our <span style="color: #1e3a8a;">Services</span>
-                </h1>
-                <p class="lead text-muted" style="font-size: 1.2rem;">
-                    Delivering smart, scalable, and sustainable tech solutions that power your success and accelerate innovation.
-                </p>
-                <div class="header-stats d-flex justify-content-center gap-4 mt-4">
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Support Available</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Floating Decorations -->
-    <div class="floating-deco deco-1">✦</div>
-    <div class="floating-deco deco-2">◆</div>
-    <div class="floating-deco deco-3">◈</div>
-</section>
-
-<!--SERVICES SECTION -->
-<section id="services" class="services-section py-5">
+        <!--SERVICES SECTION -->
+    <section id="services" class="services-section py-3">
     <div class="container">
 
         <!-- Section Intro -->
@@ -56,10 +14,8 @@
                     <span class="badge-emoji">🚀</span>
                     <span class="badge-text">Why Choose Us</span>
                 </div>
-                <h2 class="display-5 fw-bold mb-3" style="color: #0f172a; letter-spacing: -0.5px;">
-                    Transforming bold ideas into <span style="color: #1e3a8a;">real-world impact</span>
-                </h2>
-                <p class="text-muted mb-4" style="font-size: 1.05rem; line-height: 1.8;">
+               
+                <p class="mb-4" style="font-size: 1.05rem; line-height: 1.8;">
                     We design digital tools that empower people, streamline education, and support entrepreneurs globally.
                 </p>
                 <div class="feature-list">
@@ -91,15 +47,9 @@
                         <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
                         <span>Rapid MVP prototyping</span>
                     </div>
+                    
                 </div>
-                <div class="mt-4 d-flex gap-3 flex-wrap">
-                    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg rounded-pill px-5 shadow-lg">
-                        <i class="bi bi-chat-dots me-2"></i> Connect with Us
-                    </a>
-                    <button onclick="openContactPopup(true)" class="btn btn-outline-primary btn-lg rounded-pill px-5">
-                        <i class="bi bi-play-circle me-2"></i> Get Started
-                    </button>
-                </div>
+                
             </div>
 
             <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
@@ -125,11 +75,21 @@
                             <h6>Custom Web Apps</h6>
                             <span>Tailored to your goals</span>
                         </div>
+                        
                     </div>
+                    
                     <div class="visual-center-circle">
-                        <span>SirBrams</span>
-                        <small>Tech Solutions</small>
+                        <img src="{% static 'assets/img/favicon.png' %}" alt="logo" class="img-fluid" style="width: 80px; height: 80px; border-radius: 50%;">
                     </div>
+                    
+                </div>
+                  <div class="mt-5 d-flex gap-3 flex-wrap justify-content-center justify-content-lg-center">
+                      <a href="{% url 'contact' %}" class="btn btn-lg btn-primary  rounded-pill px-2 shadow-lg">
+                        <i class="bi bi-chat-dots me-1"></i> Connect with us
+                    </a>
+                    <button onclick="openContactPopup(true)" class="btn btn-lg btn-outline-primary  rounded-pill px-2">
+                        <i class="bi bi-play-circle me-1"></i> Get Started
+                    </button>
                 </div>
             </div>
         </div>
@@ -201,28 +161,7 @@
             </div>
         </div>
 
-        <!-- CTA Section -->
-        <div class="services-cta mt-5" data-aos="fade-up" data-aos-delay="500">
-            <div class="cta-wrapper">
-                <div class="cta-content">
-                    <div class="cta-icon">🤝</div>
-                    <h3>Ready to bring your idea to life?</h3>
-                    <p>Let's work together to create something amazing. We're here to help you every step of the way.</p>
-                    <div class="cta-buttons">
-                        <a href="{% url 'contact' %}" class="btn btn-light btn-lg rounded-pill px-5 shadow-lg">
-                            <i class="bi bi-send me-2"></i> Get in Touch
-                        </a>
-                        <button onclick="openContactPopup(true)" class="btn btn-outline-light btn-lg rounded-pill px-5">
-                            <i class="bi bi-chat-dots me-2"></i> Chat with Us
-                        </button>
-                    </div>
-                </div>
-                <div class="cta-decoration">
-                    <div class="cta-shape cta-shape-1"></div>
-                    <div class="cta-shape cta-shape-2"></div>
-                </div>
-            </div>
-        </div>
+        
 
     </div>
 </section>

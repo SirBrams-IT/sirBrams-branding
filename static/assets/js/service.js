@@ -1,9 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ============================================================
     // SERVICE CARDS - Intersection Observer Animation
-    // ============================================================
     const serviceCards = document.querySelectorAll('.service-card');
     
     const cardObserver = new IntersectionObserver((entries) => {
@@ -27,10 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
         cardObserver.observe(card);
     });
-    
-    // ============================================================
     // VISUAL CARDS - Parallax mouse effect
-    // ============================================================
     const visualGrid = document.querySelector('.visual-grid');
     
     if (visualGrid) {
@@ -57,43 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ============================================================
-    // STAT COUNTER ANIMATION
-    // ============================================================
-    const statNumbers = document.querySelectorAll('.stat-number');
     
-    const statObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const text = el.textContent;
-                const number = parseInt(text.replace(/[^0-9]/g, ''));
-                const suffix = text.replace(/[0-9]/g, '');
-                
-                if (isNaN(number)) return;
-                
-                let current = 0;
-                const duration = 2000;
-                const stepTime = 16;
-                const steps = duration / stepTime;
-                const increment = number / steps;
-                
-                const updateCounter = () => {
-                    current += increment;
-                    if (current >= number) {
-                        el.textContent = number + suffix;
-                        return;
-                    }
-                    el.textContent = Math.floor(current) + suffix;
-                    requestAnimationFrame(updateCounter);
-                };
-                
-                updateCounter();
-                statObserver.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    statNumbers.forEach(stat => statObserver.observe(stat));
-    
-});
