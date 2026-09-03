@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'FolioApp',
+    'TechApp',
     "anymail",
 ]
 
@@ -42,7 +42,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'My_portfolio.urls'
+ROOT_URLCONF = 'Sirbrams.urls'
 
 TEMPLATES = [
     {
@@ -59,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'My_portfolio.wsgi.application'
+WSGI_APPLICATION = 'Sirbrams.wsgi.application'
 
 DATABASES = {
     'default': {

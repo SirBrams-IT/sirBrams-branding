@@ -162,14 +162,7 @@
             </div><!-- /container -->
         </footer>
 
-    <!-- SCROLL TOP BUTTON -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-        <i class="bi bi-arrow-up-short"></i>
-    </a>
-
-    <!--FLOATING BUTTONS - BOTTOM RIGHT -->
-
-    <!-- 1. CHAT/CONTACT BUTTON (Top position) -->
+        <!-- 1. CHAT/CONTACT BUTTON (Top position) -->
     <div 
         id="floatingContactBtn"
         class="floating-btn contact-btn"
@@ -204,11 +197,13 @@
         aria-hidden="true"
     >
         <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden" style="max-width: 500px; margin: 0 auto;">
+            <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden" style="max-width: 400px; margin: 0 auto;">
 
                 <!-- POPUP HEADER -->
                 <div id="contactPopupHeader" class="popup-header">
-                    <div id="contactPopupIcon" class="popup-icon">💬</div>
+                    <div id="contactPopupIcon" class="popup-icon">
+                        <img src="{% static 'assets/img/SirBrams_logo.png' %}" alt="SirBrams LOGO" class="img-fluid" style="max-height: 40px;">
+                    </div>
                     <h3 id="contactPopupTitle" class="fw-bold mb-1">Let's Talk</h3>
                     <p id="contactPopupSubtitle" class="mb-0">Have a question or need a digital solution?</p>
                 </div>
@@ -224,19 +219,19 @@
                     <div class="row g-2 mb-3">
                         <div class="col-4">
                             <div class="feature-item">
-                                <div class="feature-icon">⚡</div>
+                                <div class="feature-icon bi-lightning"></div>
                                 <strong>Quick</strong>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="feature-item">
-                                <div class="feature-icon">🛠️</div>
+                                <div class="feature-icon bi-tools"></div>
                                 <strong>Smart</strong>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="feature-item">
-                                <div class="feature-icon">🔒</div>
+                                <div class="feature-icon bi-shield-lock"></div>
                                 <strong>Pro</strong>
                             </div>
                         </div>
