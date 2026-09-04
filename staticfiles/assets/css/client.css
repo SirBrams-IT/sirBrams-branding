@@ -1,0 +1,186 @@
+ body {
+            margin: 0;
+            padding: 0;
+            background-color: #f3f6fb;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        .wrapper {
+            width: 100%;
+            background-color: #f3f6fb;
+            padding: 40px 15px;
+        }
+        .container {
+            width: 100%;
+            max-width: 620px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+        }
+        .header {
+            background: linear-gradient(135deg, #172554, #1e3a8a);
+            padding: 28px 35px;
+            text-align: left;
+        }
+        .logo {
+            display: inline-block;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.6px;
+        }
+        .logo span {
+            color: #60a5fa;
+        }
+        .campus-badge {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 4px 9px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.14);
+            color: #dbeafe;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            vertical-align: middle;
+        }
+        .hero {
+            padding: 45px 45px 25px 45px;
+            text-align: center;
+        }
+        .success-icon {
+            width: 68px;
+            height: 68px;
+            margin: 0 auto 22px;
+            border-radius: 50%;
+            background-color: #dcfce7;
+            color: #16a34a;
+            font-size: 34px;
+            line-height: 68px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .hero-title {
+            margin: 0;
+            color: #111827;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .hero-sub {
+            margin: 16px auto 20px;
+            max-width: 460px;
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .hero-sub strong {
+            color: #1e3a8a;
+        }
+        .success-box {
+            padding: 0 35px 10px 35px;
+        }
+        .success-box-inner {
+            width: 100%;
+            background: #ecfdf5;
+            border: 1px solid #bbf7d0;
+            border-radius: 14px;
+        }
+        .success-box-content {
+            padding: 18px 22px;
+            text-align: center;
+            color: #166534;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .success-box-content strong {
+            font-weight: 700;
+        }
+        .message-preview {
+            padding: 20px 35px 15px 35px;
+        }
+        .message-preview-inner {
+            width: 100%;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+        }
+        .message-preview-content {
+            padding: 18px 22px;
+        }
+        .message-preview-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        .message-preview-text {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 16px;
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .support-section {
+            padding: 10px 35px 35px 35px;
+            text-align: center;
+        }
+        .support-text {
+            margin: 0 0 6px 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+        .support-phone {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-bottom: 1px dotted #c5d4e8;
+        }
+        .footer {
+            background: #f8fafc;
+            border-top: 1px solid #e8edf5;
+            padding: 22px 35px 24px 35px;
+            text-align: center;
+        }
+        .footer-brand {
+            color: #172033;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .footer-note {
+            color: #7f93b0;
+            font-size: 11px;
+            line-height: 1.6;
+            margin-top: 4px;
+        }
+        @media (max-width: 550px) {
+            .wrapper { padding: 20px 10px; }
+            .header { padding: 22px 25px; }
+            .hero { padding: 30px 25px 20px 25px; }
+            .hero-title { font-size: 20px; }
+            .hero-sub { font-size: 14px; }
+            .success-box { padding: 0 25px 10px 25px; }
+            .message-preview { padding: 15px 25px 10px 25px; }
+            .support-section { padding: 10px 25px 30px 25px; }
+            .footer { padding: 18px 25px 20px 25px; }
+            .logo { font-size: 20px; }
+            .success-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 28px;
+                line-height: 56px;
+            }
+        }
+   

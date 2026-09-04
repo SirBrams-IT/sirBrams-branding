@@ -385,7 +385,6 @@
 
     if (intro) intro.style.display = "block";
     if (form) form.style.display = "none";
-    if (icon) icon.innerHTML = "💬";
     if (title) title.innerText = "Let's Talk";
     if (subtitle) subtitle.innerText = "Have a question or need a digital solution?";
 
@@ -406,10 +405,8 @@
 
     if (intro) intro.style.display = "none";
     if (form) form.style.display = "block";
-    if (icon) icon.innerHTML = "✉️";
     if (title) title.innerText = "Contact Us";
-    if (subtitle) subtitle.innerText = "Send us your message and we'll get back to you.";
-
+    
     if (form) {
       form.style.animation = 'none';
       requestAnimationFrame(() => {
