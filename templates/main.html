@@ -47,10 +47,10 @@
             <!-- Navigation -->
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %}">Home</a></li>
-                    <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %}">About</a></li>
-                    <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %}">Services</a></li>
-                    <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %}">Contact</a></li>
+                    <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %} bi bi-house-door">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %} bi bi-info-circle">About</a></li>
+                    <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %} bi bi-gear">Services</a></li>
+                    <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %} bi bi-envelope">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"onclick="toggleMobileNav(this)" 
                 aria-label="Toggle navigation menu" role="button"tabindex="0"></i>
