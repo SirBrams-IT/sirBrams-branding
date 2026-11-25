@@ -7,14 +7,18 @@
     <title>SirBrams Tech Solutions | Smart Solutions. Real Impact.</title>
     <meta name="description" content="SirBrams Tech Solutions offers innovative technology solutions designed to enhance business growth, digital transformation, and professional development.">
     <meta name="keywords" content="technology solutions, digital transformation, web development, software solutions, business automation, IT consulting">
-
+       <meta name="theme-color" content="#0d6efd">
+    
     <!--Jinja2 TAGS -->
     {% load static %}
     {% load tz %}
 
     <!--  FAVICONS-->
+
     <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
     <link href="{% static 'assets/img/favicon.png' %}" rel="apple-touch-icon">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="{% static 'assets/img/icon-192.png' %}">
 
     <!-- GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,10 +51,10 @@
             <!-- Navigation -->
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %} bi bi-house-door">Home</a></li>
-                    <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %} bi bi-info-circle">About</a></li>
-                    <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %} bi bi-gear">Services</a></li>
-                    <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %} bi bi-envelope">Contact</a></li>
+                    <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %} bi bi-house-door"> Home</a></li>
+                    <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %} bi bi-info-circle"> About</a></li>
+                    <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %} bi bi-gear"> Services</a></li>
+                    <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %} bi bi-envelope"> Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"onclick="toggleMobileNav(this)" 
                 aria-label="Toggle navigation menu" role="button"tabindex="0"></i>
@@ -314,7 +318,16 @@
 
     <!--  MAIN JS  -->
     <script src="{% static 'assets/js/main.js' %}"></script>
-
+ 
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('PWA Service Worker registered:', reg.scope))
+        .catch((err) => console.error('PWA Registration failed:', err));
+    });
+  }
+</script>
   
 
 </body>

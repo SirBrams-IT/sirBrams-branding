@@ -1,0 +1,24 @@
+{
+  "name": "SirBrams Tech Solutions",
+  "short_name": "SirBrams",
+  "description": "Smart Solutions. Real Impact. Custom Web & Mobile Development in Nairobi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000080",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/assets/img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/assets/img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
