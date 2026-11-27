@@ -12,7 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = False  # Set to False for production
+# Production is the default. Set DEBUG=True in your local .env while developing.
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
     "sirbrams-branding.onrender.com",
@@ -47,7 +48,7 @@ ROOT_URLCONF = 'Sirbrams.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -61,10 +62,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Sirbrams.wsgi.application'
 
+# Where the database and admin uploads live. Locally this is the project folder.
+# On Render, attach a persistent disk and set DATA_DIR to its mount path
+# (for example /var/data); otherwise uploads and the database are wiped on
+# every deploy.
+DATA_DIR = Path(config('DATA_DIR', default=str(BASE_DIR)))
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATA_DIR / 'db.sqlite3',
     }
 }
 
@@ -91,6 +98,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Files uploaded from the admin panel (portfolio images).
+MEDIA_URL = '/media/'
+MEDIA_ROOT = DATA_DIR / 'media'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
@@ -98,8 +109,8 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_SSL_REDIRECT = False
@@ -113,7 +124,7 @@ CSRF_TRUSTED_ORIGINS = [
 EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
 
 ANYMAIL = {
-    "BREVO_API_KEY": config("BREVO_API_KEY"), 
+    "BREVO_API_KEY": config("BREVO_API_KEY", default=""),
 }
 
 DEFAULT_FROM_EMAIL = "SirBrams Support <sirbramstechcampus1@gmail.com>"

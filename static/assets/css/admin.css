@@ -1,0 +1,38 @@
+/* Admin panel: same quiet palette as the public site. */
+html, html[data-theme], html:not([data-theme]) {
+  --primary: #000080;
+  --secondary: #000080;
+  --accent: #FFD700;
+  --primary-fg: #fff;
+  --header-bg: #0B0D2A;
+  --header-color: #E6E6F7;
+  --header-branding-color: #fff;
+  --header-link-color: #E6E6F7;
+  --breadcrumbs-bg: #000080;
+  --breadcrumbs-fg: #C9C9EC;
+  --breadcrumbs-link-fg: #fff;
+  --link-fg: #000080;
+  --link-hover-color: #00005A;
+  --link-selected-fg: #00005A;
+  --button-bg: #000080;
+  --button-hover-bg: #00005A;
+  --default-button-bg: #000080;
+  --default-button-hover-bg: #00005A;
+  --selected-bg: #E8E8F6;
+  --selected-row: #F4F5FA;
+  --hairline-color: #E2E4EF;
+  --border-color: #E2E4EF;
+}
+body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; }
+#header { padding: 14px 28px; }
+#site-name a { font-family: "Newsreader", Georgia, serif; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }
+.view-site-link { color: #FFD700 !important; font-size: 13px; margin-right: 16px; }
+.view-site-link:hover { color: #fff !important; }
+.module h2, .module caption, .inline-group h2 { background: #000080; font-weight: 500; letter-spacing: .02em; }
+.module { border-radius: 8px; overflow: hidden; }
+fieldset.module { border: 1px solid #E2E4EF; border-radius: 8px; }
+.button, input[type=submit], input[type=button], .submit-row input, a.button { border-radius: 999px; }
+.submit-row { border-radius: 10px; }
+input[type=text], input[type=url], input[type=number], textarea, select { border-radius: 6px; }
+.help { color: #61667F; }
+#changelist table img { display: block; }

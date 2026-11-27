@@ -1,170 +1,122 @@
 {% extends 'main.html' %}
 {% load static %}
+{% block title %}Services | SirBrams Tech Solutions{% endblock %}
+{% block meta_description %}Custom software development, web hosting and domains, and graphic design for businesses, schools and entrepreneurs.{% endblock %}
 {% block body %}
-<link rel="stylesheet" href="{% static 'assets/css/service.css' %}">
 
-        <!--SERVICES SECTION -->
-    <section id="services" class="services-section py-3">
-    <div class="container">
-
-        <!-- Section Intro -->
-        <div class="row align-items-center g-5 mb-5">
-            <div class="col-lg-5" data-aos="fade-right">
-                <div class="section-badge mb-3">
-                    <span class="badge-emoji bi bi-lightbulb text-warning"></span>
-                    <span class="badge-text " style="color: #000080">Why Choose Us</span>
-                </div>
-               
-                <p class="mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-                    We design digital tools that empower people, streamline education, and support entrepreneurs globally.
-                </p>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
-                        <span>Custom-built platforms tailored to your goals</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
-                        <span>Secure, scalable, and future-ready architecture</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
-                        <span>Mobile-first designs that adapt seamlessly</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
-                        <span>Inclusive digital solutions worldwide</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
-                        <span>Reliable post-launch maintenance and support</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
-                        <span>Efficient deployment and server configuration</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-check"><i class="bi bi-check-circle-fill"></i></div>
-                        <span>Rapid MVP prototyping</span>
-                    </div>
-                    
-                </div>
-                
-            </div>
-
-            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
-                <div class="services-visual">
-                    <div class="visual-grid">
-                        <div class="visual-card visual-card-1">
-                            <div class="visual-icon"><i class="bi bi-laptop" style="color: #000080;"></i></div>
-                            <h6>Virtual Learning</h6>
-                            <span>Inclusive platforms for schools</span>
-                        </div>
-                        <div class="visual-card visual-card-2">
-                            <div class="visual-icon"><i class="bi bi-briefcase" style="color: #000080;"></i></div>
-                            <h6>Job Portals</h6>
-                            <span>Smart employment systems</span>
-                        </div>
-                        <div class="visual-card visual-card-3">
-                            <div class="visual-icon"><i class="bi bi-mortarboard" style="color: #000080;"></i></div>
-                            <h6>School Management</h6>
-                            <span>Complete school operations</span>
-                        </div>
-                        <div class="visual-card visual-card-4">
-                            <div class="visual-icon"><i class="bi bi-gear" style="color: #000080;"></i></div>
-                            <h6>Custom Web Apps</h6>
-                            <span>Tailored to your goals</span>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="visual-center-circle">
-                        <img src="{% static 'assets/img/favicon.png' %}" alt="logo" class="img-fluid" style="width: 80px; height: 80px; border-radius: 50%;">
-                    </div>
-                    
-                </div>
-                  <div class="mt-5 d-flex gap-2 flex-wrap justify-content-center justify-content-lg-center">
-                      <a href="{% url 'contact' %}" class="btn btn-lg   rounded-pill px-2 shadow-lg" style="background-color: #000080; color: #ffffff;">
-                        <i class="bi bi-chat-dots "></i> Connect with us
-                    </a>
-                    <button onclick="openContactPopup(true)" class="btn btn-lg   rounded-pill px-2" style="background-color: #ffffff; color: #000080; border: 1px solid #000080;">
-                        <i class="bi bi-play-circle "></i> Get Started
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Services Grid -->
-        <div class="services-grid">
-            <div class="row g-4">
-
-                <!-- Service 1 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="service-icon-wrapper">
-                            <div class="service-icon-bg">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                        </div>
-                        <h5>Virtual Learning Systems</h5>
-                        <p>Inclusive platforms like SirBrams Virtual Campus for schools, tutors, and institutions to manage online education with ease.</p>
-                        <div class="service-hover-line"></div>
-                        <div class="service-tag">Education</div>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="service-icon-wrapper">
-                            <div class="service-icon-bg">
-                                <i class="bi bi-briefcase"></i>
-                            </div>
-                        </div>
-                        <h5>Job Portals &amp; CV Tools</h5>
-                        <p>Smart employment systems, automated CV builders, and WhatsApp integration for job alerts and instant applicant engagement.</p>
-                        <div class="service-hover-line"></div>
-                        <div class="service-tag">Employment</div>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="service-icon-wrapper">
-                            <div class="service-icon-bg">
-                                <i class="bi bi-building"></i>
-                            </div>
-                        </div>
-                        <h5>School Management Systems</h5>
-                        <p>Complete solutions for school operations: admission, student records, portals, classroom tracking, and exams in one dashboard.</p>
-                        <div class="service-hover-line"></div>
-                        <div class="service-tag">Management</div>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <div class="service-icon-wrapper">
-                            <div class="service-icon-bg">
-                                <i class="bi bi-lightbulb"></i>
-                            </div>
-                        </div>
-                        <h5>Custom Web Applications</h5>
-                        <p>Secure, user-friendly, and responsive applications tailored to your goals using Django, Bootstrap, and the latest web standards.</p>
-                        <div class="service-hover-line"></div>
-                        <div class="service-tag">Development</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        
-
-    </div>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Services</p>
+    <h1>Three services, one team that sees it through</h1>
+    <p class="lead">Build it, put it online, make it look like you. We handle all three so nothing falls between suppliers.</p>
+  </div>
 </section>
-<script src="{% static 'assets/js/service.js' %}"></script>
+
+<section class="section tight-top">
+  <div class="wrap service-stack">
+
+    <article class="service" id="software">
+      <div class="service-title"><span class="num">01</span><h2>Custom software development</h2></div>
+      <div class="service-main">
+        <p>Secure, user-friendly web and mobile applications tailored to your goals, built with Django, Bootstrap and current web standards.</p>
+        <ul class="plain-list">
+          <li>Dashboards, CRM and e-commerce systems</li>
+          <li>Mobile-first designs that adapt to any screen</li>
+          <li>Rapid MVP prototyping to test ideas early</li>
+          <li>Reliable post-launch maintenance and support</li>
+        </ul>
+      </div>
+      <div class="service-side">
+        <a href="{% url 'portfolio' %}" class="link-arrow">See systems we built <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <article class="service" id="hosting">
+      <div class="service-title"><span class="num">02</span><h2>Web hosting and domains</h2></div>
+      <div class="service-main">
+        <p>Domain registration and dependable hosting at fair prices, set up so your website is online quickly and stays that way.</p>
+        <ul class="plain-list">
+          <li>Domain registration and renewals</li>
+          <li>Efficient deployment and server configuration</li>
+          <li>Secure, scalable, future-ready architecture</li>
+          <li>Technical support when you need it</li>
+        </ul>
+      </div>
+      <div class="service-side">
+        <button type="button" class="link-arrow" data-open-chat="form" data-subject="Hosting and domain enquiry">Ask about hosting <i class="bi bi-arrow-right"></i></button>
+      </div>
+    </article>
+
+    <article class="service" id="design">
+      <div class="service-title"><span class="num">03</span><h2>Graphic design</h2></div>
+      <div class="service-main">
+        <p>Logos and visual identities that look good everywhere your customers meet you, from a business card to a social feed.</p>
+        <ul class="plain-list">
+          <li>Logos and brand identities</li>
+          <li>Business cards and flyers</li>
+          <li>Social media posters</li>
+          <li>Print-ready and web-ready files</li>
+        </ul>
+      </div>
+      <div class="service-side">
+        <a href="{% url 'portfolio' %}#design" class="link-arrow">View design work <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we build</h2>
+      <p>Digital tools that empower people, streamline education and support entrepreneurs.</p>
+    </div>
+    <div class="build-grid">
+      <article class="build">
+        <span class="build-tag">Education</span>
+        <h3>Virtual learning systems</h3>
+        <p>Inclusive platforms like SirBrams Virtual Campus for schools, tutors and institutions to run online education with ease.</p>
+      </article>
+      <article class="build">
+        <span class="build-tag">Employment</span>
+        <h3>Job portals and CV tools</h3>
+        <p>Smart employment systems, automated CV builders and WhatsApp integration for job alerts and instant applicant engagement.</p>
+      </article>
+      <article class="build">
+        <span class="build-tag">Management</span>
+        <h3>School management systems</h3>
+        <p>Admissions, student records, portals, classroom tracking and exams in one dashboard.</p>
+      </article>
+      <article class="build">
+        <span class="build-tag">Development</span>
+        <h3>Custom web applications</h3>
+        <p>Secure, responsive applications shaped around the way your team already works.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap why">
+    <div>
+      <h2>Why people choose us</h2>
+      <p>We design digital tools that empower people, streamline education and support entrepreneurs worldwide.</p>
+      <div class="hero-actions">
+        <a href="{% url 'contact' %}" class="btn btn-solid">Connect with us</a>
+        <button type="button" class="btn btn-outline" data-open-chat="form">Get started</button>
+      </div>
+    </div>
+    <ul class="plain-list why-list">
+      <li>Custom-built platforms tailored to your goals</li>
+      <li>Secure, scalable and future-ready architecture</li>
+      <li>Mobile-first designs that adapt seamlessly</li>
+      <li>Inclusive digital solutions for everyone</li>
+      <li>Reliable post-launch maintenance and support</li>
+      <li>Efficient deployment and server configuration</li>
+      <li>Rapid MVP prototyping</li>
+    </ul>
+  </div>
+</section>
 
 {% endblock %}

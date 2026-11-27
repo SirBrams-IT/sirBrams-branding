@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" role="img" aria-label="School open day flyer concept">
+<rect width="800" height="1100" fill="#FAF9F6"/>
+<path d="M0 0 H800 V470 C 600 540 300 400 0 480 Z" fill="#000080"/>
+<circle cx="680" cy="110" r="150" fill="#FFD700" opacity=".95"/>
+<text x="70" y="150" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="6" fill="#FFD700">GREENFIELD ACADEMY</text>
+<text x="70" y="270" font-family="Georgia, Times New Roman, serif" font-size="112" font-weight="700" fill="#FFFFFF">Open</text>
+<text x="70" y="385" font-family="Georgia, Times New Roman, serif" font-size="112" font-weight="700" fill="#FFFFFF">Day</text>
+<rect x="70" y="560" width="250" height="250" rx="22" fill="#1B7A4E"/>
+<text x="195" y="655" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#EFF7F3">SATURDAY</text>
+<text x="195" y="745" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="96" font-weight="700" fill="#FFFFFF">14</text>
+<text x="195" y="790" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#EFF7F3">MARCH</text>
+<text x="370" y="610" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#000080">Meet our teachers.</text>
+<text x="370" y="660" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#000080">Tour the campus.</text>
+<text x="370" y="710" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#000080">Ask anything.</text>
+<text x="370" y="775" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#4a5068">9:00 AM to 1:00 PM</text>
+<text x="370" y="810" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#4a5068">Main Hall, Karen, Nairobi</text>
+<rect x="70" y="900" width="660" height="92" rx="46" fill="#FFD700"/>
+<text x="400" y="958" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#000080">Reserve your seat: 0700 000 000</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Fresh Harvest Friday social post concept">
+<rect width="800" height="800" fill="#EFF7F3"/>
+<circle cx="560" cy="280" r="230" fill="#FFD700"/>
+<path d="M0 560 C 160 480 320 640 500 560 C 640 500 720 540 800 520 V800 H0 Z" fill="#1B7A4E"/>
+<path d="M0 640 C 180 580 340 720 520 650 C 660 600 730 640 800 620 V800 H0 Z" fill="#14573a"/>
+<g fill="#EFF7F3"><circle cx="130" cy="690" r="26"/><circle cx="200" cy="716" r="20"/><circle cx="270" cy="690" r="24"/></g>
+<text x="60" y="140" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="6" fill="#1B7A4E">EVERY FRIDAY</text>
+<text x="60" y="260" font-family="Georgia, Times New Roman, serif" font-size="112" font-weight="700" fill="#000080">Fresh</text>
+<text x="60" y="372" font-family="Georgia, Times New Roman, serif" font-size="112" font-weight="700" fill="#000080">Harvest</text>
+<text x="62" y="440" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#2f3a4a">Vegetables, fruit and eggs</text>
+<text x="62" y="480" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#2f3a4a">straight from the farm.</text>
+<text x="60" y="760" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">Stall 12, Karura Market, 7 AM</text>
+</svg>

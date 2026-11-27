@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Jikoni brand identity board concept">
+<rect width="800" height="1000" fill="#FAF9F6"/>
+<rect x="40" y="40" width="720" height="360" rx="24" fill="#2E5E4E"/>
+<text x="400" y="250" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="120" font-weight="700" fill="#FAF9F6">Jikoni</text>
+<text x="400" y="310" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" letter-spacing="9" fill="#C7E0D3">NEIGHBOURHOOD KITCHEN</text>
+<circle cx="400" cy="130" r="22" fill="#FFD700"/>
+<rect x="40" y="430" width="165" height="165" rx="18" fill="#2E5E4E"/>
+<rect x="225" y="430" width="165" height="165" rx="18" fill="#A9C8B5"/>
+<rect x="410" y="430" width="165" height="165" rx="18" fill="#F1E7CF"/>
+<rect x="595" y="430" width="165" height="165" rx="18" fill="#FFD700"/>
+<g font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#2f3a4a"><text x="40" y="625">Forest</text><text x="225" y="625">Sage</text><text x="410" y="625">Oat</text><text x="595" y="625">Gold</text></g>
+<text x="40" y="735" font-family="Georgia, Times New Roman, serif" font-size="64" font-weight="700" fill="#14302a">Aa</text>
+<text x="170" y="715" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#14302a">Headlines in a warm serif</text>
+<text x="170" y="750" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4a5068">Body text in a clean sans for menus and receipts.</text>
+<path d="M40 800 H760" stroke="#D8D2C2" stroke-width="2"/>
+<circle cx="90" cy="890" r="46" fill="#2E5E4E"/><circle cx="90" cy="890" r="12" fill="#FFD700"/>
+<circle cx="200" cy="890" r="46" fill="#FFFFFF" stroke="#2E5E4E" stroke-width="3"/><circle cx="200" cy="890" r="12" fill="#2E5E4E"/>
+<rect x="290" y="844" width="92" height="92" rx="20" fill="#FFD700"/><circle cx="336" cy="890" r="12" fill="#2E5E4E"/>
+<text x="760" y="900" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4a5068">Logo marks, three ways</text>
+</svg>

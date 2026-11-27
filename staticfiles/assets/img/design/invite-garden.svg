@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Garden wedding invitation concept">
+<rect width="800" height="600" fill="#EFF7F3"/>
+<rect x="30" y="30" width="740" height="540" rx="10" fill="none" stroke="#FFD700" stroke-width="3"/>
+<rect x="46" y="46" width="708" height="508" rx="6" fill="none" stroke="#FFD700" stroke-width="1" opacity=".7"/>
+<g stroke="#1B7A4E" stroke-width="3" stroke-linecap="round" fill="none">
+<path d="M70 530 C 110 430 90 350 150 290"/>
+<path d="M730 70 C 690 170 710 250 650 310"/></g>
+<g fill="#A9D5BD">
+<path d="M110 440 C 70 430 60 400 70 380 C 100 380 112 410 110 440 Z"/>
+<path d="M130 360 C 175 355 195 335 200 310 C 160 312 135 330 130 360 Z"/>
+<path d="M690 160 C 730 170 740 200 730 220 C 700 220 688 190 690 160 Z"/>
+<path d="M670 240 C 625 245 605 265 600 290 C 640 288 665 270 670 240 Z"/></g>
+<text x="400" y="150" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" letter-spacing="8" fill="#1B7A4E">TOGETHER WITH THEIR FAMILIES</text>
+<text x="400" y="245" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="84" font-style="italic" font-weight="700" fill="#000080">Zawadi</text>
+<text x="400" y="305" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="44" fill="#C9A400">&amp;</text>
+<text x="400" y="380" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="84" font-style="italic" font-weight="700" fill="#000080">Baraka</text>
+<text x="400" y="450" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#2f3a4a">Saturday, 20 June, 3:00 PM</text>
+<text x="400" y="488" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4a5068">Limuru Gardens. RSVP by 1 June</text>
+</svg>

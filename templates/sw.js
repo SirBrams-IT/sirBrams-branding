@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sirbrams-pwa-v1';
+const CACHE_NAME = 'sirbrams-pwa-v4';
 const ASSETS_TO_CACHE = [
   '/',
   '/manifest.json'

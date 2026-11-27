@@ -1,0 +1,96 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Portfolio | SirBrams Tech Solutions{% endblock %}
+{% block meta_description %}Websites, systems and graphic design by SirBrams Tech Solutions: live projects, logos, brand identities, business cards, flyers and social posters.{% endblock %}
+{% block body %}
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Work we are proud of</h1>
+    <p class="lead">Systems that run real organisations, and designs that give brands a face. Pick a category to explore.</p>
+  </div>
+</section>
+
+<section class="section tight-top portfolio">
+  <div class="wrap">
+
+    <div class="tabs" role="tablist" aria-label="Portfolio categories">
+      <button type="button" role="tab" class="tab is-active" aria-selected="true" data-filter="all" id="tab-all">All work <span class="tab-count">{{ total_count }}</span></button>
+      <button type="button" role="tab" class="tab" aria-selected="false" data-filter="web" id="tab-web">Websites and systems <span class="tab-count">{{ projects|length }}</span></button>
+      <button type="button" role="tab" class="tab" aria-selected="false" data-filter="design" id="tab-design">Graphic design <span class="tab-count">{{ designs|length }}</span></button>
+    </div>
+
+    <div class="pf-block" data-cat="web" id="websites">
+      <h2 class="pf-title">Websites and systems</h2>
+      <div class="project-grid">
+        {% for p in projects %}
+        <article class="project">
+          <div class="project-media">
+            {% if p.image %}
+            <img src="{{ p.image.url }}" alt="Screenshot of {{ p.title }}" loading="lazy">
+            {% else %}
+            <span class="project-initial" aria-hidden="true">{{ p.initial }}</span>
+            {% endif %}
+          </div>
+          <div class="project-body">
+            <p class="tag">{{ p.tag }}</p>
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.summary }}</p>
+            {% if p.stack_list %}<ul class="pills">{% for t in p.stack_list %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+            {% if p.url %}
+            <a class="link-arrow" href="{{ p.url }}" target="_blank" rel="noopener">Visit live site <i class="bi bi-arrow-up-right"></i></a>
+            {% else %}
+            <button type="button" class="link-arrow" data-open-chat="form" data-subject="Ask about: {{ p.title }}">Ask about this project <i class="bi bi-arrow-right"></i></button>
+            {% endif %}
+          </div>
+        </article>
+        {% empty %}
+        <p class="empty">New projects are being added. Please check back soon.</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="pf-block" data-cat="design" id="design">
+      <h2 class="pf-title">Graphic design</h2>
+      <p class="pf-sub">Select any design to see it larger with the brief and colour notes.</p>
+      <div class="gallery">
+        {% for d in designs %}
+        <button type="button" class="design" data-index="{{ forloop.counter0 }}"
+          data-title="{{ d.title }}" data-type="{{ d.tag }}" data-brief="{{ d.summary }}" data-notes="{{ d.notes }}"
+          data-src="{{ d.image.url }}">
+          <img src="{{ d.image.url }}" alt="{{ d.title }}" loading="lazy">
+          <span class="design-cap"><span>{{ d.tag }}</span><strong>{{ d.title }}</strong></span>
+        </button>
+        {% empty %}
+        <p class="empty">Design work is being added. Please check back soon.</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="closing">
+      <p>Have a project in mind? We would love to hear about it.</p>
+      <button type="button" class="btn btn-solid" data-open-chat="form">Start a project</button>
+    </div>
+  </div>
+</section>
+
+<dialog id="lightbox" class="lightbox" aria-labelledby="lbTitle">
+  <button type="button" class="lb-close" data-lb-close aria-label="Close preview"><i class="bi bi-x-lg"></i></button>
+  <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous design"><i class="bi bi-chevron-left"></i></button>
+  <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next design"><i class="bi bi-chevron-right"></i></button>
+  <div class="lb-stage"><img id="lbImg" src="" alt=""></div>
+  <div class="lb-info">
+    <p class="tag" id="lbType"></p>
+    <h2 id="lbTitle"></h2>
+    <h3>Client brief</h3>
+    <p id="lbBrief"></p>
+    <div id="lbNotesWrap">
+      <h3>Colour and branding notes</h3>
+      <p id="lbNotes"></p>
+    </div>
+    <button type="button" class="btn btn-solid btn-block" data-open-chat="form" data-subject="Design enquiry" data-lb-close>Request a design like this</button>
+  </div>
+</dialog>
+
+{% endblock %}

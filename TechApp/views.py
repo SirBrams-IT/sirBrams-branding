@@ -2,7 +2,8 @@ import logging
 import os  
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from .models import Contact
+from .models import Contact, PortfolioItem
+from .content import SITE, ANNOUNCEMENT, STATS
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.utils import timezone
@@ -12,11 +13,33 @@ from django.template.loader import render_to_string
 
 logger = logging.getLogger(__name__)
 
+def page_context(page, **extra):
+    """Shared context for every page (announcement bar, contact details)."""
+    ctx = {
+        'current_page': page,
+        'site': SITE,
+        'announcement': ANNOUNCEMENT,
+    }
+    ctx.update(extra)
+    return ctx
+
+
 def index(request):
-    return render(request, 'index.html', {'current_page': 'home'})
+    return render(request, 'index.html', page_context('home', stats=STATS))
+
 
 def about(request):
-    return render(request, 'about.html', {'current_page': 'about'})
+    return render(request, 'about.html', page_context('about', stats=STATS))
+
+
+def portfolio(request):
+    # Managed from the admin panel (Portfolio). Only published items appear.
+    items = list(PortfolioItem.objects.filter(is_published=True))
+    projects = [i for i in items if i.category == PortfolioItem.WEB]
+    designs = [i for i in items if i.category == PortfolioItem.DESIGN]
+    return render(request, 'portfolio.html', page_context(
+        'portfolio', projects=projects, designs=designs, total_count=len(items),
+    ))
 
 def contact(request):
     if request.method == 'POST':
@@ -100,12 +123,12 @@ def contact(request):
 
         return redirect('contact')
 
-    return render(request, 'contact.html', {'current_page': 'contact'})
+    return render(request, 'contact.html', page_context('contact'))
 
 
 def service(request):
-    return render(request, 'service.html', {'current_page': 'services'})
+    return render(request, 'service.html', page_context('services'))
 
 
 def main(request):
-    return render(request,'main.html')
+    return render(request, 'main.html', page_context('home'))

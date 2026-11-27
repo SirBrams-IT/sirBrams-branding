@@ -1,363 +1,156 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block body %}
-<link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
-<main id="main">
 
-<div class="sirbrams-hero position-relative overflow-hidden">
-  <div class="container-fluid px-0">
-    <div id="sirbramsCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <!-- SLIDE 1 -->
-        <div class="carousel-item active">
-          <div class="sirbrams-slide split-slide">
-            <div class="split-container">
-              <div class="split-text">
-                <div class="slide-badge mb-2">
-                  <span class="badge-pulse"></span>
-                  <span class="badge-text">Web & Mobile Development</span>
-                </div>
-                <h1 class="split-heading">Custom <span class="highlight">Software</span> Development</h1>
-                <p class="split-subheading">
-                  We build web and mobile applications that solve real business problems and deliver measurable results.
-                </p>
-                <p class="split-description">
-                  From custom dashboards and Custom Relationship Management (CRM) systems to e-commerce platforms, E-learning, and Portifolios. We design, develop, and deploy solutions that help you work smarter, not harder.
-                </p>
-                <div class="split-actions">
-                  <a href="{% url 'service' %}" class="btn-join">
-                    Explore <i class="bi bi-arrow-right ms-1"></i>
-                  </a>
-                  <button onclick="openContactPopup(true)" class="btn-outline-chat">
-                    <i class="bi bi-chat me-1"></i> Chat
-                  </button>
-                </div>
-              </div>
-              <div class="split-image">
-                <img src="{% static 'assets/img/illustrations/developer.svg' %}" alt="Software development" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 2 -->
-        <div class="carousel-item">
-          <div class="sirbrams-slide split-slide">
-            <div class="split-container">
-              <div class="split-text">
-                <div class="slide-badge mb-2">
-                  <span class="badge-pulse"></span>
-                  <span class="badge-text">Experience Matters</span>
-                </div>
-                <h1 class="split-heading">Trusted <span class="highlight">Expertise</span> You Can Count On</h1>
-                <p class="split-subheading">
-                  We deliver working software for startups, SMEs, and other agencies.
-                </p>
-                <p class="split-description">
-                  Our team are skilled in building systems that drive business growth and improve operational efficiency. Every project is backed by a commitment to quality and reliability.
-                </p>
-                <div class="split-actions">
-                  <a href="{% url 'contact' %}" class="btn-join">
-                    View Portfolio <i class="bi bi-grid-3x3-gap-fill ms-1"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="split-image">
-                <img src="{% static 'assets/img/illustrations/proven.svg' %}" alt="Proven expertise" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 3 -->
-        <div class="carousel-item">
-          <div class="sirbrams-slide split-slide">
-            <div class="split-container">
-              <div class="split-text">
-                <div class="slide-badge mb-2">
-                  <span class="badge-pulse"></span>
-                  <span class="badge-text">Impact-Driven</span>
-                </div>
-                <h1 class="split-heading">Technology With <span class="highlight">Purpose</span></h1>
-                <p class="split-subheading">
-                  We create technology that bridges gaps and empowers communities.
-                </p>
-                <p class="split-description">
-                  From building accessible platforms for users with disabilities to developing solutions for non-profits and community organizations, we believe in using technology to make a difference where it matters most.
-                </p>
-                <div class="split-actions">
-                  <a href="{% url 'about' %}" class="btn-join">
-                    Our Story <i class="bi bi-book ms-1"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="split-image">
-                <img src="{% static 'assets/img/illustrations/purpose.svg' %}" alt="Purpose-driven technology" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLIDE 4 -->
-        <div class="carousel-item">
-          <div class="sirbrams-slide split-slide">
-            <div class="split-container">
-              <div class="split-text">
-                <div class="slide-badge mb-2">
-                  <span class="badge-pulse"></span>
-                  <span class="badge-text">Start Your Project</span>
-                </div>
-                <h1 class="split-heading">Ready to <span class="highlight">Build Something</span> Great?</h1>
-                <p class="split-subheading">
-                  Let's take your idea from concept to launch.
-                </p>
-                <p class="split-description">
-                  Whether you have detailed requirements or just a rough concept, we'll work with you to define, design, and deliver a solution that meets your needs and exceeds your expectations.
-                </p>
-                <div class="split-actions">
-                  <button onclick="openContactPopup(true)" class="btn-join">
-                    <i class="bi bi-chat-dots me-1"></i> Contact Us
-                  </button>
-                </div>
-              </div>
-              <div class="split-image">
-                <img src="{% static 'assets/img/illustrations/message.svg' %}" alt="Get started" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Software, hosting and design &middot;</p>
+      <h2>Smart solutions.Real impact.</h2>
+      <p class="lead">We build custom software, websites and brand design for businesses, schools and communities, and we offer support of the systems we build.</p>
+      <div class="hero-actions">
+        <a href="{% url 'contact' %}" class="btn btn-solid btn-lg">Start a project</a>
+        <a href="{% url 'portfolio' %}" class="link-arrow">Explore portfolio <i class="bi bi-arrow-right"></i></a>
       </div>
-
-      <button class="carousel-control-prev custom-control" type="button" data-bs-target="#sirbramsCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next custom-control" type="button" data-bs-target="#sirbramsCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-      <div class="carousel-indicators sirbrams-indicators d-none d-lg-flex">
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#sirbramsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      </div>
-
+      <p class="hero-note">Free first consultation. No jargon, no pressure.</p>
     </div>
+
+    <aside class="hero-index" aria-label="What we do">
+      <p class="status"><span class="dot" aria-hidden="true"></span> Available for new projects</p>
+      <ol class="index-list">
+        <li><a href="{% url 'service' %}#software"><span class="num">01</span><span class="txt"><strong>Custom software</strong><small>Web and mobile applications built around you</small></span><i class="bi bi-arrow-up-right"></i></a></li>
+        <li><a href="{% url 'service' %}#hosting"><span class="num">02</span><span class="txt"><strong>Hosting and domains</strong><small>Online quickly, and kept online</small></span><i class="bi bi-arrow-up-right"></i></a></li>
+        <li><a href="{% url 'service' %}#design"><span class="num">03</span><span class="txt"><strong>Graphic design</strong><small>Logos and identities that look like you</small></span><i class="bi bi-arrow-up-right"></i></a></li>
+      </ol>
+    </aside>
   </div>
-</div>
+</section>
 
-<!-- STATS -->
-<section class="stats-section py-5">
-  <div class="container">
-    <div class="row g-4">
+<!-- IMPACT COUNTERS -->
+<section class="impact" aria-labelledby="impactTitle">
+  <div class="wrap">
+    <h2 id="impactTitle" class="sr-only">Our impact so far</h2>
+    <ul class="impact-grid">
+      {% for s in stats %}
+      <li class="impact-item">
+        <p class="impact-num">{% if s.value %}<span class="count" data-target="{{ s.value }}">{{ s.value }}</span><span>{{ s.suffix }}</span>{% else %}<span>{{ s.static }}</span>{% endif %}</p>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.desc }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-        <div class="stat-card text-center p-4">
-          <div class="stat-icon-wrapper mb-3">
-            <div class="stat-icon-bg">
-              <i class="bi bi-people"></i>
-            </div>
-          </div>
-          <div class="stat-number">
-            <span class="counter" data-target="2">0</span><span>+</span>
-          </div>
-          <h3 class="stat-title">Clients Served</h3>
-          <p class="stat-desc">Businesses we've partnered with</p>
-        </div>
-      </div>
+<!-- WHAT YOU GET -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What you get when you work with us</h2>
+      <p>Careful engineering, honest advice and design that feels human.</p>
+    </div>
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="stat-card text-center p-4">
-          <div class="stat-icon-wrapper mb-3">
-            <div class="stat-icon-bg">
-              <i class="bi bi-check-circle"></i>
-            </div>
-          </div>
-          <div class="stat-number">
-            <span class="counter" data-target="5">0</span><span>+</span>
-          </div>
-          <h3 class="stat-title">Projects Delivered</h3>
-          <p class="stat-desc">Completed on time and on budget</p>
-        </div>
-      </div>
+    <div class="trio">
+      <article class="trio-item">
+        <span class="num">01</span>
+        <h3>Trusted expertise</h3>
+        <p>We deliver working software for startups, SMEs and other agencies. Every system we build is meant to drive growth and make daily operations easier, with quality and reliability behind each project.</p>
+        <ul class="plain-list">
+          <li>Custom dashboards</li>
+          <li>Customer Relationship Management (CRM) systems</li>
+          <li>E-commerce platforms</li>
+          <li>E-learning platforms</li>
+          <li>Portfolios</li>
+        </ul>
+        <a href="{% url 'portfolio' %}" class="link-arrow">See our work <i class="bi bi-arrow-right"></i></a>
+      </article>
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="stat-card text-center p-4">
-          <div class="stat-icon-wrapper mb-3">
-            <div class="stat-icon-bg">
-              <i class="bi bi-star"></i>
-            </div>
-          </div>
-          <div class="stat-number">
-            <span class="counter" data-target="96">0</span><span>%</span>
-          </div>
-          <h3 class="stat-title">Client Satisfaction</h3>
-          <p class="stat-desc">Would recommend our services</p>
-        </div>
-      </div>
+      <article class="trio-item">
+        <span class="num">02</span>
+        <h3>Technology with purpose</h3>
+        <p>We create technology that bridges gaps and supports communities: accessible platforms for users with disabilities, and tools for non-profits and community organisations.</p>
+        <a href="{% url 'about' %}" class="link-arrow">Our story <i class="bi bi-arrow-right"></i></a>
+      </article>
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="stat-card text-center p-4">
-          <div class="stat-icon-wrapper mb-3">
-            <div class="stat-icon-bg">
-              <i class="bi bi-clock"></i>
-            </div>
-          </div>
-          <div class="stat-number">
-            <span>24</span><span>/</span><span>7</span>
-          </div>
-          <h3 class="stat-title">Support Available</h3>
-          <p class="stat-desc">Round-the-clock assistance</p>
-        </div>
-      </div>
-
+      <article class="trio-item">
+        <span class="num">03</span>
+        <h3>Domain and hosting, sorted</h3>
+        <p>Get online without the technical headaches. We register your domain and host your site for you.</p>
+        <a href="{% url 'service' %}#hosting" class="link-arrow">How it works <i class="bi bi-arrow-right"></i></a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- FAQ & CTA -->
-<section id="faq" class="faq section py-5">
-  <div class="container">
-    <div class="row g-5 align-items-start">
-
-      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="section-title mb-4">Frequently Asked Questions</h2>
-        
-        <div class="faq-container">
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-              <div class="faq-icon-wrapper">
-                <i class="bi bi-building"></i>
-              </div>
-              <h3>What industries do you serve?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-content">
-              <p>We work with healthcare providers, financial institutions, educational organizations, retail businesses, and manufacturers. Each solution is tailored to the specific needs of that industry.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-              <div class="faq-icon-wrapper">
-                <i class="bi bi-check-circle"></i>
-              </div>
-              <h3>How do you ensure quality?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-content">
-              <p>We use automated testing, manual QA, and peer code reviews throughout development. Every project goes through multiple quality checkpoints before delivery.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-              <div class="faq-icon-wrapper">
-                <i class="bi bi-tools"></i>
-              </div>
-              <h3>Do you provide ongoing maintenance?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-content">
-              <p>Yes. We offer maintenance plans that include updates, security patches, performance monitoring, and technical support with guaranteed response times.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-              <div class="faq-icon-wrapper">
-                <i class="bi bi-shield-lock"></i>
-              </div>
-              <h3>How do you protect client data?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-content">
-              <p>We implement encryption, access controls, regular security audits, and compliance with data protection regulations to keep your information secure.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-              <div class="faq-icon-wrapper">
-                <i class="bi bi-globe"></i>
-              </div>
-              <h3>Do you offer domain registration and hosting?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-content">
-              <p>Yes, we provide domain registration and hosting services with competitive pricing and reliable performance to get your website online quickly.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-              <div class="faq-icon-wrapper">
-                <i class="bi bi-clock-history"></i>
-              </div>
-              <h3>What is the typical project timeline?</h3>
-              <i class="faq-toggle bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-content">
-              <p>Simple websites and prototypes take 2–4 weeks. Full-scale web applications and complex systems typically take 2–6 months, depending on the scope.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
-        <div class="cta-card p-5">
-          <h2 class="cta-title">Let's Build Something Together</h2>
-          <p class="cta-text">
-            Tell us about your project and we'll show you how we can help.
-          </p>
-
-          <div class="cta-features">
-            <div class="cta-feature">
-              <i class="bi bi-check-circle"></i>
-              <span>Free consultation</span>
-            </div>
-            <div class="cta-feature">
-              <i class="bi bi-check-circle"></i>
-              <span>Custom solutions</span>
-            </div>
-            <div class="cta-feature">
-              <i class="bi bi-check-circle"></i>
-              <span>Agile development</span>
-            </div>
-            <div class="cta-feature">
-              <i class="bi bi-check-circle"></i>
-              <span>Ongoing support</span>
-            </div>
-          </div>
-
-          <div class="cta-actions">
-            <button onclick="openContactPopup(true)" class="btn-primary">
-              Get Started
-            </button>
-            <a href="{% url 'service' %}" class="btn-secondary">
-              Our Services
-            </a>
-          </div>
-
-          <div class="cta-trust">
-            <span class="bi bi-shield-check">Secure</span>
-            <span class="bi bi-arrow-repeat">Reliable</span>
-            <span class="bi bi-star">Trusted</span>
-          </div>
-        </div>
-      </div>
-
+<!-- PROCESS -->
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>From concept to launch</h2>
+      <p>Whether you have detailed requirements or a rough idea, this is how we take it from sketch to a live product.</p>
     </div>
+    <ol class="steps">
+      <li><strong>Discover</strong><span>We listen, ask questions and agree on the goal.</span></li>
+      <li><strong>Design</strong><span>You see layouts and flows before we build.</span></li>
+      <li><strong>Build</strong><span>Tested in small steps, with regular check-ins.</span></li>
+      <li><strong>Launch</strong><span>We deploy, train your team and keep supporting.</span></li>
+    </ol>
   </div>
 </section>
 
-</main>
+<!-- FAQ + CTA -->
+<section class="section" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <div class="section-head left">
+        <h2>Frequently asked questions</h2>
+        <p>Short answers to what people ask us first.</p>
+      </div>
 
-<script src="{% static 'assets/js/index.js' %}"></script>
+      <div class="faq">
+        <details name="faq">
+          <summary><span>What industries do you serve?</span></summary>
+          <p>We work with healthcare providers, financial institutions, educational organisations, retail businesses and manufacturers. Each solution is tailored to the needs of that industry.</p>
+        </details>
+        <details name="faq">
+          <summary><span>How do you ensure quality?</span></summary>
+          <p>We use automated testing, manual QA and peer code reviews throughout development. Every project goes through several quality checkpoints before delivery.</p>
+        </details>
+        <details name="faq">
+          <summary><span>Do you provide ongoing maintenance?</span></summary>
+          <p>Yes. Our maintenance plans include updates, security patches, performance monitoring and technical support with guaranteed response times.</p>
+        </details>
+        <details name="faq">
+          <summary><span>How do you protect client data?</span></summary>
+          <p>We use encryption, access controls and regular security audits, and we follow data protection regulations to keep your information secure.</p>
+        </details>
+        <details name="faq">
+          <summary><span>Do you offer domain registration and hosting?</span></summary>
+          <p>Yes. We provide domain registration and hosting with competitive pricing and reliable performance, so your website is online quickly.</p>
+        </details>
+        <details name="faq">
+          <summary><span>What is the typical project timeline?</span></summary>
+          <p>Simple websites and prototypes take 2 to 4 weeks. Full web applications and complex systems usually take 2 to 6 months, depending on scope.</p>
+        </details>
+      </div>
+    </div>
+
+    <aside class="cta-card">
+      <h2>Let's build something together</h2>
+      <p>Tell us about your project and we will show you how we can help.</p>
+      <ul class="plain-list">
+        <li> <span class="nav-icon bi bi-chat-dots" style="color: #ffd700;"></span> Free consultation</li>
+        <li> <span class="nav-icon bi bi-gear" style="color: #ffd700;"></span> Custom solutions</li>
+        <li> <span class="nav-icon bi bi-rocket" style="color: #ffd700;"></span> Agile development</li>
+        <li> <span class="nav-icon bi bi-shield" style="color: #ffd700;"></span> Ongoing support</li>
+      </ul>
+      <div class="cta-actions">
+        <button type="button" class="btn btn-light" data-open-chat="form">Get started</button>
+        <a href="{% url 'service' %}" class="btn btn-ghost-light">Our services</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
 {% endblock %}

@@ -1,194 +1,79 @@
 {% extends 'main.html' %}
 {% load static %}
+{% block title %}About | SirBrams Tech Solutions{% endblock %}
+{% block meta_description %}Founded in 2024 in Nairobi, SirBrams Tech Solutions is a small team of technologists building software, websites and brands that make a real difference.{% endblock %}
 {% block body %}
 
-<link rel="stylesheet" href="{% static 'assets/css/about.css' %}">
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">About us</p>
+    <h1>A small team with a big appetite for useful technology</h1>
+    <p class="lead">We started in 2024 to help businesses, schools and communities get more from the tools they use every day.</p>
+  </div>
+</section>
 
-<main id="aboutMain" class="about-page">
+<section class="section tight-top">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <h2 class="sr-only">Our story</h2>
+      <p>SirBrams Tech Solutions began as a small team of passionate technologists who wanted to change how businesses use technology. What started as a modest operation has grown into a name clients trust.</p>
+      <p>Our journey has been about continuous learning, adapting quickly and never settling for good enough. We have partnered with <strong>2+ clients</strong> across different industries to reach their digital goals.</p>
+      <p>Today we bring innovative thinking, technical expertise and genuine care for the people we work with to a fast-moving tech landscape.</p>
 
-    <!-- ABOUT HERO - STORY SECTION -->
-    <section class="about-story-section py-5 position-relative overflow-hidden">
-        
-        <!-- Decorative Background Elements -->
-        <div class="about-bg-deco">
-            <div class="about-bg-circle about-bg-circle-1"></div>
-            <div class="about-bg-circle about-bg-circle-2"></div>
-            <div class="about-bg-circle about-bg-circle-3"></div>
-        </div>
+      <dl class="about-facts">
+        <div><dt>Founded</dt><dd>2024</dd></div>
+        <div><dt>Clients</dt><dd>2+</dd></div>
+        <div><dt>Satisfaction</dt><dd>96%</dd></div>
+      </dl>
 
-        <div class="container position-relative" style="z-index: 2;">
-            <div class="about-grid">
-                
-                <!-- Text Column -->
-                <div class="about-text-col" data-aos="fade-right" data-aos-duration="800">
-                    <div class="about-badge mb-3">
-                        <span class="bi bi-info-circle" style="color: #000080;"></span>
-                        <span class="badge-text" style="color: #000080;">About SirBrams Tech Solutions</span>
-                    </div>
-                                       
-                    <div class="about-timeline">
-                        <div class="about-timeline-item">
-                            <div class="about-timeline-dot"></div>
-                            <p class="about-story-text">
-                                Founded in 2024, SirBrams Tech Solutions began as a small team of passionate technologists with a vision to transform how businesses leverage technology. What started as a modest operation has grown into a trusted name in the tech industry.
-                            </p>
-                        </div>
-                        
-                        <div class="about-timeline-item">
-                            <div class="about-timeline-dot"></div>
-                            <p class="about-story-text">
-                                Our journey has been marked by continuous learning, adaptation, and an unwavering commitment to excellence. We've helped over <strong style="color: #000080;">2+ clients</strong> across various industries achieve their digital transformation goals.
-                            </p>
-                        </div>
-                        
-                        <div class="about-timeline-item">
-                            <div class="about-timeline-dot"></div>
-                            <p class="about-story-text">
-                                Today, we stand as a testament to what innovative thinking, technical expertise, and customer-centric values can achieve in the rapidly evolving tech landscape.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="about-stats mt-4">
-                        <div class="about-stat-item">
-                            <span class="about-stat-number">2024</span>
-                            <span class="about-stat-label">Founded</span>
-                        </div>
-                        <div class="about-stat-item">
-                            <span class="about-stat-number">2+</span>
-                            <span class="about-stat-label">Clients</span>
-                        </div>
-                        <div class="about-stat-item">
-                            <span class="about-stat-number">96%</span>
-                            <span class="about-stat-label">Satisfaction</span>
-                        </div>
-                    </div>
-                </div>
+      <a href="{{ site.whatsapp_channel }}" class="link-arrow" target="_blank" rel="noopener">Join our WhatsApp channel <i class="bi bi-arrow-up-right"></i></a>
+    </div>
 
-                <!-- Image Column -->
-                <div class="about-image-wrapper" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-                    <div class="about-image-container">
-                        <img src="{% static 'assets/img/about (2).jpg' %}" alt="SirBrams Tech Solutions Team" class="img-fluid rounded-4 shadow-lg">
-                        
-                        <!-- Floating Elements -->
-                        <div class="about-float-card about-float-card-1">
-                            <i class="fas fa-code"></i>
-                            <span>Web Dev</span>
-                        </div>
-                        <div class="about-float-card about-float-card-2">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile</span>
-                        </div>
-                        <div class="about-float-card about-float-card-3 me-2">
-                            <i class="fas fa-cloud"></i>
-                            <span>Hosting</span>
-                        </div>
-                        
-                        <!-- Join Button Overlay -->
-                        <div class="about-image-overlay">
-                            <a href="https://whatsapp.com/channel/0029Vb3HC8R7dmebd5Awqs2T" class="about-join-btn about-pulse-btn" target="_blank">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>Join Our Channel</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <figure class="about-photo">
+      <img src="{% static 'assets/img/about-desk.jpg' %}" alt="A laptop showing code on a tidy desk with a coffee cup and a small plant" width="1600" height="1065" loading="lazy">
+          <figcaption> <span class="nav-icon bi bi-laptop" style="color: #000080;"></span> Web development <span class="nav-icon bi bi-phone" style="color: #000080;"></span> Mobile development <span class="nav-icon bi bi-server" style="color: #000080;"></span> Web Hosting</figcaption>
+        </figure>
+  </div>
+</section>
 
-            </div>
-        </div>
-    </section>
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we stand for</h2>
+      <p>Four habits that shape every project.</p>
+    </div>
+    <div class="values">
+      <article class="value">
+        <span class="num">01</span>
+        <h3>Innovation</h3>
+        <p>We build solutions that work well today and stay relevant as your needs grow.</p>
+      </article>
+      <article class="value">
+        <span class="num">02</span>
+        <h3>Integrity</h3>
+        <p>Honest communication and ethical practice in every engagement and deliverable.</p>
+      </article>
+      <article class="value">
+        <span class="num">03</span>
+        <h3>Collaboration</h3>
+        <p>We treat your challenges as our own and shape the solution around you.</p>
+      </article>
+      <article class="value">
+        <span class="num">04</span>
+        <h3>Excellence</h3>
+        <p>Quality work with attention to every detail, from code to copy.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- VALUES SECTION - CORE VALUES -->
-    <section class="about-values-section py-4">
-        <div class="container">
-
-            <!-- Section Header -->
-            <div class="section-header text-center mb-2" data-aos="fade-up">
-                <div class="about-section-badge mx-auto mb-2">
-                    <span class="badge-emoji bi bi-lightbulb"></span>
-                    <span class="badge-text">What We Stand For</span>
-                </div>
-               
-            </div>
-
-            <!-- Values Grid -->
-            <div class="about-values-grid">
-                
-                <!-- Value Card 1 -->
-                <div class="about-value-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-                    <div class="about-value-icon-wrap">
-                        <div class="about-value-icon-bg">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                    </div>
-                    <h3>Innovation</h3>
-                    <p>We constantly push boundaries to develop solutions that are not just effective today but will remain relevant tomorrow.</p>
-                    <div class="about-value-progress">
-                        <div class="about-value-progress-bar" style="width: 0%;"></div>
-                    </div>
-                </div>
-
-                <!-- Value Card 2 -->
-                <div class="about-value-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-                    <div class="about-value-icon-wrap">
-                        <div class="about-value-icon-bg">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                    </div>
-                    <h3>Integrity</h3>
-                    <p>We believe in transparent, honest communication and ethical business practices in all our engagements and Deliverables.</p>
-                    <div class="about-value-progress">
-                        <div class="about-value-progress-bar" style="width: 0%;"></div>
-                    </div>
-                </div>
-
-                <!-- Value Card 3 -->
-             <div class="about-value-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
-                    <div class="about-value-icon-wrap">
-                        <div class="about-value-icon-bg">
-                            <i class="fas fa-users"></i>
-                        </div>
-                    </div>
-                    <h3>Collaboration</h3>
-                    <p>We work closely with our clients, treating their challenges as our own to deliver truly customized solutions.</p>
-                    <div class="about-value-progress">
-                        <div class="about-value-progress-bar" style="width: 0%;"></div>
-                    </div>
-                </div>
-
-                <!-- Value Card 4 -->
-                <div class="about-value-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
-                    <div class="about-value-icon-wrap">
-                        <div class="about-value-icon-bg">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <h3>Excellence</h3>
-                    <p>We're committed to delivering nothing but the highest quality solutions, with attention to every detail.</p>
-                    <div class="about-value-progress">
-                        <div class="about-value-progress-bar" style="width: 0%;"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Value CTA -->
-            <div class="about-value-cta text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-                <p class="text-muted mb-3" style="font-size: 1.1rem;">
-                    <i class="bi bi-quote me-2" style="color: #000080;"></i>
-                    These values are not just words, they are the foundation of everything we build #SMART SOLUTIONS, REAL IMPACT.
-                </p>
-                <button onclick="openContactPopup(true)" class=" btn-lg rounded-pill px-3 shadow-lg" style="background:  #000080; color: white; font-weight: 700; font-size: 1rem;">
-                  
-                    <i class="bi bi-chat-dots me-2"></i> Contact Us
-                </button>
-            </div>
-
-        </div>
-    </section>
-<script src="{% static 'assets/js/about.js' %}"></script>
-</main>
-
+<section class="section">
+  <div class="wrap">
+    <div class="closing">
+      <p>These values are the foundation of everything we build. <strong>Smart Solutions. Real Impact.</strong></p>
+      <button type="button" class="btn btn-solid" data-open-chat="form">Talk to us</button>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Kijani Coffee logo concept">
+<rect width="800" height="800" fill="#F4EFE3"/>
+<circle cx="400" cy="330" r="190" fill="#1B7A4E"/>
+<circle cx="400" cy="330" r="168" fill="none" stroke="#F4EFE3" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<path d="M400 440 C 300 400 290 290 400 210 C 510 290 500 400 400 440 Z" fill="#F4EFE3"/>
+<path d="M400 430 L400 250" stroke="#1B7A4E" stroke-width="6" stroke-linecap="round"/>
+<path d="M400 340 L350 300 M400 380 L345 345 M400 320 L452 282 M400 362 L455 326" stroke="#1B7A4E" stroke-width="5" stroke-linecap="round"/>
+<circle cx="400" cy="196" r="14" fill="#FFD700"/>
+<text x="400" y="615" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="84" font-weight="700" fill="#14452F">Kijani</text>
+<text x="400" y="670" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#1B7A4E">COFFEE ROASTERS</text>
+<text x="400" y="735" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#5b6b61">Small batch, Kenyan highlands</text>
+</svg>

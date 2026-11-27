@@ -1,334 +1,174 @@
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- meta tags -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>SirBrams Tech Solutions | Smart Solutions. Real Impact.</title>
-    <meta name="description" content="SirBrams Tech Solutions offers innovative technology solutions designed to enhance business growth, digital transformation, and professional development.">
-    <meta name="keywords" content="technology solutions, digital transformation, web development, software solutions, business automation, IT consulting">
-       <meta name="theme-color" content="#0d6efd">
-    
-    <!--Jinja2 TAGS -->
-    {% load static %}
-    {% load tz %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block title %}SirBrams Tech Solutions | Smart Solutions. Real Impact.{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}SirBrams Tech Solutions builds custom software, websites and brand design for businesses, schools and communities from Nairobi, Kenya, and works with clients worldwide.{% endblock %}">
+  <meta name="theme-color" content="#FFFFFF">
 
-    <!--  FAVICONS-->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SirBrams Tech Solutions">
+  <meta property="og:title" content="SirBrams Tech Solutions | Smart Solutions. Real Impact.">
+  <meta property="og:description" content="Custom software, web hosting and graphic design from Nairobi, Kenya.">
+  <meta property="og:image" content="{% static 'assets/img/icon-512.png' %}">
 
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-    <link href="{% static 'assets/img/favicon.png' %}" rel="apple-touch-icon">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="{% static 'assets/img/icon-192.png' %}">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="{% static 'assets/img/icon-192.png' %}">
 
-    <!-- GOOGLE FONTS-->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="{% static 'assets/files/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/sb.css' %}" rel="stylesheet">
 
-    <!-- BOOTSTRAP & OTHER CSS -->
-    <link href="{% static 'assets/files/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/files//bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/files//aos/aos.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/files//glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/files//swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-    <!-- main.css -->
-    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
-
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"SirBrams Tech Solutions",
+   "url":"{{ site.site_url }}","email":"{{ site.email }}","telephone":"{{ site.phone }}",
+   "address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"}}
+  </script>
 </head>
 
-<body class="index-page">
+<body class="page-{{ current_page }}">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!--  header -->
-    <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <header class="site-header" id="header">
+    <div class="wrap header-row">
+      <a href="{% url 'index' %}" class="brand" aria-label="SirBrams Tech Solutions home">
+        <img src="{% static 'assets/img/SirBrams.png' %}" alt="SirBrams Tech Solutions" class="brand-icon img-fluid" style="max-height: 45px;">
+      </a>
 
-            <!-- Logo -->
-            <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
-                <img src="{% static 'assets/img/SirBrams_logo.png' %}" alt="SirBrams Logo" class="img-fluid" style="max-height: 45px; ; ">
-                
-            </a>
+      <nav id="nav" class="nav" aria-label="Main">
+        <ul>
+          <li><a href="{% url 'index' %}" {% if current_page == 'home' %}class="is-active" aria-current="page"{% endif %}><span class="nav-icon bi bi-house" style="color: #000080;"></span> Home</a></li>
+          <li><a href="{% url 'about' %}" {% if current_page == 'about' %}class="is-active" aria-current="page"{% endif %}><span class="nav-icon bi bi-info-circle" style="color: #000080;"></span> About</a></li>
+          <li><a href="{% url 'service' %}" {% if current_page == 'services' %}class="is-active" aria-current="page"{% endif %}><span class="nav-icon bi bi-gear" style="color: #000080;"></span> Services</a></li>
+          <li><a href="{% url 'portfolio' %}" {% if current_page == 'portfolio' %}class="is-active" aria-current="page"{% endif %}><span class="nav-icon bi bi-briefcase" style="color: #000080;"></span> Portfolio</a></li>
+          <li><a href="{% url 'contact' %}" {% if current_page == 'contact' %}class="is-active" aria-current="page"{% endif %}><span class="nav-icon bi bi-envelope" style="color: #000080;"></span> Contact</a></li>
+        </ul>
+        <a href="{% url 'contact' %}" class="btn btn-solid btn-sm nav-cta">Start a project</a>
+      </nav>
 
-            <!-- Navigation -->
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="{% url 'index' %}" class="{% if current_page == 'home' %}active{% endif %} bi bi-house-door"> Home</a></li>
-                    <li><a href="{% url 'about' %}" class="{% if current_page == 'about' %}active{% endif %} bi bi-info-circle"> About</a></li>
-                    <li><a href="{% url 'service' %}" class="{% if current_page == 'services' %}active{% endif %} bi bi-gear"> Services</a></li>
-                    <li><a href="{% url 'contact' %}" class="{% if current_page == 'contact' %}active{% endif %} bi bi-envelope"> Contact</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"onclick="toggleMobileNav(this)" 
-                aria-label="Toggle navigation menu" role="button"tabindex="0"></i>
-            </nav>
-
-                </div>
-            </header>
-
-            <!-- MAIN CONTENT BLOCK-->
-            {% block body %}
-            <!-- Main content goes here -->
-            {% endblock %}
-
-        
-        <!-- footer-->
-        
-        <footer id="footer" class="footer">
-            <div class="container">
-
-                <!-- MAIN FOOTER ROW -->
-                <div class="row g-4">
-
-                    <!-- COLUMN 1: BRAND + TAGLINE -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-brand">
-                            <img src="{% static 'assets/img/SirBrams_logo.png' %}" 
-                                alt="SirBrams Tech Solutions" 
-                                class="footer-logo">
-                            <p class="tagline">
-                                Smart Solutions. Real Impact.
-                            </p>
-                            <p class="location">
-                                <i class="bi bi-geo-alt"></i> <span style="color: #fff;">Nairobi, Kenya</span>
-                            </p>
-                            <p class="contact-email">
-                                <i class="bi bi-envelope"></i> 
-                                <a href="mailto:sirbrams.b@gmail.com">sirbrams.b@gmail.com</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- COLUMN 2: QUICK LINKS -->
-                    <div class="col-lg-2 col-md-6">
-                        <h4 class="footer-heading">Explore</h4>
-                        <ul class="footer-links">
-                            <li><a href="{% url 'index' %}"><i class="bi bi-chevron-right"></i> Home</a></li>
-                            <li><a href="{% url 'about' %}"><i class="bi bi-chevron-right"></i> About Us</a></li>
-                            <li><a href="{% url 'service' %}"><i class="bi bi-chevron-right"></i> Services</a></li>
-                            <li><a href="{% url 'contact' %}"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- COLUMN 3: SERVICES (ADDED VALUE) -->
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="footer-heading">What We Do</h4>
-                        <ul class="footer-links">
-                            <li><i class="bi bi-check-circle-fill"></i> Web Design & Development</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Web Hosting</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Domain Registration</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Graphic Design</li>
-                        
-                        </ul>
-                    </div>
-
-                    <!-- COLUMN 4: SOCIAL + NEWSLETTER -->
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="footer-heading">Connect</h4>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/profile.php?id=61575350737698" 
-                            aria-label="Facebook" class="social-link">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="https://x.com/bramuelwekesa1?t=k4QhtblVWih06NYBqtOTGw&s=09" 
-                            aria-label="Twitter" class="social-link">
-                                <i class="bi bi-twitter-x"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/bramuel-simiyu-036983360" 
-                            aria-label="LinkedIn" class="social-link">
-                                <i class="bi bi-linkedin"></i>
-                            </a>
-                            <a href="https://whatsapp.com/channel/0029Vb3HC8R7dmebd5Awqs2T" 
-                            aria-label="WhatsApp" class="social-link">
-                                <i class="bi bi-whatsapp"></i>
-                            </a>
-                            <a href="#" aria-label="YouTube" class="social-link">
-                                <i class="bi bi-youtube"></i>
-                            </a>
-                        </div>
-
-
-                </div><!-- /row -->
-
-                <!-- DIVIDER -->
-                <hr class="footer-divider">
-
-                <!-- BOTTOM BAR: COPYRIGHT + CREDITS -->
-                <div class="row align-items-center ">
-                    <div class="mt-3 text-center text-md-center">
-                        <p class="copyright">
-                            &copy; <span>{% now "Y" %}</span> 
-                            <strong>SirBrams Tech Solutions</strong>. 
-                            <span class="sep">|</span> 
-                            <span class="">All Rights Reserved</span>
-                        </p>
-                    </div>
-                   
-                </div><!-- /row -->
-
-            </div><!-- /container -->
-        </footer>
-
-        <!-- 1. CHAT/CONTACT BUTTON (Top position) -->
-    <div 
-        id="floatingContactBtn"
-        class="floating-btn contact-btn"
-        onclick="openContactPopup(false)"
-    >
-        <i class="bi bi-chat-dots"></i>
-        <span class="btn-label">Chat</span>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <i class="bi bi-list"></i>
+      </button>
     </div>
+    
+  </header> 
 
-    <!-- 2. WHATSAPP JOIN BUTTON (Bottom position) -->
-    <a 
-        href="https://whatsapp.com/channel/0029Vb3HC8R7dmebd5Awqs2T" 
-        target="_blank"
-        class="floating-btn whatsapp-btn"
-    >
-        <i class="fab fa-whatsapp"></i>
-        <span class="btn-label">Join Us</span>
+  <main id="main">
+    {% block body %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="{% url 'index' %}" class="brand" aria-label="SirBrams Tech Solutions home">
+          <img src="{% static 'assets/img/SirBrams.png' %}" alt="SirBrams Tech Solutions" class="brand-icon img-fluid" style="max-height: 45px;">
+          
+        </a>
+        <p class="footer-tag">Smart Solutions. Real Impact.</p>
+        <p class="footer-line">Nairobi, Kenya</p>
+        <p class="footer-line">
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <button type="button" class="copy-btn" data-copy="{{ site.email }}" aria-label="Copy email address"><i class="bi bi-clipboard"></i></button>
+        </p>
+      </div>
+
+      <div>
+        <h2 class="footer-h">Explore</h2>
+        <ul class="footer-links">
+          <li><a href="{% url 'index' %}"><span class="nav-icon bi bi-house" style="color: #000080;"></span> Home</a></li>
+          <li><a href="{% url 'about' %}"><span class="nav-icon bi bi-info-circle" style="color: #000080;"></span> About us</a></li>
+          <li><a href="{% url 'service' %}"><span class="nav-icon bi bi-gear" style="color: #000080;"></span> Services</a></li>
+          <li><a href="{% url 'portfolio' %}"><span class="nav-icon bi bi-briefcase" style="color: #000080;"></span> Portfolio</a></li>
+          <li><a href="{% url 'contact' %}"><span class="nav-icon bi bi-envelope" style="color: #000080;"></span> Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-h">What we do</h2>
+        <ul class="footer-links">
+          <li><a href="{% url 'service' %}#software" ><span class="nav-icon bi bi-code" style="color: #000080;"></span> Custom software</a></li>
+          <li><a href="{% url 'service' %}#hosting"><span class="nav-icon bi bi-server" style="color: #000080;"></span> Web hosting and domains</a></li>
+          <li><a href="{% url 'service' %}#design"><span class="nav-icon bi bi-palette" style="color: #000080;"></span> Graphic design</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-h">Connect</h2>
+        <ul class="footer-links">
+          <li><a href="https://www.facebook.com/profile.php?id=61575350737698" target="_blank" rel="noopener"> <span class="nav-icon bi bi-facebook" style="color: #000080;"></span> Facebook</a></li>
+          <li><a href="https://x.com/bramuelwekesa1?t=k4QhtblVWih06NYBqtOTGw&s=09" target="_blank" rel="noopener"> <span class="nav-icon bi bi-twitter" style="color: #000080;"></span> X (Twitter)</a></li>
+          <li><a href="https://www.linkedin.com/in/bramuel-simiyu-036983360" target="_blank" rel="noopener"> <span class="nav-icon bi bi-linkedin" style="color: #000080;"></span> LinkedIn</a></li>
+          <li><a href="{{ site.whatsapp_channel }}" target="_blank" rel="noopener"> <span class="nav-icon bi bi-whatsapp" style="color: #000080;"></span> WhatsApp channel</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <p>&copy; {% now "Y" %} SirBrams Tech Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating actions, bottom right -->
+  <div class="fab-stack">
+    <a href="{{ site.whatsapp_channel }}" class="fab fab-wa" target="_blank" rel="noopener" aria-label="Join our WhatsApp channel">
+      <i class="bi bi-whatsapp"></i>
     </a>
+    <button type="button" class="fab fab-chat" id="chatLauncher" aria-haspopup="dialog">
+      <i class="bi bi-chat-dots"></i><span>Let's talk</span>
+    </button>
+  </div>
+  <div class="chat-nudge" id="chatNudge" role="status" hidden>Have a question? We reply fast.</div>
 
-    <!-- Tooltip for Contact Button -->
-    <div id="floatingLabel" class="floating-tooltip">
-        <i class="bi bi-chat-dots me-2"></i> Chat with us!
-        <div class="tooltip-arrow"></div>
+  <!-- Chat / contact dialog -->
+  <dialog id="chatDialog" class="chat" aria-labelledby="chatTitle">
+    <div class="chat-head">
+      <button type="button" class="chat-close" data-chat-close aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      <h2 id="chatTitle">Let's talk</h2>
+      <p id="chatSub">Have a question or need a digital solution?</p>
     </div>
 
-    <!-- CONTACT POPUP-->
-    <div
-        class="modal fade"
-        id="contactPopup"
-        tabindex="-1"
-        aria-labelledby="contactPopupTitle"
-        aria-hidden="true"
-    >
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden" style="max-width: 400px; margin: 0 auto;">
+    <div class="chat-body" id="chatIntro">
+      <h3>We are here for you.</h3>
+      <p>Technical support, web development, custom software or design. Tell us what you need and we will point you the right way.</p>
+      <ul class="chat-points">
+        <li><strong>Quick</strong><span>Fast, friendly replies</span></li>
+        <li><strong>Smart</strong><span>Advice that fits your budget</span></li>
+        <li><strong>Professional</strong><span>Secure, well-built work</span></li>
+      </ul>
+      <button type="button" class="btn btn-solid btn-block" id="chatShowForm">Send us a message</button>
+      <button type="button" class="btn btn-quiet btn-block" data-chat-close>Maybe later</button>
+    </div>
 
-                <!-- POPUP HEADER -->
-                <div id="contactPopupHeader" class="popup-header">
-                    <div id="contactPopupIcon" class="popup-icon">
-                        <img src="{% static 'assets/img/SirBrams_logo.png' %}" alt="SirBrams LOGO" class="img-fluid" style="max-height: 40px;">
-                    </div>
-                    <h3 id="contactPopupTitle" class="fw-bold mb-1">Let's Talk</h3>
-                    <p id="contactPopupSubtitle" class="mb-0">Have a question or need a digital solution?</p>
-                </div>
-
-                <!-- POPUP INTRO -->
-                <div id="contactIntro" class="modal-body text-center p-4">
-                    <h4 class="fw-bold mb-2 " style="color: #000080;">We Are Here For You.</h4>
-                    <p class="text-muted mx-auto mb-3">
-                        Whether you need technical support, web development, custom software, or digital solutions, our team is ready to help.
-                    </p>
-
-                    <!-- Features -->
-                    <div class="row g-2 mb-3" style="color: #000080;">
-                        <div class="col-4">
-                            <div class="feature-item">
-                                <div class="feature-icon bi-lightning"></div>
-                                <strong>Quick</strong>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="feature-item">
-                                <div class="feature-icon bi-tools"></div>
-                                <strong>Smart</strong>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="feature-item">
-                                <div class="feature-icon bi-shield-lock"></div>
-                                <strong>Pro</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn w-100 py-2 rounded-3 fw-semibold" onclick="showContactForm()" style="background: #000080; color: white;">
-                        Contact Us <i class="bi bi-arrow-right ms-2"></i>
-                    </button>
-
-                    <button type="button" class="btn  w-100 mt-2 rounded-3" data-bs-dismiss="modal" style="background-color: transparent; color: #000080; border: 2px solid #000080;">
-                       <i class="bi bi-x ms-2"></i> Maybe Later
-                    </button>
-                </div>
-
-                <!-- CONTACT FORM -->
-                <div id="contactFormContainer" class="modal-body p-4" style="display:none;">
-                    <div class="text-center mb-3">
-                        <h4 class="fw-bold">Send Us a Message</h4>
-                        <p class="text-muted small mb-0">Tell us how we can help you.</p>
-                    </div>
-
-                    <form method="POST" action="{% url 'contact' %}">
-                        {% csrf_token %}
-                        <div class="row g-2">
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold small" for="popupName">Full Name</label>
-                                <input type="text" id="popupName" name="name" class="form-control rounded-3 py-1" placeholder="Your full name" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label fw-semibold small" for="popupPhone">Phone Number</label>
-                                <input type="text" id="popupPhone" name="phone" class="form-control rounded-3 py-1" placeholder="+254..." required>
-                            </div>
-
-                            <div class="col-12">
-                                <label class="form-label fw-semibold small" for="popupEmail">Email Address</label>
-                                <input type="email" id="popupEmail" name="email" class="form-control rounded-3 py-1" placeholder="you@example.com" required>
-                            </div>
-
-                            <div class="col-12">
-                                <label class="form-label fw-semibold small" for="popupSubject">Subject</label>
-                                <input type="text" id="popupSubject" name="subject" class="form-control rounded-3 py-1" placeholder="What can we help you with?" required>
-                            </div>
-
-                            <div class="col-12">
-                                <label class="form-label fw-semibold small" for="popupMessage">Message</label>
-                                <textarea id="popupMessage" name="message" rows="3" class="form-control rounded-3" placeholder="Tell us more about your enquiry..." required></textarea>
-                            </div>
-
-                            <div class="col-12 mt-3">
-                                <button type="submit" class="btn  w-100 py-2 rounded-3 fw-semibold" style="background: #000080; color: white;">
-                                    Send Message <i class="bi bi-send ms-2"></i>
-                                </button>
-                            </div>
-
-                            <div class="col-12 text-center">
-                                <button type="button" class=" bi bi-arrow-left btn btn-link text-muted text-decoration-none small" onclick="showContactIntro()">
-                                    Back
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- POPUP FOOTER -->
-                <div class="text-center py-2" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
-                    <small style="color: #000080; font-size: 11px;">SirBrams Tech Solutions</small>
-                </div>
-
-            </div>
+    <div class="chat-body" id="chatFormWrap" hidden>
+      <form method="post" action="{% url 'contact' %}" class="form form-compact">
+        {% csrf_token %}
+        <div class="field-row">
+          <div class="field"><label for="chat-name">Full name</label><input id="chat-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="chat-phone">Phone</label><input id="chat-phone" name="phone" type="tel" autocomplete="tel" placeholder="+254..." required></div>
         </div>
+        <div class="field"><label for="chat-email">Email</label><input id="chat-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="chat-subject">Subject</label><input id="chat-subject" name="subject" type="text" required></div>
+        <div class="field"><label for="chat-message">Message</label><textarea id="chat-message" name="message" rows="3" required></textarea></div>
+        <button type="submit" class="btn btn-solid btn-block">Send message</button>
+        <button type="button" class="btn btn-quiet btn-block" id="chatBack"><i class="bi bi-arrow-left"></i> Back</button>
+      </form>
     </div>
+  </dialog>
 
-    <!--JAVASCRIPT FILES -->
-    <script src="{% static 'assets/files/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'assets/files/aos/aos.js' %}"></script>
-    <script src="{% static 'assets/files/glightbox/js/glightbox.min.js' %}"></script>
-    <script src="{% static 'assets/files/swiper/swiper-bundle.min.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- Toasts -->
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+  <div id="djangoMessages" hidden>{% if messages %}{% for message in messages %}<span data-level="{{ message.tags }}">{{ message }}</span>{% endfor %}{% endif %}</div>
 
-    <!--  MAIN JS  -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
- 
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then((reg) => console.log('PWA Service Worker registered:', reg.scope))
-        .catch((err) => console.error('PWA Registration failed:', err));
-    });
-  }
-</script>
-  
-
+  <script src="{% static 'assets/js/sb.js' %}" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(function (err) { console.error('PWA registration failed:', err); });
+      });
+    }
+  </script>
 </body>
 </html>

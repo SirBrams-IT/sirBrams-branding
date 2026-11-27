@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Amani Legal business card concept">
+<rect width="800" height="500" fill="#E9E6DC"/>
+<rect x="60" y="50" width="680" height="400" rx="14" fill="#000080"/>
+<circle cx="190" cy="180" r="62" fill="none" stroke="#FFD700" stroke-width="4"/>
+<text x="190" y="206" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" fill="#FFD700">A</text>
+<text x="290" y="170" font-family="Georgia, Times New Roman, serif" font-size="46" font-weight="700" fill="#FFFFFF">Amani Legal</text>
+<text x="292" y="208" font-family="Helvetica, Arial, sans-serif" font-size="17" letter-spacing="5" fill="#FFD700">ADVOCATES &amp; CONSULTANTS</text>
+<path d="M110 280 H690" stroke="#FFD700" stroke-opacity=".45" stroke-width="1.5"/>
+<text x="110" y="335" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Wanjiru Amani</text>
+<text x="110" y="364" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#C9CCF2">Managing Partner</text>
+<text x="690" y="335" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#FFFFFF">+254 700 000 000</text>
+<text x="690" y="364" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#FFFFFF">hello@amanilegal.example</text>
+<text x="690" y="393" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#C9CCF2">Nairobi, Kenya</text>
+</svg>
