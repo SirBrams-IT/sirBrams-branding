@@ -1,10 +1,8 @@
 """
 Editable site content for SirBrams Tech Solutions.
 
-Change contact details and the homepage numbers here. The portfolio is no
-longer edited in this file: add, edit and hide work from the admin panel
-(/admin/ > Portfolio). PROJECTS and DESIGNS below are only the starter
-samples loaded by `python manage.py seed_portfolio`.
+Change the numbers, announcement text, portfolio projects and design pieces
+here — no template editing needed.
 """
 
 SITE = {
@@ -26,7 +24,7 @@ ANNOUNCEMENT = {
 # Homepage counters. Each value is written into the HTML, so it never shows
 # "0" if JavaScript is slow or blocked; the count-up animation is a bonus.
 STATS = [
-    {"icon": "bi-people", "value": 2, "suffix": "+", "title": "Clients served",
+    {"icon": "bi-people", "value": 5, "suffix": "+", "title": "Clients served",
      "desc": "Businesses and organisations we have partnered with"},
     {"icon": "bi-check2-circle", "value": 5, "suffix": "+", "title": "Projects delivered",
      "desc": "Websites, systems and brand pieces shipped"},
@@ -36,7 +34,9 @@ STATS = [
      "desc": "Critical issues are never left waiting"},
 ]
 
-# Starter websites and systems (see note at the top of this file).
+# Websites & systems. Leave "url" empty until the site is live; the card then
+# offers "Ask about this project" instead of a broken link.
+# Add a real screenshot with "screenshot": "assets/img/portfolio/yourfile.webp".
 PROJECTS = [
     {
         "name": "SirBrams Tech Solutions",
@@ -72,7 +72,9 @@ PROJECTS = [
     },
 ]
 
-# Starter graphic design pieces. "image" lives in static/assets/img/design/.
+# Graphic design gallery. "image" lives in static/assets/img/design/.
+# These are original concept pieces; swap in real client work by changing the
+# file name, title, brief and notes.
 DESIGNS = [
     {"id": "kijani", "title": "Kijani Coffee logo", "type": "Logo", "image": "assets/img/design/logo-kijani.svg",
      "brief": "A friendly mark for a small-batch coffee roaster that sources from Kenyan highlands.",
